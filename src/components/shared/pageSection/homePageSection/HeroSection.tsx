@@ -40,28 +40,28 @@ const HeroSection = () => {
               alt="Mobile Mockup"
               width={60}
               height={80}
-              className="absolute inset-0 right-[71%] animate-vertically1 animate top-20 left-[29%]"
+              className="hidden md:block absolute inset-0 right-[71%] animate-vertically1 animate top-20 left-[29%]"
             />
             <Image
               src={IMAGES.HEROBG}
               alt="Laptop Mockup"
               width={600}
               height={400}
-              className="mx-auto"
+              className="mx-auto "
             />
             <Image
               src={IMAGES.MOBILE1}
               alt="Mobile Mockup"
               width={130}
               height={240}
-              className=" absolute inset-0 left-[58%] animate-vertically animate top-10 right-[45%]"
+              className=" absolute inset-0 md:left-[58%] md:w-[130px] md:h-[210px] w-[75px] h-[100px] animate-vertically animate top-10 md:right-[45%] left-[65%] right-[35%]"
             />
             <Image
               src={IMAGES.A4}
               alt="Mobile Mockup"
               width={60}
               height={80}
-              className=" absolute inset-0 left-[67%] animate-vertically1 animate top-20 right-[33%]"
+              className=" hidden md:block absolute inset-0 left-[67%] animate-vertically1 animate top-20 right-[33%]"
             />
           </div>
         </div>

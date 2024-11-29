@@ -41,7 +41,7 @@ const Features = () => {
               width={280}
               height={200}
               alt="School Management Software"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg"
               loading="lazy"
             />
           </div>

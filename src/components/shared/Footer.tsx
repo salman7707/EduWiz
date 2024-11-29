@@ -10,9 +10,9 @@ const Footer = () => {
   return (
     <footer className="py-10 bg-gradientdarkblue">
       <div className="w-full max-w-[1176px] mx-auto xl:px-0 px-5">
-        <div className="flex flex-wrap justify-between pt-4 pb-3">
+        <div className="flex lg:flex-row flex-col justify-between pt-4 pb-3 gap-y-6">
           {/* Column 1 */}
-          <div className="w-full md:w-1/3 px-4">
+          <div className="w-full lg:w-1/3 lg:px-4 px-2">
             <div className="pb-6">
               <Image
                 src={IMAGES.LOGO}
@@ -34,8 +34,8 @@ const Footer = () => {
           </div>
 
           {/* Column 2 */}
-          <div className="w-full md:w-2/3 flex flex-wrap justify-end px-4">
-            <div className="w-[25%] px-4">
+          <div className="w-full md:w-2/3 flex lg:flex-row flex-col justify-end lg:px-4 px-2 gap-y-6">
+            <div className="lg:w-[25%] lg:px-4">
               <h4 className="font-semibold text-white mb-4 capitalize">
                 eSkooly
               </h4>
@@ -69,7 +69,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="w-[30%] px-4">
+            <div className="lg:w-[30%] lg:px-4">
               <h4 className="font-semibold text-white mb-4">Terms</h4>
               <ul className="space-y-2 text-neutralgray text-sm">
                 <li>
@@ -93,7 +93,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="w-[23%] flex flex-col justify-start items-center">
+            <div className="lg:w-[23%] flex flex-col justify-start lg:items-center items-start">
               <ul className="space-y-4 ">
                 <li>
                   <Link href="https://play.google.com/store/apps/details?id=com.eskooly.app">
@@ -116,7 +116,7 @@ const Footer = () => {
                   </Link>
                 </li>
               </ul>
-              <div className="flex mt-4 text-xl justify-center gap-x-4 text-neutralgray">
+              <div className="flex mt-4 text-xl justify-center items-center gap-x-4 text-neutralgray lg:px-0 px-2">
                 <Link
                   href="http://www.facebook.com/eskooly/"
                   className="hover:text-blue-500"

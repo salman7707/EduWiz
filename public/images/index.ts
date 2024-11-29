@@ -50,5 +50,6 @@ const IMAGES = {
     A6:"/images/sideImages/a6.png",
     A4:"/images/sideImages/a4.png",
     TRI1:"/images/icons/tri1.png",
+    SIGNUPBG:"/images/sideImages/signup.png",
 }
 export default IMAGES

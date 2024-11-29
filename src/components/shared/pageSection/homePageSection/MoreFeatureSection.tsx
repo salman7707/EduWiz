@@ -9,7 +9,7 @@ const MoreFeatureSection = () => {
       <div className="mx-auto text-center">
         <div className="w-full flex items-center justify-between">
           
-          <div className="w-full max-w-[40%] px-10 flex justify-start items-center">
+          <div className="w-full lg:max-w-[40%] max-w-[100%] md:px-10 px-4 flex justify-start items-center">
             <Image
               src={IMAGES.GLASSES}
               width={50}

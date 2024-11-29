@@ -42,7 +42,7 @@ const TrustSection = () => {
                   alt={client.alt}
                   width={110}
                   height={110}
-                  className="py-4 lg:w-[120px] lg:h-[120px] w-[180px] h-[110px]"
+                  className="py-4 xl:w-[120px] xl:h-[120px] lg:w-[100px] lg:h-[100px] md:w-[180px] md:h-[110px] w-[130px] h-auto"
                 />
               </div>
             ))}
@@ -53,7 +53,7 @@ const TrustSection = () => {
         <div className="text-center mt-10">
           <Link
             href="/signup"
-            className="bg-blue-700 text-white py-3 px-6 rounded-lg shadow-lg hover:bg-blue-600 transition"
+            className="bg-blue-700 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition"
           >
             <Button variant={"blue"} className="rounded-3xl">
               Get started Now
