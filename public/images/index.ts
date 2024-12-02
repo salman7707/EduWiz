@@ -1,6 +1,8 @@
 const IMAGES = {
     LOGO: "/images/icons/logo.png",
+    CLOGO: "/images/icons/clogo.png",
     CIRCLE: "/images/icons/circle.png",
+    STUDENTS: "/images/icons/students.png",
     HEROBG: "/images/bgImages/laptop.png",
     MOBILE1: "/images/bgImages/mobile.png",
     MOBILE: "/images/sideImages/play.png",
@@ -18,6 +20,7 @@ const IMAGES = {
     PERSONS: "/images/icons/persons.png",
     PAPER: "/images/icons/paper.png",
     EMOJI: "/images/icons/emoji.png",
+    COURTC: "/images/icons/courtC.png",
     MONEY: "/images/icons/money.png",
     FILES: "/images/icons/files.png",
     WEIGHT: "/images/icons/weight.png",
@@ -51,5 +54,6 @@ const IMAGES = {
     A4:"/images/sideImages/a4.png",
     TRI1:"/images/icons/tri1.png",
     SIGNUPBG:"/images/sideImages/signup.png",
+    LOGINBG:"/images/sideImages/loginbg.png",
 }
 export default IMAGES

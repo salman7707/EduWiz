@@ -21,6 +21,8 @@ export default {
 				gradientdarkblue: 'var(--gradientdarkblue)',
 				coolblue: 'var(--coolblue)',
 				neutralgray: 'var(--neutralgray)',
+				electricblue: 'var(--electricblue)',
+				lightelectricblue: 'var(--lightelectricblue)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'

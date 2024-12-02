@@ -42,7 +42,7 @@ const TrustSection = () => {
                   alt={client.alt}
                   width={110}
                   height={110}
-                  className="py-4 xl:w-[120px] xl:h-[120px] lg:w-[100px] lg:h-[100px] md:w-[180px] md:h-[110px] w-[130px] h-auto"
+                  className="py-4 xl:w-[120px] xl:h-[100px] lg:w-[100px] lg:h-[100px] md:w-[180px] md:h-[110px] w-[130px] h-auto"
                 />
               </div>
             ))}
