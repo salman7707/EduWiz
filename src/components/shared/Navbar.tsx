@@ -6,8 +6,8 @@ import IMAGES from "../../../public/images";
 import { Button } from "../ui/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
-import { useSelector } from "react-redux";
-import { initialValuesTypes } from "@/lib/store/features/authslice/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { initialValuesTypes } from "@/lib/store/authSlice";
 import { usePathname } from "next/navigation";
 import { IoMdSearch } from "react-icons/io";
 import { AiOutlineExpand } from "react-icons/ai";
@@ -16,6 +16,7 @@ import { FaMessage } from "react-icons/fa6";
 import { IoIosNotifications } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { changeNavState } from "@/lib/store/navSlice";
 
 export default function Navbar() {
   const PathName = usePathname();
@@ -41,6 +42,7 @@ export default function Navbar() {
     };
   }, []);
 
+  const dispatch = useDispatch();
   const { UserLoggedIn } = useSelector(
     (state: { auth: initialValuesTypes }) => state.auth
   );
@@ -48,10 +50,10 @@ export default function Navbar() {
   return (
     <div
       className={`w-full fixed top-0 ${
-        state === true ? " drop-shadow-2xl shadow-2xl" : "shadow-none"
-      } shadow-sm left-0 right-0 z-10 ${
+        state === true ? " shadow-even" : "shadow-none"
+      } shadow-sm left-0 right-0 z-10 h-[75px] ${
         UserLoggedIn
-          ? "bg-white  drop-shadow-2xl"
+          ? "bg-white shadow-2xl"
           : "bg-gradient-to-r from-[#09327f] to-[#06183b]"
       } `}
     >
@@ -63,8 +65,8 @@ export default function Navbar() {
       >
         {/* Brand */}
         <div
-          className={`flex items-center justify-between ${
-            UserLoggedIn ? "lg:w-[20%] " : "w-full"
+          className={`flex items-center justify-between h-full ${
+            UserLoggedIn ? "xl:w-[23%] lg:w-[20%] " : "w-full"
           } `}
         >
           <Link href="/">
@@ -73,9 +75,9 @@ export default function Navbar() {
                 UserLoggedIn && PathName !== "/" ? IMAGES.CLOGO : IMAGES.LOGO
               }
               alt="eSkooly Logo"
-              width={110}
+              width={120}
               height={75}
-              className="h-16 py-[10px] px-2"
+              className="h-[70px] py-3 px-2"
             />
           </Link>
           <div className="lg:hidden block" onClick={() => SetNavOpen(!navOpen)}>
@@ -119,8 +121,11 @@ export default function Navbar() {
           <div className=" w-[95%] flex justify-start ">
             {/*  */}
             <div className="flex justify-start items-center gap-x-10 xl:w-[33%] lg:w-[18%]">
-              <div className="flex items-end justify-center">
-                <GiHamburgerMenu className="text-black text-xl  " />
+              <div
+                className="flex items-end justify-center"
+                onClick={() => dispatch(changeNavState())}
+              >
+                <GiHamburgerMenu className="text-black text-xl cursor-pointer  " />
               </div>
               <div className="flex items-center justify-center gap-x-4">
                 <IoMdSearch className="text-gray-700 text-2xl" />
@@ -128,21 +133,21 @@ export default function Navbar() {
               </div>
             </div>
             {/*  */}
-            <div className="xl:w-[57%] w-[] flex items-center justify-end gap-x-4">
+            <div className="xl:w-[57%]  flex items-center justify-end  gap-x-4">
               <div className="flex items-center gap-x-3">
                 <Image
                   src={IMAGES.APPLE}
                   width={100}
                   height={100}
                   alt="download"
-                  className="w-[120px] h-[35px]"
+                  className="w-[130px] h-[40px]"
                 />
                 <Image
                   src={IMAGES.DOWNLOAD}
                   width={100}
                   height={100}
                   alt="download"
-                  className="w-[120px] h-[35px]"
+                  className="w-[130px] h-[40px]"
                 />
               </div>
               <div className="bg-neutralgray rounded-full">

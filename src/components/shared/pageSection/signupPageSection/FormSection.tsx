@@ -8,7 +8,7 @@ import LoginForm from "@/components/template/form/LoginForm";
 import { LeftSectionTypes } from "@/types/LeftSectionType";
 import RoleData from "@/lib/RoleData";
 
-export default function LeftSection({
+export default function FormSection({
   imgC = false,
   bgColor = "gradient",
   roleSection = false,

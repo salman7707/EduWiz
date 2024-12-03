@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { login } from "@/lib/store/features/authslice/authSlice";
+import { login } from "@/lib/store/authSlice";
 import { LoginSchema } from "@/lib/validations/loginSchema";
 import { useFormik } from "formik";
 import { useRouter } from "next/navigation";
