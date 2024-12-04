@@ -4,6 +4,7 @@ import { SideBar } from "@/components/shared/SideBar";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import { navInitialStateTypes } from "@/lib/store/navSlice";
+import Navbar from "@/components/shared/Navbar";
 
 export default function RootLayout({
   children,
@@ -19,13 +20,16 @@ export default function RootLayout({
   );
 
   return (
-    <html lang="en" className={`antialiased`}>
-      <body>
-        <SidebarProvider open={navbarOpen}>
-          {showsidebar && <SideBar />}
-          <div className="w-full">{children}</div>
-        </SidebarProvider>
-      </body>
-    </html>
+    <SidebarProvider open={navbarOpen}>
+      {showsidebar && (
+        <div className={` ${navbarOpen ? "w-[23%]" : "w-0"} mt-24`}>
+          <SideBar />
+        </div>
+      )}
+      <Navbar />
+      <div className={`${navbarOpen ? "w-[77%]" : "w-full"} mt-[75px]`}>
+        {children}
+      </div>
+    </SidebarProvider>
   );
 }

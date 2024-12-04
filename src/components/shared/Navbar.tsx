@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
-import { initialValuesTypes } from "@/lib/store/authSlice";
+import { initialValuesTypes, logout } from "@/lib/store/authSlice";
 import { usePathname } from "next/navigation";
 import { IoMdSearch } from "react-icons/io";
 import { AiOutlineExpand } from "react-icons/ai";
@@ -17,13 +17,14 @@ import { IoIosNotifications } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { changeNavState } from "@/lib/store/navSlice";
-
+import { CiSettings } from "react-icons/ci";
+import { FaBuildingColumns } from "react-icons/fa6";
+import { CiLock } from "react-icons/ci";
 export default function Navbar() {
   const PathName = usePathname();
-
   const [navOpen, SetNavOpen] = useState(false);
-
   const [state, setState] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,11 +47,16 @@ export default function Navbar() {
   const { UserLoggedIn } = useSelector(
     (state: { auth: initialValuesTypes }) => state.auth
   );
+  const handleLogout = () => {
+    setTimeout(() => {
+      dispatch(logout());
+    }, 3000);
+  };
 
   return (
     <div
       className={`w-full fixed top-0 ${
-        state === true ? " shadow-even" : "shadow-none"
+        state === true ? " shadow-2xl" : "shadow-md"
       } shadow-sm left-0 right-0 z-10 h-[75px] ${
         UserLoggedIn
           ? "bg-white shadow-2xl"
@@ -66,7 +72,7 @@ export default function Navbar() {
         {/* Brand */}
         <div
           className={`flex items-center justify-between h-full ${
-            UserLoggedIn ? "xl:w-[23%] lg:w-[20%] " : "w-full"
+            UserLoggedIn ? "xl:w-[20%] lg:w-[20%] " : "w-full"
           } `}
         >
           <Link href="/">
@@ -120,7 +126,7 @@ export default function Navbar() {
         ) : (
           <div className=" w-[95%] flex justify-start ">
             {/*  */}
-            <div className="flex justify-start items-center gap-x-10 xl:w-[33%] lg:w-[18%]">
+            <div className="flex justify-start items-center gap-x-10 xl:w-[30%] lg:w-[18%]">
               <div
                 className="flex items-end justify-center"
                 onClick={() => dispatch(changeNavState())}
@@ -133,7 +139,7 @@ export default function Navbar() {
               </div>
             </div>
             {/*  */}
-            <div className="xl:w-[57%]  flex items-center justify-end  gap-x-4">
+            <div className="xl:w-[60%]  flex items-center justify-end  gap-x-4">
               <div className="flex items-center gap-x-3">
                 <Image
                   src={IMAGES.APPLE}
@@ -158,7 +164,10 @@ export default function Navbar() {
                 <IoIosNotifications className="text-black text-2xl" />
                 <FaCartShopping className="text-black text-xl" />
               </div>
-              <div className="flex items-center justify-center gap-x-2">
+              <div
+                onClick={() => setDropdown(!dropdown)}
+                className="flex items-center justify-center gap-x-2 cursor-pointer"
+              >
                 <Image
                   src={IMAGES.COURTC}
                   alt="court"
@@ -170,6 +179,37 @@ export default function Navbar() {
                   Institute Name <MdKeyboardArrowDown />
                 </div>
               </div>
+              {dropdown && (
+                <div className=" absolute top-[90px] right-14 bg-white pl-3 rounded pr-16 py-3">
+                  <div className="space-y-4 py-0">
+                    <div className="flex items-center justify-start gap-x-3 w-full pl-1">
+                      <div>
+                        <CiSettings className="text-2xl" />
+                      </div>
+                      <div className="text-black text-base flex">
+                        Account Settings
+                      </div>
+                    </div>
+                    <div className="flex items-center justify-start gap-x-3 w-full pl-2">
+                      <div>
+                        <FaBuildingColumns className="text-xl" />
+                      </div>
+                      <div className="text-black text-base flex">Profile</div>
+                    </div>
+                    <Link
+                      href={"/login"}
+                      onClick={() => handleLogout()}
+                      className="cursor-pointer flex items-center justify-start gap-x-3 w-full pl-2"
+                    >
+                      <div>
+                        <CiLock className="text-xl" />
+                      </div>
+                      <div className="text-black text-base flex">Logout</div>
+                    </Link>
+                  </div>
+                  <div className="w-6 h-6 bg-white absolute -top-2 right-8 rounded-sm rotate-45"></div>
+                </div>
+              )}
             </div>
           </div>
         )}

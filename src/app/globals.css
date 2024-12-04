@@ -7,14 +7,21 @@
   --darkblue: #1d4ed8;
   --darkwhite: #e5e7eb;
   --lightgray: #9295d3;
+  --cardfirst: #5857ab;
+  --cardsecond: #a0a2d9;
+  --pink: #fa8b95;
+  --dimwhite: #f6f7fb;
+  --lightpink: #f7e5e9;
+  --cardfourth: #698af6;
   --blue: #0f5ef7;
-  --electricblue: #039BE5;
+  --electricblue: #039be5;
   --lightelectricblue: #3fb1eb;
   --gradientlightblue: #09327f;
   --gradientdarkblue: #06183b;
   --coolblue: #93c5fd;
   --neutralgray: #9ca3af;
-  --navbaractiveColor: #5E81F4;
+  --lightblack: #333333;
+  --navbaractiveColor: #5e81f4;
 }
 
 body {

@@ -25,7 +25,7 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          <div className="w-full">{children}</div>
+          <div className="w-full bg-dimwhite">{children}</div>
         </Providers>
       </body>
     </html>

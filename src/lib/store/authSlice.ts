@@ -5,7 +5,7 @@ export interface initialValuesTypes {
 }
 
 const initialValues: initialValuesTypes = {
-    UserLoggedIn: false,
+    UserLoggedIn: true,
 }
 
 export const authSlice = createSlice({

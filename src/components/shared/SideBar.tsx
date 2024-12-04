@@ -1,9 +1,9 @@
 "use client";
 import {
-  Calendar,
   Home,
   LucideIcon,
   Minus,
+  PencilRuler,
   Plus,
   Search,
   Settings,
@@ -66,10 +66,22 @@ const items: itemstype[] = [
   },
   {
     id: 2,
-    title: "Calendar",
+    title: "Classes",
     url: "#",
-    icon: Calendar,
+    icon: PencilRuler,
     plusicon: true,
+    insidedata: [
+      {
+        id: 0,
+        title: "All Classes",
+        url: "/allclasses",
+      },
+      {
+        id: 1,
+        title: "New Class",
+        url: "/addnewclasses",
+      },
+    ],
   },
   {
     id: 3,
@@ -117,15 +129,15 @@ export function SideBar() {
   return (
     <Sidebar
       className={`  ${
-        navbarOpen === true ? "w-[25%]" : "w-0"
-      } mt-24 shadow-even`}
+        navbarOpen === true ? "w-[23%]" : "w-0"
+      } mt-[75px] shadow-even bg-transparent`}
     >
       <SidebarContent>
         <SidebarGroup className="w-full px-0 mx-0">
           <SidebarGroupLabel className="text-black text-sm font-semibold py-2 px-4 w-full">
             menu
           </SidebarGroupLabel>
-          <SidebarGroupContent>
+          <SidebarGroupContent className="">
             <SidebarMenu className={` w-full flex flex-col h-full`}>
               {/* MAin Looping Start From there */}
               {items.map((item) => (
@@ -141,7 +153,7 @@ export function SideBar() {
                   >
                     <div className="flex flex-col items-center justify-center h-auto">
                       {/* Main Simple div if there is no data for dropdown then only this will shown */}
-                      <div className="flex items-center justify-start gap-x-4 w-full ">
+                      <div className="flex items-center justify-start gap-x-4 w-full pr-2">
                         <Link
                           onClick={() => setinsideitemClicked(false)}
                           href={item.url}
@@ -192,7 +204,7 @@ export function SideBar() {
                             >
                               {(hoverDot.hover && hoverDot.id === index) ||
                               pathname === insideitem.url ? (
-                                <div className="w-[10px] h-[10px] absolute -left-[4.8px] rounded-full bg-navbaractiveColor"></div>
+                                <div className="w-[10px] h-[10px] absolute -left-[5px] rounded-full bg-navbaractiveColor"></div>
                               ) : (
                                 ""
                               )}

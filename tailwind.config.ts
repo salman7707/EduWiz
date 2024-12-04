@@ -27,6 +27,13 @@ export default {
 				electricblue: 'var(--electricblue)',
 				lightelectricblue: 'var(--lightelectricblue)',
 				navbaractiveColor: 'var(--navbaractiveColor)',
+				cardfirst: 'var(--cardfirst)',
+				cardsecond: 'var(--cardsecond)',
+				pink: 'var(--pink)',
+				dimwhite: 'var(--dimwhite)',
+				lightpink: 'var(--lightpink)',
+				cardfourth: 'var(--cardfourth)',
+				lightblack: 'var(--lightblack)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
