@@ -10,7 +10,7 @@ export default function DownloadVersion() {
       <div className="px-4 py-3">
         <div className="space-y-1.5">
           <div className="">
-            <h2 className="text-gray-900 text-base font-semibold">
+            <h2 className="text-gray-900 xl:text-base text-sm font-semibold">
               Desktop Version
             </h2>
             <h2 className="text-gray-500 text-[11px] font-semibold w-[60%] leading-none">

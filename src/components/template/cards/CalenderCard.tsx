@@ -62,9 +62,9 @@ export default function CalenderCard() {
             <MdOutlineKeyboardArrowLeft className="text-xl text-blue" />
           </div>
           <div>
-            <h2 className="text-pink text-lg font-semibold">December , 2024</h2>
-            <h2 className="text-pink text-sm font-normal text-center">
-              Wed Dec 04 2024
+            <h2 className="text-pink xl:text-lg text-base text-center font-semibold">December , 2024</h2>
+            <h2 className="text-pink xl:text-sm text-xs font-normal text-center">
+              Thu Dec 05 2024
             </h2>
           </div>
           <div className="bg-gray-200 px-1.5 py-1.5 rounded-full">
@@ -76,7 +76,7 @@ export default function CalenderCard() {
           {days.map((data, index) => (
             <div
               key={index}
-              className="px-1 border-l border-pink text-blue text-xs"
+              className="xl:px-1 px-[3px] border-l border-pink text-blue text-[9px] xl:text-xs"
             >
               {data.day}
             </div>
@@ -84,11 +84,11 @@ export default function CalenderCard() {
         </div>
         <div
           className={`grid grid-cols-7 items-center justify-between w-full px-3 ${
-            navbarOpen ? "gap-x-8" : "gap-x-[50px]"
+            navbarOpen ? "xl:gap-x-8 gap-x-6" : "xl:gap-x-[50px] gap-x-8"
           }  gap-y-3`}
         >
           {date.map((data, index) => (
-            <div key={index} className="text-blue text-xs text-center">
+            <div key={index} className="text-blue xl:text-xs text-[9px] text-center">
               {data.date}
             </div>
           ))}

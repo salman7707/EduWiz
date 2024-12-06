@@ -14,9 +14,12 @@ export const navSlice = createSlice({
     reducers: {
         changeNavState: (state) => {
             state.navbarOpen = !state.navbarOpen
+        },
+        closeNav: (state) => {
+            state.navbarOpen = false
         }
     }
 })
 
-export const { changeNavState } = navSlice.actions;
+export const { changeNavState, closeNav } = navSlice.actions;
 export default navSlice.reducer;

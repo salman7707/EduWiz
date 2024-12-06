@@ -5,14 +5,14 @@ import IMAGES from "../../../../public/images";
 export default function WellcomeAdminCard() {
   return (
     <div className="w-auto bg-lightpink rounded-2xl flex relative">
-      <div className="px-12 py-4 space-y-1">
+      <div className="xl:px-12 px-6 py-4 space-y-1">
         <h2 className="text-pink text-lg font-semibold ">
           Welcome to Admin Dashboard
         </h2>
-        <h2 className="text-gray-500 text-base font-medium ">
+        <h2 className="text-gray-500 xl:text-base lg:text-sm font-medium ">
           Your Account is not Verified yet!
         </h2>
-        <h2 className="text-gray-500 text-base font-medium ">
+        <h2 className="text-gray-500 xl:text-base lg:text-sm font-medium ">
           Please Verify your email address.
           <span className="text-blue">Verify now!</span>
         </h2>
@@ -23,7 +23,7 @@ export default function WellcomeAdminCard() {
           alt="admin-massage"
           width={150}
           height={150}
-          className="w-[200px] h-[120px] absolute -top-6"
+          className="xl:w-[200px] xl:h-[120px] w-[160px] h-[90px] absolute xl:-top-6 top-0 right-1"
         />
       </div>
     </div>

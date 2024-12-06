@@ -20,14 +20,22 @@ export default function RootLayout({
   );
 
   return (
-    <SidebarProvider open={navbarOpen}>
+    <SidebarProvider open={navbarOpen} openMobile={navbarOpen}>
       {showsidebar && (
-        <div className={` ${navbarOpen ? "w-[23%]" : "w-0"} mt-24`}>
+        <div
+          className={` ${
+            navbarOpen ? "lg:w-[23%] md:w-[0%] xs:w-[0%]" : "w-0"
+          } ${navbarOpen ? "lg:bg-dimwhite bg-black/20" : ""} mt-24`}
+        >
           <SideBar />
         </div>
       )}
       <Navbar />
-      <div className={`${navbarOpen ? "w-[77%]" : "w-full"} mt-[75px]`}>
+      <div
+        className={`${
+          navbarOpen ? "lg:w-[77%] md:w-full xs:w-full" : "w-full"
+        } mt-[75px] `}
+      >
         {children}
       </div>
     </SidebarProvider>

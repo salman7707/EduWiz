@@ -1,13 +1,5 @@
 "use client";
-import {
-  Home,
-  LucideIcon,
-  Minus,
-  PencilRuler,
-  Plus,
-  Search,
-  Settings,
-} from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 
 import {
   Sidebar,
@@ -20,84 +12,11 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useSelector } from "react-redux";
-import { navInitialStateTypes } from "@/lib/store/navSlice";
-
-interface itemstype {
-  id: number;
-  title: string;
-  url: string;
-  icon: LucideIcon;
-  plusicon?: boolean;
-  insidedata?: {
-    id: number;
-    title: string;
-    url: string;
-  }[];
-}
-
-const items: itemstype[] = [
-  {
-    id: 0,
-    title: "Dashboard",
-    url: "/dashboard",
-    icon: Home,
-  },
-  {
-    id: 1,
-    title: "General Settings",
-    url: "/generalsetting",
-    icon: Settings,
-    plusicon: true,
-    insidedata: [
-      {
-        id: 0,
-        title: "Institute Profile",
-        url: "/schoolinfo",
-      },
-      {
-        id: 1,
-        title: "ٖٖFee Particulars",
-        url: "/feeparticulars",
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: "Classes",
-    url: "#",
-    icon: PencilRuler,
-    plusicon: true,
-    insidedata: [
-      {
-        id: 0,
-        title: "All Classes",
-        url: "/allclasses",
-      },
-      {
-        id: 1,
-        title: "New Class",
-        url: "/addnewclasses",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Search",
-    url: "#",
-    icon: Search,
-    plusicon: true,
-  },
-  {
-    id: 4,
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-    plusicon: false,
-  },
-];
+import { useDispatch, useSelector } from "react-redux";
+import { closeNav, navInitialStateTypes } from "@/lib/store/navSlice";
+import SideBarItems from "@/lib/SideBarItems";
 
 export function SideBar() {
   const pathname = usePathname();
@@ -126,11 +45,31 @@ export function SideBar() {
   const { navbarOpen } = useSelector(
     (state: { nav: navInitialStateTypes }) => state.nav
   );
+  const dispatch = useDispatch();
+  const Ref = useRef<HTMLDivElement | null>(null);
+  const handlemousedown = (e: MouseEvent) => {
+    if ((Ref.current, !Ref.current?.contains(e.target as Node))) {
+      dispatch(closeNav());
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const mediaquery = window.matchMedia("(max-width:786px)");
+      if (mediaquery.matches) {
+        window.addEventListener("mousedown", handlemousedown);
+      }
+      return () => {
+        window.removeEventListener("mousedown", handlemousedown);
+      };
+    }
+  }, [dispatch]);
   return (
     <Sidebar
+      ref={Ref}
       className={`  ${
-        navbarOpen === true ? "w-[23%]" : "w-0"
-      } mt-[75px] shadow-even bg-transparent`}
+        navbarOpen === true ? "lg:w-[23%] sm:w-[35%] xs:w-[75%]" : "w-0"
+      } mt-[75px] shadow-even bg-transparent `}
     >
       <SidebarContent>
         <SidebarGroup className="w-full px-0 mx-0">
@@ -140,7 +79,7 @@ export function SideBar() {
           <SidebarGroupContent className="">
             <SidebarMenu className={` w-full flex flex-col h-full`}>
               {/* MAin Looping Start From there */}
-              {items.map((item) => (
+              {SideBarItems.map((item) => (
                 <SidebarMenuItem key={item.title} className={`w-full `}>
                   <SidebarMenuButton
                     asChild
@@ -168,9 +107,9 @@ export function SideBar() {
                             }`}
                           ></div>
                           {/* title and icon */}
-                          <div className="flex items-center pag-x-4 w-full">
+                          <div className="flex items-center md:gap-x-0 gap-x-2 w-full">
                             <div className="w-[10%]">
-                              <item.icon className="w-[70%]" />
+                              <item.icon className="md:w-[70%] w-[90%]" />
                             </div>
                             <span className={`text-base w-[80%]`}>
                               {item.title}

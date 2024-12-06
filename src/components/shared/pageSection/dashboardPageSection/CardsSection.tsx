@@ -4,8 +4,8 @@ import React from "react";
 
 export default function CardsSection() {
   return (
-    <div className="w-full px-9 pt-12 pb-8">
-      <div className="grid grid-cols-4 gap-9">
+    <div className="lg:w-full px-9 pt-12 pb-8">
+      <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-9">
         {DashboardCard.map((data, index) => (
           <div key={index}>
             <Cards

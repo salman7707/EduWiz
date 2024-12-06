@@ -9,8 +9,18 @@ export default {
 	],
 	theme: {
 		extend: {
+			screens: {
+				xs: '320px',
+				xss: '375px',
+				xsss: '425px',
+				sm: '640px',
+				md: '768px',
+				lg: '1024px',
+				xl: '1280px',
+				'2xl': '1536px',
+			},
 			boxShadow: {
-				'even': '0 0 10px rgba(0, 0, 0, 0.1)',
+				even: '0 0 10px rgba(0, 0, 0, 0.1)'
 			},
 			colors: {
 				background: 'hsl(var(--background))',
