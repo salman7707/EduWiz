@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { AiOutlineExpand } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoIosNotifications, IoMdSearch } from "react-icons/io";
@@ -9,38 +9,51 @@ import { FaBuildingColumns, FaCartShopping, FaMessage } from "react-icons/fa6";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { CiLock, CiSettings } from "react-icons/ci";
 import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeNavState } from "@/lib/store/navSlice";
-import { initialValuesTypes, logout } from "@/lib/store/authSlice";
+import { logout } from "@/lib/store/authSlice";
 import { BsThreeDots } from "react-icons/bs";
+import { useRouter } from "next/navigation";
 
 export default function NAvBarWithLogin() {
+  const router = useRouter();
+  const Ref = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
   const [dropdown, setDropdown] = useState(false);
   const [navOpen, SetNavOpen] = useState(false);
-  const handleLogout = () => {
-    setTimeout(() => {
+  const handleLogout = async () => {
+    const response = await fetch("/api/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+    });
+    if (response.ok) {
+      console.log("User Logout");
       dispatch(logout());
-    }, 3000);
+      router.push("/login");
+    }
   };
-
-  const { UserLoggedIn } = useSelector(
-    (state: { auth: initialValuesTypes }) => state.auth
-  );
+  const handleclickoutside = (e: MouseEvent) => {
+    if (Ref.current && !Ref.current.contains(e.target as Node)) {
+      setDropdown(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("mousedown", handleclickoutside);
+    return () => window.removeEventListener("mousedown", handleclickoutside);
+  }, []);
   return (
     <nav
-      className={` flex lg:flex-row flex-col justify-between items-center overflow-hidden py-0 ${
-        UserLoggedIn ? "w-full lg:ml-[44px]" : "lg:max-w-[1173px]"
-      }  mx-auto w-full lg:px-0 px-5 ${
-        navOpen ? "h-auto" : "h-[75px]"
-      } transition-all duration-1000 ease-in-out `}
+      className={` flex lg:flex-row flex-col justify-between items-center overflow-hidden py-0 w-[95%] lg:mx-[44px]
+       mx-auto lg:px-0 px-5 ${
+         navOpen ? "h-auto" : "h-[75px]"
+       } transition-all duration-1000 ease-in-out `}
     >
       {/* IMG Logo Section */}
 
       <div
-        className={`flex items-center justify-between h-full ${
-          UserLoggedIn ? "xl:w-[20%] lg:w-[20%] w-full " : "w-full"
-        } `}
+        className={`flex items-center justify-between h-full lg:w-[20%] w-full`}
       >
         <div className="flex justify-start items-center gap-x-10 xl:w-[30%] lg:w-[18%] lg:hidden">
           <div
@@ -61,17 +74,17 @@ export default function NAvBarWithLogin() {
         </Link>
         <div className="flex justify-start items-center gap-x-10 xl:w-[30%] lg:w-[18%] lg:hidden">
           <BsThreeDots
-            className="text-black text-xl cursor-pointer  "
+            className="text-black text-xl cursor-pointer"
             onClick={() => SetNavOpen(!navOpen)}
           />
         </div>
       </div>
 
       <div
-        className={`w-[95%] flex lg:justify-start justify-center lg:my-0 my-3  `}
+        className={`lg:w-[80%] flex xl:justify-center lg:justify-end justify-start lg:my-0 my-3  `}
       >
         {/*  */}
-        <div className="lg:flex hidden justify-start items-center gap-x-10 xl:w-[30%] lg:w-[18%]">
+        <div className="lg:flex hidden justify-center items-center gap-x-10 xl:w-[10%] lg:w-[20%]">
           <div
             className="flex items-end justify-center"
             onClick={() => dispatch(changeNavState())}
@@ -84,7 +97,7 @@ export default function NAvBarWithLogin() {
           </div>
         </div>
         {/*  */}
-        <div className="xl:w-[60%] flex flex-wrap items-center lg:justify-end justify-center gap-4">
+        <div className="xl:w-[90%] lg:w-[80%] flex lg:flex-row flex-wrap items-center xl:justify-end lg:justify-start justify-center gap-4">
           <div className="flex items-center gap-x-3">
             <Image
               src={IMAGES.APPLE}
@@ -109,7 +122,7 @@ export default function NAvBarWithLogin() {
             <IoIosNotifications className="text-black text-2xl" />
             <FaCartShopping className="text-black text-xl" />
           </div>
-          <div></div>
+
           <div
             onClick={() => setDropdown(!dropdown)}
             className="flex items-center justify-center gap-x-2 cursor-pointer"
@@ -126,7 +139,10 @@ export default function NAvBarWithLogin() {
             </div>
           </div>
           {dropdown && (
-            <div className=" absolute lg:top-[90px] md:top-[150px] sm:top-52 xsss:top-52  top-64  md:right-14 bg-white pl-3 rounded pr-16 py-3">
+            <div
+              ref={Ref}
+              className=" absolute lg:top-[90px] md:top-[150px] sm:top-52 xsss:top-52  top-64  md:right-14 bg-white pl-3 rounded pr-16 py-3"
+            >
               <div className="space-y-4 py-0">
                 <div className="flex items-center justify-start gap-x-3 w-full pl-1">
                   <div>
@@ -142,8 +158,7 @@ export default function NAvBarWithLogin() {
                   </div>
                   <div className="text-black text-base flex">Profile</div>
                 </div>
-                <Link
-                  href={"/login"}
+                <div
                   onClick={() => handleLogout()}
                   className="cursor-pointer flex items-center justify-start gap-x-3 w-full pl-2"
                 >
@@ -151,7 +166,7 @@ export default function NAvBarWithLogin() {
                     <CiLock className="text-xl" />
                   </div>
                   <div className="text-black text-base flex">Logout</div>
-                </Link>
+                </div>
               </div>
               <div className="w-6 h-6 bg-white absolute -top-2 right-8 rounded-sm rotate-45"></div>
             </div>

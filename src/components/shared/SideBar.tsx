@@ -47,13 +47,13 @@ export function SideBar() {
   );
   const dispatch = useDispatch();
   const Ref = useRef<HTMLDivElement | null>(null);
-  const handlemousedown = (e: MouseEvent) => {
-    if ((Ref.current, !Ref.current?.contains(e.target as Node))) {
-      dispatch(closeNav());
-    }
-  };
 
   useEffect(() => {
+    const handlemousedown = (e: MouseEvent) => {
+      if ((Ref.current, !Ref.current?.contains(e.target as Node))) {
+        dispatch(closeNav());
+      }
+    };
     if (typeof window !== "undefined") {
       const mediaquery = window.matchMedia("(max-width:786px)");
       if (mediaquery.matches) {

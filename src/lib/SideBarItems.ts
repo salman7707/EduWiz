@@ -62,7 +62,7 @@ const SideBarItems: SideBaritemstypes[] = [
             {
                 id: 1,
                 title: "Add New",
-                url: "/addnew",
+                url: "/addnewstudent",
             },
         ],
     },

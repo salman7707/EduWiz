@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -11,19 +12,35 @@ import { useDispatch } from "react-redux";
 export default function LoginForm() {
   const Router = useRouter();
   const initialValues = {
-    username: "",
-    password: "",
+    username: "salman@gmail.com",
+    password: "123456",
   };
   const dispatch = useDispatch();
   const { handleChange, handleSubmit, touched, errors, values, handleBlur } =
     useFormik({
       initialValues: initialValues,
       validationSchema: LoginSchema,
-      onSubmit: (values, action) => {
-        console.log(values);
-        dispatch(login());
-        Router.push("/dashboard")
-        action.resetForm();
+      onSubmit: async (values, action) => {
+        const data = await fetch("/api/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: values.username,
+            password: values.password,
+          }),
+        });
+
+        const result = await data.json();
+        if (data.ok) {
+          console.log(result);
+          dispatch(login());
+          Router.push("/dashboard");
+          action.resetForm();
+        } else {
+          console.log("error in sending data", result.message);
+        }
       },
     });
 
@@ -74,7 +91,12 @@ export default function LoginForm() {
         </div>
 
         <div className="w-full flex items-center justify-center">
-          <Button type="submit" className=" rounded-3xl" variant={"lightblue"}>
+          <Button
+            type="submit"
+            className=" rounded-3xl"
+            size={"lg"}
+            variant={"lightblue"}
+          >
             Login
           </Button>
         </div>

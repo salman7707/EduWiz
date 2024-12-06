@@ -10,6 +10,8 @@
   --cardfirst: #5857ab;
   --cardsecond: #a0a2d9;
   --pink: #fa8b95;
+  --darkpink: #F7617A;
+  --orange: #F77D61;
   --dimwhite: #f6f7fb;
   --lightpink: #f7e5e9;
   --cardfourth: #698af6;
@@ -17,11 +19,15 @@
   --electricblue: #039be5;
   --lightelectricblue: #3fb1eb;
   --gradientlightblue: #09327f;
+  --slate: #8898AA;
   --gradientdarkblue: #06183b;
   --coolblue: #93c5fd;
   --neutralgray: #9ca3af;
   --lightblack: #333333;
+  --medblacktext:#111827;
+  --lightblacktext:#9CA3AF;
   --navbaractiveColor: #5e81f4;
+  --lightpurplegradient: #815EE4;
 }
 
 body {

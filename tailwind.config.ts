@@ -44,6 +44,12 @@ export default {
 				lightpink: 'var(--lightpink)',
 				cardfourth: 'var(--cardfourth)',
 				lightblack: 'var(--lightblack)',
+				darkpink: 'var(--darkpink)',
+				orange: 'var(--orange)',
+				medblacktext: 'var(--medblacktext)',
+				lightblacktext: 'var(--lightblacktext)',
+				lightpurplegradient: 'var(--lightpurplegradient)',
+				slate: 'var(--slate)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
