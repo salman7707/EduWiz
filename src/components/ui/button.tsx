@@ -22,12 +22,15 @@ const buttonVariants = cva(
         blue: "text-white bg-blue hover:bg-darkblue",
         white: "text-black bg-white hover:bg-darkwhite",
         lightblue: "text-white bg-electricblue  hover:bg-lightelectricblue  ",
-        orangegradient: "bg-gradient-to-l to-darkpink from-orange cursor-pointer  ",
+        orangegradient:
+          "bg-gradient-to-l to-darkpink from-orange cursor-pointer  ",
         medblue: "bg-cardsecond cursor-pointer  ",
+        yellow: "bg-YellowBtn text-black cursor-pointer",
       },
       size: {
         default: "h-9 px-4 py-2",
         sm: "h-8 rounded-md px-3 text-xs",
+        formbtn:"h-11 px-6 rounded-3xl",
         lg: "h-11 rounded-md px-12",
         icon: "h-9 w-9",
       },
