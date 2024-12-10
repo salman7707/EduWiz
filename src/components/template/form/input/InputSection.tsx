@@ -1,21 +1,7 @@
 import { Label } from "@/components/ui/label";
 import React from "react";
 import { Input } from "../../../ui/input";
-import { option } from "@/types/FieldsData.type";
-
-export interface inputSectionTypes {
-  id?: number;
-  label?: string;
-  placeHolder?: string;
-  type?: string;
-  theme?: string;
-  select?: boolean;
-  option?: option[];
-  values: string;
-  name?: string;
-  handlechange?: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
-  handleblur?: React.FocusEventHandler<HTMLInputElement | HTMLSelectElement>;
-}
+import { inputFieldTypes } from "@/types/InputFieldTypes";
 
 export default function InputSection({
   label,
@@ -28,9 +14,9 @@ export default function InputSection({
   name,
   handlechange,
   handleblur,
-}: inputSectionTypes) {
+}: inputFieldTypes) {
   return (
-    <div className={`flex flex-col `}>
+    <div className={`flex flex-col w-full`}>
       <div className="border-cardfourth relative border w-full h-auto rounded-3xl py-1 px-1">
         <Label
           className={`absolute -top-2.5 left-4 ${

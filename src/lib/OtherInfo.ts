@@ -1,4 +1,4 @@
-import { fieldsData } from "@/types/FieldsData.type";
+import { fieldsData } from "@/types/FieldsDataTypes";
 
 const OtherInfo: fieldsData[] = [
     {
@@ -201,6 +201,10 @@ const OtherInfo: fieldsData[] = [
             {
                 id: 0,
                 value: "Select"
+            },
+            {
+                id: 1,
+                value: "UnKnown"
             },
         ]
     },

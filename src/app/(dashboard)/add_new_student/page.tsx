@@ -4,8 +4,8 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="px-5 py-8">
-      <HeadingSection />
+    <div className="md:px-5 px-2 py-8">
+      <HeadingSection heading="Admission Form" />
       <AddmisionFormSection />
     </div>
   );

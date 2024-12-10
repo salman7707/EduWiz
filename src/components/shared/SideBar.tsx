@@ -50,8 +50,14 @@ export function SideBar() {
 
   useEffect(() => {
     const handlemousedown = (e: MouseEvent) => {
-      if ((Ref.current, !Ref.current?.contains(e.target as Node))) {
+      const toggleBtn = document.querySelector(".hamburger");
+      if (
+        Ref.current &&
+        !Ref.current?.contains(e.target as Node) &&
+        !toggleBtn?.contains(e.target as Node)
+      ) {
         dispatch(closeNav());
+        // when i click outside of the togglebtn or the complete sidebar then it will be close or one more functionallity i added there is that when i click on button and its state is true before then when i click on this then it will be close or when i click on this button or its initial state is false then it will be true on click can i want to add this functionality on this where i check this conditionally or just toggle this like on click the state will change to its previous state
       }
     };
     if (typeof window !== "undefined") {

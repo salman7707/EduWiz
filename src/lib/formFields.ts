@@ -1,4 +1,4 @@
-import { fieldsData } from "@/types/FieldsData.type";
+import { fieldsData } from "@/types/FieldsDataTypes";
 
 const Studentsfields: fieldsData[] = [
     { id: 0, name: "studentName", label: "Student Name*", value:"", theme: "blues", placeholder: "Name of Student", type: "text", justifyend: false, select: false, },

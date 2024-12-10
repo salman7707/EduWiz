@@ -63,5 +63,6 @@ const IMAGES = {
     GRAPH2: "/images/sideImages/graph2.png",
     MASSAGE: "/images/sideImages/msg1.png",
     DESKTOPi: "/images/sideImages/desktop.png",
+    AVATAR: "/images/sideImages/avatar.jpg",
 }
 export default IMAGES

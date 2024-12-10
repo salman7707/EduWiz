@@ -19,7 +19,7 @@ export default function NavBarWithoutLogin() {
     <nav
       className={` flex lg:flex-row flex-col justify-between items-center py-0 ${
         UserLoggedIn ? "w-full ml-[44px]" : "max-w-[1173px]"
-      }  mx-auto w-full xl:px-0 px-0`}
+      }  mx-auto w-full xl:px-0 lg:px-0 px-2`}
     >
       {/* IMG Logo Section */}
 
@@ -94,7 +94,7 @@ export default function NavBarWithoutLogin() {
                 Sign Up
               </Button>
             </Link>
-            <Link href="/signin">
+            <Link href="/login">
               <Button variant={"white"} size={"lg"} className="rounded-3xl">
                 Login
               </Button>

@@ -12,19 +12,19 @@ const SideBarItems: SideBaritemstypes[] = [
     {
         id: 1,
         title: "General Settings",
-        url: "/generalsetting",
+        url: "/general_setting",
         icon: Settings,
         plusicon: true,
         insidedata: [
             {
                 id: 0,
                 title: "Institute Profile",
-                url: "/schoolinfo",
+                url: "/school_info",
             },
             {
                 id: 1,
                 title: "ٖٖFee Particulars",
-                url: "/feeparticulars",
+                url: "/fee_particulars",
             },
         ],
     },
@@ -38,12 +38,12 @@ const SideBarItems: SideBaritemstypes[] = [
             {
                 id: 0,
                 title: "All Classes",
-                url: "/allclasses",
+                url: "/all_classes",
             },
             {
                 id: 1,
                 title: "New Class",
-                url: "/addnewclasses",
+                url: "/add_new_classes",
             },
         ],
     },
@@ -57,12 +57,17 @@ const SideBarItems: SideBaritemstypes[] = [
             {
                 id: 0,
                 title: "All Students",
-                url: "/allstudents",
+                url: "/all_students",
             },
             {
                 id: 1,
                 title: "Add New",
-                url: "/addnewstudent",
+                url: "/add_new_student",
+            },
+            {
+                id: 2,
+                title: "Admission Letter",
+                url: "/admission_letter",
             },
         ],
     },

@@ -18,6 +18,7 @@ import { useRouter } from "next/navigation";
 export default function NAvBarWithLogin() {
   const router = useRouter();
   const Ref = useRef<HTMLDivElement>(null);
+  const ButtonRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
   const [dropdown, setDropdown] = useState(false);
   const [navOpen, SetNavOpen] = useState(false);
@@ -35,14 +36,19 @@ export default function NAvBarWithLogin() {
     }
   };
   const handleclickoutside = (e: MouseEvent) => {
-    if (Ref.current && !Ref.current.contains(e.target as Node)) {
+    if (
+      Ref.current &&
+      !Ref.current.contains(e.target as Node) &&
+      ButtonRef.current &&
+      !ButtonRef.current.contains(e.target as Node)
+    ) {
       setDropdown(false);
     }
   };
   useEffect(() => {
     window.addEventListener("mousedown", handleclickoutside);
     return () => window.removeEventListener("mousedown", handleclickoutside);
-  }, []);
+  }, [Ref]);
   return (
     <nav
       className={` flex lg:flex-row flex-col justify-between items-center overflow-hidden py-0 w-[95%] lg:mx-[44px]
@@ -51,14 +57,15 @@ export default function NAvBarWithLogin() {
        } transition-all duration-1000 ease-in-out `}
     >
       {/* IMG Logo Section */}
-
       <div
         className={`flex items-center justify-between h-full lg:w-[20%] w-full`}
       >
-        <div className="flex justify-start items-center gap-x-10 xl:w-[30%] lg:w-[18%] lg:hidden">
+        <div className=" hamburger flex justify-start items-center gap-x-10 xl:w-[30%] lg:w-[18%] lg:hidden">
           <div
-            className="flex items-end justify-center"
-            onClick={() => dispatch(changeNavState())}
+            className=" flex items-end justify-center"
+            onClick={() => {
+              dispatch(changeNavState());
+            }}
           >
             <GiHamburgerMenu className="text-black text-xl cursor-pointer  " />
           </div>
@@ -86,10 +93,12 @@ export default function NAvBarWithLogin() {
         {/*  */}
         <div className="lg:flex hidden justify-center items-center gap-x-10 xl:w-[10%] lg:w-[20%]">
           <div
-            className="flex items-end justify-center"
-            onClick={() => dispatch(changeNavState())}
+            className="flex hamburger items-end justify-center"
+            onClick={() => {
+              dispatch(changeNavState());
+            }}
           >
-            <GiHamburgerMenu className="text-black text-xl cursor-pointer  " />
+            <GiHamburgerMenu className="text-black text-xl cursor-pointer" />
           </div>
           <div className="flex items-center justify-center gap-x-4">
             <IoMdSearch className="text-gray-700 text-2xl" />
@@ -124,8 +133,9 @@ export default function NAvBarWithLogin() {
           </div>
 
           <div
-            onClick={() => setDropdown(!dropdown)}
-            className="flex items-center justify-center gap-x-2 cursor-pointer"
+            ref={ButtonRef}
+            onClick={() => (dropdown ? setDropdown(false) : setDropdown(true))}
+            className=" flex items-center justify-center gap-x-2 cursor-pointer"
           >
             <Image
               src={IMAGES.COURTC}
