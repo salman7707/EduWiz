@@ -3,14 +3,22 @@ import { AiOutlineHome } from "react-icons/ai";
 import { RiPencilRulerLine } from "react-icons/ri";
 import { FiDownload } from "react-icons/fi";
 import { Button } from "@/components/ui/button";
+import { RiLoopRightLine } from "react-icons/ri";
+import { IoSearchOutline } from "react-icons/io5";
+import { FaPrint } from "react-icons/fa";
+import { FaPencilRuler } from "react-icons/fa";
 
 interface HeadingSectionType {
   buttonsection?: boolean;
+  allstudentbtn?: boolean;
+  allstudentprintbtn?: boolean;
   heading?: string;
 }
 
 export default function HeadingSection({
   buttonsection = true,
+  allstudentbtn = false,
+  allstudentprintbtn = false,
   heading,
 }: HeadingSectionType) {
   return (
@@ -42,6 +50,55 @@ export default function HeadingSection({
           >
             <FiDownload />
             Import Students
+          </Button>
+        </div>
+      )}
+      {/* Allstudent btn for AllStudents Page */}
+      {allstudentbtn && (
+        <div className="gap-x-2 flex items-center justify-center px-6">
+          <Button
+            size={"default"}
+            className="text-black rounded-md bg-btnbg hover:bg-btnbg px-4 text-xl"
+          >
+            <RiLoopRightLine />
+          </Button>
+          <Button
+            size={"default"}
+            className="text-black bg-btnbg hover:bg-btnbg rounded-md text-xl"
+          >
+            <IoSearchOutline />
+            Search
+          </Button>
+        </div>
+      )}
+      {allstudentprintbtn && (
+        <div className="gap-2 flex md:flex-row flex-wrap items-center justify-center lg:px-6 px-2">
+          <Button
+            size={"default"}
+            className="text-black rounded-md bg-btnbg hover:bg-btnbg px-4 text-lg"
+          >
+            <RiLoopRightLine />
+          </Button>
+          <Button
+            size={"default"}
+            className="text-black bg-btnbg hover:bg-btnbg rounded-md text-lg"
+          >
+            <IoSearchOutline />
+            Search
+          </Button>
+          <Button
+            size={"default"}
+            className="text-black bg-btnbg hover:bg-btnbg rounded-md text-lg"
+          >
+            <FaPrint />
+            Print
+          </Button>
+          <Button
+            size={"default"}
+            className="opacity-55 text-black bg-btnbg hover:bg-btnbg rounded-md text-lg"
+          >
+            <FaPencilRuler />
+            Customize
           </Button>
         </div>
       )}

@@ -64,5 +64,7 @@ const IMAGES = {
     MASSAGE: "/images/sideImages/msg1.png",
     DESKTOPi: "/images/sideImages/desktop.png",
     AVATAR: "/images/sideImages/avatar.jpg",
+    BARCODE: "/images/sideImages/barcode.png",
+    DBARCODE: "/images/sideImages/download.gif",
 }
 export default IMAGES

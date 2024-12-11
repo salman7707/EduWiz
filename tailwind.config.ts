@@ -51,6 +51,8 @@ export default {
 				lightpurplegradient: 'var(--lightpurplegradient)',
 				slate: 'var(--slate)',
 				YellowBtn: 'var(--YellowBtn)',
+				btnbg: 'var(--btnbg)',
+				studentdataBtn: 'var(--studentdataBtn)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'

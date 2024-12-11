@@ -69,6 +69,16 @@ const SideBarItems: SideBaritemstypes[] = [
                 title: "Admission Letter",
                 url: "/admission_letter",
             },
+            {
+                id: 3,
+                title: "Print Basic List",
+                url: "/printinfo",
+            },
+            {
+                id: 4,
+                title: "Student ID Cards",
+                url: "/studentid_card",
+            },
         ],
     },
     {

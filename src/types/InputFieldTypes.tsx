@@ -8,7 +8,7 @@ export interface inputFieldTypes {
     theme?: string;
     select?: boolean;
     option?: option[];
-    values: string;
+    values?: string;
     name?: string;
     handlechange?: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
     handleblur?: React.FocusEventHandler<HTMLInputElement | HTMLSelectElement>;

@@ -10,8 +10,8 @@
   --cardfirst: #5857ab;
   --cardsecond: #a0a2d9;
   --pink: #fa8b95;
-  --darkpink: #F7617A;
-  --orange: #F77D61;
+  --darkpink: #f7617a;
+  --orange: #f77d61;
   --dimwhite: #f6f7fb;
   --lightpink: #f7e5e9;
   --cardfourth: #698af6;
@@ -19,16 +19,18 @@
   --electricblue: #039be5;
   --lightelectricblue: #3fb1eb;
   --gradientlightblue: #09327f;
-  --slate: #8898AA;
+  --slate: #8898aa;
   --gradientdarkblue: #06183b;
   --coolblue: #93c5fd;
   --neutralgray: #9ca3af;
   --lightblack: #333333;
-  --medblacktext:#111827;
-  --lightblacktext:#9CA3AF;
+  --medblacktext: #111827;
+  --lightblacktext: #9ca3af;
   --navbaractiveColor: #5e81f4;
-  --lightpurplegradient: #815EE4;
-  --YellowBtn: #FFC26B;
+  --lightpurplegradient: #815ee4;
+  --btnbg: #e7e7e8;
+  --YellowBtn: #ffc26b;
+  --studentdataBtn: #6f6f6f;
 }
 
 body {
