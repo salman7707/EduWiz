@@ -1,3 +1,4 @@
+import { employeename } from "@/components/shared/pageSection/addEmployeePageSection/EmployeeFormSection";
 import { Name } from "@/components/shared/pageSection/addStudentPageSection/FormSection";
 
 export type option = {
@@ -7,7 +8,7 @@ export type option = {
 
 export type fieldsData = {
   id?: number;
-  name?: Name;
+  name?: Name | employeename;
   label?: string;
   placeholder?: string;
   type?: string;

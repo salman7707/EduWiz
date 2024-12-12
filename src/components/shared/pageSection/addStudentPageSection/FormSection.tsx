@@ -67,26 +67,22 @@ export default function FormSection() {
         inputFields={Studentsfields}
         formikProps={formik}
         sectionNumber={1}
-        sectionHeading="Student Information"
-      />
+        sectionHeading="Student Information" employeepage={false}      />
       <SectionHeadingandInput
         inputFields={OtherInfo}
         formikProps={formik}
         sectionNumber={2}
-        sectionHeading="Other Information"
-      />
+        sectionHeading="Other Information" employeepage={false}      />
       <SectionHeadingandInput
         inputFields={Fatherfields}
         formikProps={formik}
         sectionNumber={3}
-        sectionHeading="Father Information"
-      />
+        sectionHeading="Father Information" employeepage={false}      />
       <SectionHeadingandInput
         inputFields={Motherfields}
         formikProps={formik}
         sectionNumber={4}
-        sectionHeading="Mother Information"
-      />
+        sectionHeading="Mother Information" employeepage={false}      />
       <div className="flex items-center justify-center gap-x-1 py-4">
         <Button
           type="button"

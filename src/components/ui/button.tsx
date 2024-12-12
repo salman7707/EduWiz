@@ -27,6 +27,7 @@ const buttonVariants = cva(
         medblue: "bg-cardsecond cursor-pointer  ",
         yellow: "bg-YellowBtn text-black cursor-pointer",
         dark: "bg-studentdataBtn hover:bg-darkblue text-white cursor-pointer",
+        light: "bg-gray-200 border-slate border hover:bg-darkblue text-lightblack hover:text-white cursor-pointer",
         transparent: "bg-transparent text-neutralgray",
       },
       size: {

@@ -117,7 +117,7 @@ export function SideBar() {
                             <div className="w-[10%]">
                               <item.icon className="md:w-[70%] w-[90%]" />
                             </div>
-                            <span className={`text-base w-[80%]`}>
+                            <span className={`text-[15px] w-[80%]`}>
                               {item.title}
                             </span>
                           </div>
@@ -125,7 +125,7 @@ export function SideBar() {
                         {/* icon to open and close the dropdown */}
                         {item.plusicon === true && (
                           <SidebarMenuButton
-                            className=" w-[10%]"
+                            className="w-[10%]"
                             onClick={() => handleDropDown(item.id)}
                           >
                             {openState.open && openState.id === item.id ? (
@@ -159,7 +159,7 @@ export function SideBar() {
                                 onClick={() =>
                                   setinsideitemClicked(!insideitemClicked)
                                 }
-                                className={`text-base ${
+                                className={`text-[15px] ${
                                   pathname === insideitem.url
                                     ? "font-semibold text-navbaractiveColor"
                                     : "font-normal text-gray-600"

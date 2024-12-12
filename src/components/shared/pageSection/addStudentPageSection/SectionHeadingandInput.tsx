@@ -3,12 +3,14 @@ import InputSection from "@/components/template/form/input/InputSection";
 import { Name } from "./FormSection";
 import { Button } from "@/components/ui/button";
 import { InputSectionProps } from "@/types/InputFormSectionType";
+import { employeename } from "../addEmployeePageSection/EmployeeFormSection";
 
 export default function SectionHeadingandInput({
   inputFields,
   sectionNumber,
   sectionHeading,
   formikProps,
+  employeepage,
 }: InputSectionProps) {
   const { values, errors, touched, handleChange, handleBlur } = formikProps;
 
@@ -56,18 +58,23 @@ export default function SectionHeadingandInput({
               handleblur={handleBlur}
               placeHolder={field.placeholder}
             />
-            {errors[field.name as Name] && touched[field.name as Name] && (
-              <div
-                className={`text-red-500 text-xs ${
-                  sectionNumber === 1 && field.id === 5 && "lg:mb-7"
-                } `}
-              >
-                {errors[field.name as Name]}
-              </div>
-            )}
+            {errors[field.name as Name] &&
+              touched[
+                employeepage === false
+                  ? (field.name as Name)
+                  : (field.name as employeename)
+              ] && (
+                <div
+                  className={`text-red-500 text-xs ${
+                    sectionNumber === 1 && field.id === 5 && "lg:mb-7"
+                  } `}
+                >
+                  {errors[field.name as Name]}
+                </div>
+              )}
           </div>
         ))}
-        {sectionHeading === "Other Information" && (
+        {sectionHeading === "Other Information" && !employeepage && (
           <Button
             variant={"yellow"}
             className="w-[60%] h-12 text-lg rounded-3xl"

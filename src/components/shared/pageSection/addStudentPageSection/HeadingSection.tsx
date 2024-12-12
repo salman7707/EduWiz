@@ -13,6 +13,8 @@ interface HeadingSectionType {
   allstudentbtn?: boolean;
   allstudentprintbtn?: boolean;
   heading?: string;
+  addEmployee?: boolean;
+  forpage?:string;
 }
 
 export default function HeadingSection({
@@ -20,12 +22,14 @@ export default function HeadingSection({
   allstudentbtn = false,
   allstudentprintbtn = false,
   heading,
+  addEmployee,
+  forpage,
 }: HeadingSectionType) {
   return (
     <div className="bg-white w-full rounded-lg flex md:flex-row flex-col items-center justify-between gap-y-3 md:px-4 py-3 px-2">
       <div className="flex items-center md:justify-start justify-center gap-x-3">
         <div className="border-r border-black px-3">
-          <h1 className="text-gray-900 font-semibold">Students</h1>
+          <h1 className="text-gray-900 font-semibold">{forpage}</h1>
         </div>
         <div className="flex items-center justify-center gap-x-2">
           <AiOutlineHome className="text-xl" />
@@ -43,14 +47,16 @@ export default function HeadingSection({
             <RiPencilRulerLine />
             Customize
           </Button>
-          <Button
-            size={"default"}
-            variant={"medblue"}
-            className="text-white rounded-2xl"
-          >
-            <FiDownload />
-            Import Students
-          </Button>
+          {!addEmployee && (
+            <Button
+              size={"default"}
+              variant={"medblue"}
+              className="text-white rounded-2xl"
+            >
+              <FiDownload />
+              Import Students
+            </Button>
+          )}
         </div>
       )}
       {/* Allstudent btn for AllStudents Page */}

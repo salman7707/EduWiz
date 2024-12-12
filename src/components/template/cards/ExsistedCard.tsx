@@ -7,17 +7,19 @@ import { IoMdSearch } from "react-icons/io";
 import { RiPencilFill } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 
-interface Exsistedstudentcardtype {
+interface Exsistedcardtype {
   src?: string;
   name?: string;
   regno?: string;
+  role?: string;
 }
 
-export default function ExsistedstudentCard({
+export default function ExsistedCard({
   src,
   name,
   regno,
-}: Exsistedstudentcardtype) {
+  role,
+}: Exsistedcardtype) {
   const [view, setView] = useState(false);
   const [edit, setEdit] = useState(false);
   const [deleteb, setDelete] = useState(false);
@@ -34,12 +36,19 @@ export default function ExsistedstudentCard({
       </div>
 
       <div>
-        <h2 className="text-xs text-lightblack text-center text-gray-500 font-extralight">
-          {regno}
-        </h2>
+        {!role && (
+          <h2 className="text-xs text-lightblack text-center text-gray-500 font-extralight">
+            {regno}
+          </h2>
+        )}
         <h2 className="text-xs text-lightblack text-center font-medium">
           {name}
         </h2>
+        {role && (
+          <h2 className="text-xs text-lightblack text-center font-semibold">
+            {role}
+          </h2>
+        )}
       </div>
 
       <div className="space-x-1 mt-4">

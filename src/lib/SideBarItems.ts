@@ -1,6 +1,7 @@
 import { SideBaritemstypes } from "@/types/SidebarItemsType";
 import { Home, PencilRuler, Settings } from "lucide-react";
 import { BsPerson } from "react-icons/bs";
+import { TfiBag } from "react-icons/tfi";
 
 const SideBarItems: SideBaritemstypes[] = [
     {
@@ -83,10 +84,32 @@ const SideBarItems: SideBaritemstypes[] = [
     },
     {
         id: 4,
-        title: "Settings",
-        url: "#",
-        icon: Settings,
-        plusicon: false,
+        title: "Employees",
+        url: "",
+        icon: TfiBag,
+        plusicon: true,
+        insidedata: [
+            {
+                id: 0,
+                title: "Add New",
+                url: "/add_new_employee"
+            },
+            {
+                id: 1,
+                title: "All Employees",
+                url: "/all_employees"
+            },
+            {
+                id: 2,
+                title: "Job Letter",
+                url: "/job_letter"
+            },
+            {
+                id: 3,
+                title: "Manage Login",
+                url: "/employee_login"
+            },
+        ]
     },
 ];
 
