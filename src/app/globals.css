@@ -197,3 +197,16 @@ body {
     transform: translateY(-15px);
   }
 }
+
+.scroll-infinity {
+  animation: 1s scrollinfinity ease-in-out infinite;
+}
+
+@keyframes scrollinfinity {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(110%);
+  }
+}

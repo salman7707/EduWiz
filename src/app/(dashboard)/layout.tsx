@@ -20,7 +20,7 @@ export default function RootLayout({
   );
 
   return (
-    <SidebarProvider open={navbarOpen} openMobile={navbarOpen}>
+    <SidebarProvider open={navbarOpen} openMobile={navbarOpen} className="z-40">
       {showsidebar && (
         <div
           className={` ${

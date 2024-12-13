@@ -78,7 +78,7 @@ export default function ManageLoginDataSection() {
     handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [navbarOpen]);
 
   return (
     <div className="w-full bg-white rounded-2xl py-4 md:px-4 px-1.5 border border-gray-200">

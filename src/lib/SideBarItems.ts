@@ -13,7 +13,7 @@ const SideBarItems: SideBaritemstypes[] = [
     {
         id: 1,
         title: "General Settings",
-        url: "/general_setting",
+        url: "",
         icon: Settings,
         plusicon: true,
         insidedata: [
@@ -32,7 +32,7 @@ const SideBarItems: SideBaritemstypes[] = [
     {
         id: 2,
         title: "Classes",
-        url: "#",
+        url: "",
         icon: PencilRuler,
         plusicon: true,
         insidedata: [
@@ -51,7 +51,7 @@ const SideBarItems: SideBaritemstypes[] = [
     {
         id: 3,
         title: "Students",
-        url: "/students",
+        url: "",
         icon: BsPerson,
         plusicon: true,
         insidedata: [

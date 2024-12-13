@@ -32,9 +32,7 @@ export function SideBar() {
     hover: boolean;
     id: number | null;
   }>({ hover: false, id: null });
-  const handleDropDown = (id: number) => {
-    setOpenState({ open: !openState.open, id: id });
-  };
+
   const hanldehover = (id: number) => {
     console.log(id);
     setHoverDot({ hover: true, id: id });
@@ -70,6 +68,16 @@ export function SideBar() {
       };
     }
   }, [dispatch]);
+
+  // const url = document.querySelector("[data-url]");
+  const handleDropDown = (id: number) => {
+    if (openState.open && openState.id === id) {
+      setOpenState({ open: false, id: null });
+    } else {
+      setOpenState({ open: true, id: id });
+    }
+  };
+
   return (
     <Sidebar
       ref={Ref}
@@ -90,8 +98,7 @@ export function SideBar() {
                   <SidebarMenuButton
                     asChild
                     className={` w-full rounded-none px-0  ${
-                      pathname === item.url ||
-                      (insideitemClicked && openState.id === item.id)
+                      pathname === item.url
                         ? "text-navbaractiveColor font-semibold"
                         : "text-gray-600 font-normal"
                     } hover:text-navbaractiveColor bg-transparent hover:bg-transparent `}
@@ -100,9 +107,14 @@ export function SideBar() {
                       {/* Main Simple div if there is no data for dropdown then only this will shown */}
                       <div className="flex items-center justify-start gap-x-4 w-full pr-2">
                         <Link
-                          onClick={() => setinsideitemClicked(false)}
+                          onClick={() => {
+                            setinsideitemClicked(false);
+                            if (!item.url) {
+                              handleDropDown(item.id);
+                            }
+                          }}
                           href={item.url}
-                          className=" flex items-center w-full gap-x-7"
+                          className="flex items-center w-full gap-x-7"
                         >
                           {/* Border */}
                           <div
@@ -113,7 +125,7 @@ export function SideBar() {
                             }`}
                           ></div>
                           {/* title and icon */}
-                          <div className="flex items-center md:gap-x-0 gap-x-2 w-full">
+                          <div className="flex items-center md:gap-x-1 gap-x-2 w-full">
                             <div className="w-[10%]">
                               <item.icon className="md:w-[70%] w-[90%]" />
                             </div>
@@ -142,6 +154,7 @@ export function SideBar() {
                         <div className="border-l relative border-navbaractiveColor w-[70%] h-auto text-gray-700">
                           {item.insidedata?.map((insideitem, index) => (
                             <div
+                              for-url={insideitem.url}
                               key={insideitem.id}
                               onMouseEnter={() => hanldehover(insideitem.id)}
                               onMouseLeave={handleMouseLeave}
