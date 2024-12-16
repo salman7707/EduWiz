@@ -5,7 +5,7 @@ import React from "react";
 export default function page() {
   return (
     <div className="px-4 py-7">
-      <HeadingSection heading="All Students" buttonsection={false} allstudentbtn={true} />
+      <HeadingSection forpage="Students" heading="All Students" buttonsection={false} allstudentbtn={true} />
       <AddNewStudentSection />
     </div>
   );

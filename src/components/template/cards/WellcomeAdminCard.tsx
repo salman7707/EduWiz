@@ -9,10 +9,10 @@ export default function WellcomeAdminCard() {
         <h2 className="text-pink text-lg font-semibold ">
           Welcome to Admin Dashboard
         </h2>
-        <h2 className="text-gray-500 xl:text-base lg:text-sm font-medium ">
+        <h2 className="text-gray-500 xl:text-base text-sm font-medium ">
           Your Account is not Verified yet!
         </h2>
-        <h2 className="text-gray-500 xl:text-base lg:text-sm font-medium ">
+        <h2 className="text-gray-500 xl:text-base text-sm font-medium ">
           Please Verify your email address.
           <span className="text-blue">Verify now!</span>
         </h2>
@@ -23,7 +23,7 @@ export default function WellcomeAdminCard() {
           alt="admin-massage"
           width={150}
           height={150}
-          className="xl:w-[200px] xl:h-[120px] w-[160px] h-[90px] absolute xl:-top-6 top-0 right-1"
+          className="md:block hidden xl:w-[200px] xl:h-[120px] w-[160px] h-[90px] absolute xl:-top-6 top-0 right-1"
         />
       </div>
     </div>

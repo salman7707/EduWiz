@@ -6,7 +6,7 @@ import React from "react";
 export default function page() {
   return (
     <div className="py-8 px-6">
-      <HeadingSection heading="All Employees" buttonsection={false} />
+      <HeadingSection  forpage="Employees" heading="All Employees" buttonsection={false} />
       <SearchEmployeeSection />
       <AddNewEmployeeSection />
     </div>

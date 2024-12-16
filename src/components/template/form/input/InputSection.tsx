@@ -2,7 +2,6 @@ import { Label } from "@/components/ui/label";
 import React from "react";
 import { Input } from "../../../ui/input";
 import { inputFieldTypes } from "@/types/InputFieldTypes";
-
 export default function InputSection({
   label,
   placeHolder,
@@ -25,7 +24,7 @@ export default function InputSection({
               : theme === "dark"
               ? "bg-slate "
               : "bg-transparent"
-          }  text-xs text-white px-1.5 py-0.5 rounded-xl`}
+          }  md:text-xs text-[10px] text-white md:px-1.5 px-1 py-0.5 rounded-xl`}
         >
           {label}
         </Label>
@@ -40,7 +39,7 @@ export default function InputSection({
             onBlur={handleblur}
             className={`${
               select && "hidden"
-            } h-9 w-full rounded-3xl bg-white border-none focus-visible:ring-0 focus-visible:border-none`}
+            } h-9 w-full rounded-3xl lg:text-base text-sm bg-white border-none focus-visible:ring-0 focus-visible:border-none`}
             placeholder={placeHolder}
           />
         )}

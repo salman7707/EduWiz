@@ -81,7 +81,7 @@ export function SideBar() {
   return (
     <Sidebar
       ref={Ref}
-      className={`  ${
+      className={`${
         navbarOpen === true ? "lg:w-[23%] sm:w-[35%] xs:w-[75%]" : "w-0"
       } mt-[75px] shadow-even bg-transparent `}
     >
@@ -180,7 +180,7 @@ export function SideBar() {
                               >
                                 {insideitem.title}
                               </Link>
-                            </div>
+                            </div>  
                           ))}
                         </div>
                       )}

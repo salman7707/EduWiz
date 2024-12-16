@@ -20,12 +20,17 @@ const SideBarItems: SideBaritemstypes[] = [
             {
                 id: 0,
                 title: "Institute Profile",
-                url: "/school_info",
+                url: "/institute_profile",
             },
             {
                 id: 1,
                 title: "ٖٖFee Particulars",
                 url: "/fee_particulars",
+            },
+            {
+                id: 2,
+                title: "Log Out",
+                url: "/",
             },
         ],
     },

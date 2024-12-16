@@ -7,6 +7,7 @@ export default function page() {
   return (
     <div className="py-7 px-5">
       <HeadingSection
+        forpage="Students"
         heading="All Students"
         buttonsection={false}
         allstudentprintbtn

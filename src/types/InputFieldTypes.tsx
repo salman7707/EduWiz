@@ -1,3 +1,4 @@
+
 import { option } from "./FieldsDataTypes";
 
 export interface inputFieldTypes {
@@ -8,8 +9,9 @@ export interface inputFieldTypes {
     theme?: string;
     select?: boolean;
     option?: option[];
-    values?: string;
+    values?: string | number;
     name?: string;
     handlechange?: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
     handleblur?: React.FocusEventHandler<HTMLInputElement | HTMLSelectElement>;
+    width?:string;
 }

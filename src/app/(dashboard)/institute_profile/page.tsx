@@ -1,17 +1,16 @@
 import HeadingSection from "@/components/shared/pageSection/addStudentPageSection/HeadingSection";
-import FeeFormAndHeadingSection from "@/components/shared/pageSection/feePaticularsPageSection/FeeFormAndHeadingSection";
+import InstituteForm from "@/components/shared/pageSection/istituteProfilePageSection/InstituteFormAndCard";
 import React from "react";
 
 export default function page() {
   return (
     <div className="px-6 py-8">
       <HeadingSection
-        forpage="Settings"
-        heading="Change Fee Particulars"
+        forpage="General Settings"
+        heading="Institute Profile"
         buttonsection={false}
-        resetBtn={true}
       />
-      <FeeFormAndHeadingSection />
+      <InstituteForm />
     </div>
   );
 }

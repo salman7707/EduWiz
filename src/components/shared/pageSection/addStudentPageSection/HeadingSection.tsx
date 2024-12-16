@@ -14,7 +14,8 @@ interface HeadingSectionType {
   allstudentprintbtn?: boolean;
   heading?: string;
   addEmployee?: boolean;
-  forpage?:string;
+  forpage?: string;
+  resetBtn?: boolean;
 }
 
 export default function HeadingSection({
@@ -24,6 +25,7 @@ export default function HeadingSection({
   heading,
   addEmployee,
   forpage,
+  resetBtn = false,
 }: HeadingSectionType) {
   return (
     <div className="bg-white w-full rounded-lg flex md:flex-row flex-col items-center justify-between gap-y-3 md:px-4 py-3 px-2">
@@ -105,6 +107,16 @@ export default function HeadingSection({
           >
             <FaPencilRuler />
             Customize
+          </Button>
+        </div>
+      )}
+      {resetBtn && (
+        <div className="gap-x-2 flex items-center justify-center px-6">
+          <Button size={"default"} className="rounded-2xl px-4 text-xs">
+            <RiLoopRightLine /> Reset To Default
+          </Button>
+          <Button size={"default"} className="rounded-full bg-green-500 text-xs">
+            ?
           </Button>
         </div>
       )}

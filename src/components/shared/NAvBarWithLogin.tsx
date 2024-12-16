@@ -16,25 +16,12 @@ import { BsThreeDots } from "react-icons/bs";
 import { useRouter } from "next/navigation";
 
 export default function NAvBarWithLogin() {
-  const router = useRouter();
+  const dispatch = useDispatch();
   const Ref = useRef<HTMLDivElement>(null);
   const ButtonRef = useRef<HTMLDivElement>(null);
-  const dispatch = useDispatch();
   const [dropdown, setDropdown] = useState(false);
   const [navOpen, SetNavOpen] = useState(false);
-  const handleLogout = async () => {
-    const response = await fetch("/api/logout", {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-    });
-    if (response.ok) {
-      console.log("User Logout");
-      dispatch(logout());
-      router.push("/login");
-    }
-  };
+
   const handleclickoutside = (e: MouseEvent) => {
     if (
       Ref.current &&
@@ -49,6 +36,20 @@ export default function NAvBarWithLogin() {
     window.addEventListener("mousedown", handleclickoutside);
     return () => window.removeEventListener("mousedown", handleclickoutside);
   }, [Ref]);
+  const router = useRouter();
+  const handleLogout = async () => {
+    const response = await fetch("/api/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+    });
+    if (response.ok) {
+      console.log("User Logout");
+      dispatch(logout());
+      router.push("/login");
+    }
+  };
   return (
     <nav
       className={` flex lg:flex-row flex-col justify-between items-center overflow-hidden py-0 w-[95%] lg:mx-[44px]

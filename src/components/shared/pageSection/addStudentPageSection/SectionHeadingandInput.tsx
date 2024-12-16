@@ -10,7 +10,7 @@ export default function SectionHeadingandInput({
   sectionNumber,
   sectionHeading,
   formikProps,
-  employeepage,
+  employeepage, 
 }: InputSectionProps) {
   const { values, errors, touched, handleChange, handleBlur } = formikProps;
 
