@@ -7,6 +7,7 @@ import { RiLoopRightLine } from "react-icons/ri";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaPrint } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
+import { GoPlus } from "react-icons/go";
 
 interface HeadingSectionType {
   buttonsection?: boolean;
@@ -16,6 +17,7 @@ interface HeadingSectionType {
   addEmployee?: boolean;
   forpage?: string;
   resetBtn?: boolean;
+  homeworkbtn?: boolean;
 }
 
 export default function HeadingSection({
@@ -26,6 +28,7 @@ export default function HeadingSection({
   addEmployee,
   forpage,
   resetBtn = false,
+  homeworkbtn,
 }: HeadingSectionType) {
   return (
     <div className="bg-white w-full rounded-lg flex md:flex-row flex-col items-center justify-between gap-y-3 md:px-4 py-3 px-2">
@@ -115,10 +118,22 @@ export default function HeadingSection({
           <Button size={"default"} className="rounded-2xl px-4 text-xs">
             <RiLoopRightLine /> Reset To Default
           </Button>
-          <Button size={"default"} className="rounded-full bg-green-500 text-xs">
+          <Button
+            size={"default"}
+            className="rounded-full bg-green-500 text-xs"
+          >
             ?
           </Button>
         </div>
+      )}
+      {homeworkbtn && (
+        <Button
+          size={"default"}
+          variant={"blue"}
+          className="opacity-60 rounded-2xl px-4 text-xs"
+        >
+          <GoPlus /> Add Homework
+        </Button>
       )}
     </div>
   );

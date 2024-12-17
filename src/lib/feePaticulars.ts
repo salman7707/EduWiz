@@ -26,7 +26,7 @@ const feeParticulars: formFieldFeeSectionTypes[] = [
         name: "monthlytutionfee",
         theme: "dark",
         label: "Particular Label*",
-        placeHolder: "Monthly Tution Fee",
+        placeHolder: "MONTHLY TUTION FEE",
         type: "text",
     },
     {

@@ -66,5 +66,6 @@ const IMAGES = {
     AVATAR: "/images/sideImages/avatar.jpg",
     BARCODE: "/images/sideImages/barcode.png",
     DBARCODE: "/images/sideImages/download.gif",
+    SCANCARD: "/images/sideImages/scancard.gif",
 }
 export default IMAGES

@@ -1,6 +1,6 @@
 import { SideBaritemstypes } from "@/types/SidebarItemsType";
-import { Home, PencilRuler, Settings } from "lucide-react";
-import { BsPerson } from "react-icons/bs";
+import { Hand, Home, PencilRuler, Settings } from "lucide-react";
+import { BsPencilFill, BsPerson } from "react-icons/bs";
 import { TfiBag } from "react-icons/tfi";
 
 const SideBarItems: SideBaritemstypes[] = [
@@ -31,6 +31,7 @@ const SideBarItems: SideBaritemstypes[] = [
                 id: 2,
                 title: "Log Out",
                 url: "/",
+                logoutBtn: true,
             },
         ],
     },
@@ -115,6 +116,46 @@ const SideBarItems: SideBaritemstypes[] = [
                 url: "/employee_login"
             },
         ]
+    },
+    {
+        id: 5,
+        title: "Attendance",
+        url: "",
+        icon: Hand,
+        plusicon: true,
+        insidedata: [
+            {
+                id: 0,
+                title: "Mark Students Attendance",
+                url: "/mark_student_attendance"
+            },
+            {
+                id: 1,
+                title: "Mark employee Attendance",
+                url: "/mark_employee_attendance"
+            },
+            {
+                id: 2,
+                title: "Class Wise Report",
+                url: "/class_wise_report"
+            },
+            {
+                id: 3,
+                title: "Students Attendance Report",
+                url: "/students_attendance_report"
+            },
+            {
+                id: 4,
+                title: "Employees Attendance Report",
+                url: "/employees_attendance_report"
+            },
+        ]
+    },
+    {
+        id: 6,
+        title: "Homework",
+        url: "/homework",
+        icon: BsPencilFill,
     },
 ];
 

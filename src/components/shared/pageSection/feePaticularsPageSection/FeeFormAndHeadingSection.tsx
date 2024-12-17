@@ -61,7 +61,7 @@ export default function FeeFormAndHeadingSection() {
       </div>
       {/* Form section */}
       <form className="lg:w-[65%] mx-auto" onSubmit={handleSubmit}>
-        <div className={`grid grid-cols-1 w-full mx-auto pb-8 `}>
+        <div className={`grid grid-cols-1 w-full mx-auto pb-12 `}>
           {data.map((data) => (
             <div className="lg:w-[45%]" key={data.id}>
               <InputSection
@@ -82,7 +82,7 @@ export default function FeeFormAndHeadingSection() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-[65%_35%] w-full mx-auto gap-y-4 gap-x-1">
+        <div className="grid grid-cols-[65%_35%] w-full mx-auto gap-y-5 gap-x-2.5">
           {alldata.map((field) => (
             <div className="" key={field.id}>
               <InputSection
@@ -93,6 +93,8 @@ export default function FeeFormAndHeadingSection() {
                 handlechange={handleChange}
                 theme={field.theme}
                 label={field.label}
+                color="gray"
+                size="small"
                 placeHolder={field.placeHolder}
               />
               {errors[field.name as feeformname] &&

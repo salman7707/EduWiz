@@ -14,4 +14,6 @@ export interface inputFieldTypes {
     handlechange?: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
     handleblur?: React.FocusEventHandler<HTMLInputElement | HTMLSelectElement>;
     width?:string;
+    color?:string;
+    size?:string;
 }

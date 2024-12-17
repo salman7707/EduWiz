@@ -11,15 +11,17 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { closeNav, navInitialStateTypes } from "@/lib/store/navSlice";
 import SideBarItems from "@/lib/SideBarItems";
+import { logout } from "@/lib/store/authSlice";
 
 export function SideBar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [insideitemClicked, setinsideitemClicked] = useState(false);
   const [openState, setOpenState] = useState<{
     open: boolean;
@@ -55,7 +57,6 @@ export function SideBar() {
         !toggleBtn?.contains(e.target as Node)
       ) {
         dispatch(closeNav());
-        // when i click outside of the togglebtn or the complete sidebar then it will be close or one more functionallity i added there is that when i click on button and its state is true before then when i click on this then it will be close or when i click on this button or its initial state is false then it will be true on click can i want to add this functionality on this where i check this conditionally or just toggle this like on click the state will change to its previous state
       }
     };
     if (typeof window !== "undefined") {
@@ -69,7 +70,6 @@ export function SideBar() {
     }
   }, [dispatch]);
 
-  // const url = document.querySelector("[data-url]");
   const handleDropDown = (id: number) => {
     if (openState.open && openState.id === id) {
       setOpenState({ open: false, id: null });
@@ -78,12 +78,28 @@ export function SideBar() {
     }
   };
 
+  const handleLogout = async () => {
+    const response = await fetch("/api/logout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "Application/json",
+      },
+    });
+    if (response.ok) {
+      console.log("User Logout SuccessFully");
+      dispatch(logout());
+      router.push("/login");
+    } else {
+      console.log("Error In Logout ");
+    }
+  };
+
   return (
     <Sidebar
       ref={Ref}
       className={`${
         navbarOpen === true ? "lg:w-[23%] sm:w-[35%] xs:w-[75%]" : "w-0"
-      } mt-[75px] shadow-even bg-transparent `}
+      } mt-[75px] shadow-even bg-transparent`}
     >
       <SidebarContent>
         <SidebarGroup className="w-full px-0 mx-0">
@@ -97,8 +113,8 @@ export function SideBar() {
                 <SidebarMenuItem key={item.title} className={`w-full `}>
                   <SidebarMenuButton
                     asChild
-                    className={` w-full rounded-none px-0  ${
-                      pathname === item.url
+                    className={` w-full rounded-none px-0 ${
+                      pathname === item.url || openState.id === item.id
                         ? "text-navbaractiveColor font-semibold"
                         : "text-gray-600 font-normal"
                     } hover:text-navbaractiveColor bg-transparent hover:bg-transparent `}
@@ -119,7 +135,7 @@ export function SideBar() {
                           {/* Border */}
                           <div
                             className={`${
-                              pathname === item.url
+                              pathname === item.url && item.plusicon === true
                                 ? "border-l-4 h-10 border-navbaractiveColor"
                                 : "border-l-4 border-transparent"
                             }`}
@@ -151,14 +167,14 @@ export function SideBar() {
 
                       {/* If there is data avaliable for for dropdown then this will also shown */}
                       {openState.open && openState.id === item.id && (
-                        <div className="border-l relative border-navbaractiveColor w-[70%] h-auto text-gray-700">
+                        <div className="border-l relative border-navbaractiveColor w-[75%] h-auto text-gray-700">
                           {item.insidedata?.map((insideitem, index) => (
                             <div
-                              for-url={insideitem.url}
+                              data-url={insideitem.url}
                               key={insideitem.id}
                               onMouseEnter={() => hanldehover(insideitem.id)}
                               onMouseLeave={handleMouseLeave}
-                              className={` flex flex-col w-full items-center justify-center py-2 px-6 `}
+                              className={`flex flex-col w-full items-center justify-center py-2 pl-4`}
                             >
                               {(hoverDot.hover && hoverDot.id === index) ||
                               pathname === insideitem.url ? (
@@ -167,20 +183,33 @@ export function SideBar() {
                                 ""
                               )}
 
-                              <Link
-                                href={insideitem.url || "/dashboard"}
-                                onClick={() =>
-                                  setinsideitemClicked(!insideitemClicked)
-                                }
-                                className={`text-[15px] ${
-                                  pathname === insideitem.url
-                                    ? "font-semibold text-navbaractiveColor"
-                                    : "font-normal text-gray-600"
-                                } hover:text-navbaractiveColor flex items-center w-full`}
-                              >
-                                {insideitem.title}
-                              </Link>
-                            </div>  
+                              {insideitem.logoutBtn ? (
+                                <div
+                                  className={`text-[15px] ${
+                                    pathname === insideitem.url
+                                      ? "font-semibold text-navbaractiveColor"
+                                      : "font-normal text-gray-600"
+                                  } hover:text-navbaractiveColor cursor-pointer flex items-center w-full`}
+                                  onClick={() => handleLogout()}
+                                >
+                                  {insideitem.title}
+                                </div>
+                              ) : (
+                                <Link
+                                  href={insideitem.url || "/dashboard"}
+                                  onClick={() =>
+                                    setinsideitemClicked(!insideitemClicked)
+                                  }
+                                  className={`text-[15px] ${
+                                    pathname === insideitem.url
+                                      ? "font-semibold text-navbaractiveColor"
+                                      : "font-normal text-gray-600"
+                                  } hover:text-navbaractiveColor flex cursor-pointer items-center w-full`}
+                                >
+                                  {insideitem.title}
+                                </Link>
+                              )}
+                            </div>
                           ))}
                         </div>
                       )}

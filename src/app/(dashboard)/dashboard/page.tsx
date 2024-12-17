@@ -3,7 +3,7 @@ import OtherCardsSection from "@/components/shared/pageSection/dashboardPageSect
 import React from "react";
 
 export default function page() {
-  return <div className="w-full h-full">
+  return <div className="w-full pb-6">
     <CardsSection/>
     <OtherCardsSection/>
   </div>;

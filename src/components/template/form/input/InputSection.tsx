@@ -13,7 +13,11 @@ export default function InputSection({
   name,
   handlechange,
   handleblur,
+  color,
+  size,
 }: inputFieldTypes) {
+  const sizeClasses = size === "small" ? "lg:text-sm" : "lg:text-base";
+  const colorClasses = color === "gray" ? "text-lightblack" : "text-black";
   return (
     <div className={`flex flex-col w-full`}>
       <div className="border-cardfourth relative border w-full h-auto rounded-3xl py-1 px-1">
@@ -24,7 +28,7 @@ export default function InputSection({
               : theme === "dark"
               ? "bg-slate "
               : "bg-transparent"
-          }  md:text-xs text-[10px] text-white md:px-1.5 px-1 py-0.5 rounded-xl`}
+          }  md:text-[10.5px] text-[10px] text-white md:px-2 px-1 py-0.5 rounded-xl`}
         >
           {label}
         </Label>
@@ -39,7 +43,7 @@ export default function InputSection({
             onBlur={handleblur}
             className={`${
               select && "hidden"
-            } h-9 w-full rounded-3xl lg:text-base text-sm bg-white border-none focus-visible:ring-0 focus-visible:border-none`}
+            } h-9 w-full rounded-3xl ${sizeClasses} text-sm ${colorClasses} bg-white border-none focus-visible:ring-0 focus-visible:border-none`}
             placeholder={placeHolder}
           />
         )}
@@ -67,7 +71,7 @@ export default function InputSection({
         {/* Select Dropdown */}
         {select && option && (
           <select
-            className="h-8 w-full bg-white rounded-3xl text-lightblacktext px-2 border border-none focus-visible:outline-none focus-visible:ring-0"
+            className="h-8 w-full bg-white rounded-3xl text-lightblacktext px-2.5 border border-none focus-visible:outline-none focus-visible:ring-0"
             name={name}
             value={values}
             onChange={handlechange}

@@ -10,5 +10,6 @@ export interface SideBaritemstypes {
     id: number;
     title: string;
     url: string;
+    logoutBtn?: boolean;
   }[];
 }

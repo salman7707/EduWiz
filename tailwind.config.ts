@@ -53,6 +53,7 @@ export default {
 				YellowBtn: 'var(--YellowBtn)',
 				btnbg: 'var(--btnbg)',
 				studentdataBtn: 'var(--studentdataBtn)',
+				btngreen: 'var(--btngreen)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
