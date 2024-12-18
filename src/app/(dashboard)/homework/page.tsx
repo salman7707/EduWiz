@@ -1,4 +1,5 @@
 import HeadingSection from "@/components/shared/pageSection/addStudentPageSection/HeadingSection";
+import HomeworkDataSection from "@/components/shared/pageSection/homeworkPageSection/HomeworkDataSection";
 import HomeworkFormSectionPage from "@/components/shared/pageSection/homeworkPageSection/HomeworkFormSectionPage";
 import React from "react";
 
@@ -12,6 +13,7 @@ export default function page() {
         homeworkbtn={true}
       />
       <HomeworkFormSectionPage />
+      <HomeworkDataSection />
     </div>
   );
 }

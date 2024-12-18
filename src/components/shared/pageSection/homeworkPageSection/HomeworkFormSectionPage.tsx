@@ -1,15 +1,19 @@
+"use client"
 import InputSection from "@/components/template/form/input/InputSection";
 import { Button } from "@/components/ui/button";
-import React from "react";
+import React, { useState } from "react";
+import { IoMdSearch } from "react-icons/io";
 
 export default function HomeworkFormSectionPage() {
+  const [date, setDate] = useState("2024-12-18");
   return (
-    <div className="bg-white flex gap-x-8 w-full justify-start items-center rounded-xl mt-4 py-10 px-4">
+    <div className="bg-white flex lg:flex-row flex-col gap-x-8 gap-y-5 w-full justify-start items-center rounded-xl mt-3 py-10 px-4">
       <div className="w-full">
         <InputSection
           label="Homework Date*"
           type="date"
-          values={"2024-12-17"}
+          values={date}
+          handlechange={(e)=>setDate(e.target.value)}
           select={false}
         />
       </div>
@@ -31,7 +35,7 @@ export default function HomeworkFormSectionPage() {
       </div>
       <div className="w-full">
         <InputSection
-          label="Class*"
+          label="Teacher*"
           select={true}
           option={[
             {
@@ -46,7 +50,10 @@ export default function HomeworkFormSectionPage() {
         />
       </div>
       <div className="w-full">
-        <Button className="bg-gradient-to-l to-cardfourth from-lightpurplegradient rounded-3xl" size={"lg"}> Search</Button>
+        <Button className="bg-gradient-to-l to-cardfourth from-lightpurplegradient rounded-3xl h-10 px-3 text-[17px]">
+          <IoMdSearch />
+          Search
+        </Button>
       </div>
     </div>
   );

@@ -54,6 +54,7 @@ export default {
 				btnbg: 'var(--btnbg)',
 				studentdataBtn: 'var(--studentdataBtn)',
 				btngreen: 'var(--btngreen)',
+				lightgraytext: 'var(--lightgraytext)',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'

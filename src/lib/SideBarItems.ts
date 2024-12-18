@@ -29,6 +29,16 @@ const SideBarItems: SideBaritemstypes[] = [
             },
             {
                 id: 2,
+                title: "Marks Grading",
+                url: "/marks_grading",
+            },
+            {
+                id: 3,
+                title: "Account Settings",
+                url: "/account_setting",
+            },
+            {
+                id: 4,
                 title: "Log Out",
                 url: "/",
                 logoutBtn: true,

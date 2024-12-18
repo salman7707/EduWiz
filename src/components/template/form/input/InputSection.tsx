@@ -17,7 +17,7 @@ export default function InputSection({
   size,
 }: inputFieldTypes) {
   const sizeClasses = size === "small" ? "lg:text-sm" : "lg:text-base";
-  const colorClasses = color === "gray" ? "text-lightblack" : "text-black";
+  const colorClasses = color === "gray" ? "text-lightgraytext" : "text-black";
   return (
     <div className={`flex flex-col w-full`}>
       <div className="border-cardfourth relative border w-full h-auto rounded-3xl py-1 px-1">

@@ -99,7 +99,7 @@ export function SideBar() {
       ref={Ref}
       className={`${
         navbarOpen === true ? "lg:w-[23%] sm:w-[35%] xs:w-[75%]" : "w-0"
-      } mt-[75px] shadow-even bg-transparent`}
+      } mt-[75px] shadow-even bg-transparent z-20`}
     >
       <SidebarContent>
         <SidebarGroup className="w-full px-0 mx-0">

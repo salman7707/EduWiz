@@ -67,5 +67,7 @@ const IMAGES = {
     BARCODE: "/images/sideImages/barcode.png",
     DBARCODE: "/images/sideImages/download.gif",
     SCANCARD: "/images/sideImages/scancard.gif",
+    ACCBTNBG: "/images/sideImages/acccardbg.jpg",
+    ACCCTR: "/images/sideImages/tr1.png",
 }
 export default IMAGES

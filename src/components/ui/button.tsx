@@ -33,6 +33,8 @@ const buttonVariants = cva(
           "bg-gray-200 border-slate border hover:bg-darkblue text-lightblack hover:text-white cursor-pointer",
         transparent: "bg-transparent text-neutralgray",
         green: "bg-btngreen hover:btngreen text-white",
+        lighteshblue:
+          "bg-gradient-to-l to-[#11C6EF] from-[#1176EF] hover:btngreen text-white",
       },
       size: {
         default: "h-9 px-4 py-2",
