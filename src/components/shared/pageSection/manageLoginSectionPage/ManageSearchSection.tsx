@@ -3,7 +3,7 @@ import InputSection from "@/components/template/form/input/InputSection";
 import React, { useState } from "react";
 import { IoSearchOutline } from "react-icons/io5";
 
-export default function ManageSearchSection() {
+export default function ManageSearchSection({}) {
   const [search, setSearch] = useState<string>("");
   const [role, setRole] = useState("Select*");
   return (

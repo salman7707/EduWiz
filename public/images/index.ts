@@ -69,5 +69,6 @@ const IMAGES = {
     SCANCARD: "/images/sideImages/scancard.gif",
     ACCBTNBG: "/images/sideImages/acccardbg.jpg",
     ACCCTR: "/images/sideImages/tr1.png",
+    ACCCBL: "/images/sideImages/bl.png",
 }
 export default IMAGES

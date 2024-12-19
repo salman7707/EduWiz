@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ClassAttendanceSection() {
   return (
-    <div>
+    <div className="flex items-center justify-start">
       <ClassAttendanceCard />
     </div>
   );

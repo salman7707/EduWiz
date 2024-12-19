@@ -24,6 +24,15 @@ export default function AccountDetailCard() {
           className="w-[65px] h-[65px] absolute right-0 top-0 rounded-r-lg"
         />
       </div>
+      <div>
+        <Image
+          src={IMAGES.ACCCBL}
+          width={100}
+          height={100}
+          alt={"tr"}
+          className="w-[60px] h-[175px] absolute left-0 bottom-0 rounded-l-lg"
+        />
+      </div>
       <div className="text-white font-semibold text-xl flex items-center gap-x-1.5 justify-center">
         <MdLockOutline className="text-2xl font-medium" />
         Account details

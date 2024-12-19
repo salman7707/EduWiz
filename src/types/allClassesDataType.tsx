@@ -5,7 +5,9 @@ export interface allClassesDataType {
   grilsPercentage?: string;
   naPercentage?: string;
   totalStudents?: number;
+  totalsubjects?: number;
   boys?: number;
   girls?: number;
   na?: number;
+  totalmarks?: number;
 }

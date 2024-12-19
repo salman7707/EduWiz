@@ -9,7 +9,7 @@ import { RiLoopLeftLine } from "react-icons/ri";
 import { FaCheck } from "react-icons/fa6";
 import { useFormik } from "formik";
 import { admisionschema } from "@/lib/validations/AdmissionFormSchema";
-import SectionHeadingandInput from "./SectionHeadingandInput";
+import SectionHeadingandInput from "../../shared/pageSection/addStudentPageSection/SectionHeadingandInput";
 
 const initialValues = {
   studentName: "",

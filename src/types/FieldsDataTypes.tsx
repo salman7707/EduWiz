@@ -1,5 +1,5 @@
 import { employeename } from "@/components/shared/pageSection/addEmployeePageSection/EmployeeFormSection";
-import { Name } from "@/components/shared/pageSection/addStudentPageSection/FormSection";
+import { Name } from "@/components/template/form/FormSection";
 
 export type option = {
   id?: number;

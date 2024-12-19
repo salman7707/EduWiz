@@ -27,7 +27,7 @@ export default function AccountSettingForm() {
     });
   return (
     <form onSubmit={handleSubmit}>
-      <div className="grid grid-cols-[60%_40%] gap-5">
+      <div className="grid grid-cols-[60%_40%] gap-5 items-center">
         {accountInputs.map((data) => (
           <div key={data.id} className={`${data.colSpan && "col-span-2"}`}>
             <InputSection

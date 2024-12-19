@@ -5,7 +5,7 @@ import React from "react";
 
 export default function AddNewStudentSection() {
   return (
-    <div className="py-4 flex items-start justify-start px-3 gap-x-6">
+    <div className="py-4 flex flex-wrap gap-y-4 items-start justify-start px-3 gap-x-6">
       {ExsistedStudent.map((data) => (
         <div key={data.id}>
           <ExsistedCard

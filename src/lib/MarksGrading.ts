@@ -8,7 +8,7 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Grade*",
-        value: "A+",
+        
     },
     {
         id: 1,
@@ -17,7 +17,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% From*",
-        value: 80,
     },
     {
         id: 2,
@@ -26,7 +25,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% Upto*",
-        value: 100,
     },
     {
         id: 3,
@@ -35,7 +33,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Status*",
-        value: "PASS",
     },
     {
         id: 4,
@@ -44,7 +41,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Grade*",
-        value: "A",
     },
     {
         id: 5,
@@ -53,7 +49,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% From*",
-        value: 70,
     },
     {
         id: 6,
@@ -62,7 +57,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% Upto*",
-        value: 79,
     },
     {
         id: 7,
@@ -71,7 +65,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Status*",
-        value: "PASS",
     },
     {
         id: 8,
@@ -80,7 +73,7 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Grade*",
-        value: "B+",
+        value: "",
     },
     {
         id: 9,
@@ -89,7 +82,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% From*",
-        value: 60,
     },
     {
         id: 10,
@@ -107,7 +99,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Status*",
-        value: "PASS",
     },
     {
         id: 12,
@@ -125,7 +116,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% From*",
-        value: 50,
     },
     {
         id: 14,
@@ -134,7 +124,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% Upto*",
-        value: 59,
     },
     {
         id: 15,
@@ -143,7 +132,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Status*",
-        value: "PASS",
     },
     {
         id: 16,
@@ -152,7 +140,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Grade*",
-        value: "C",
     },
     {
         id: 17,
@@ -161,7 +148,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% From*",
-        value: 40,
     },
     {
         id: 18,
@@ -170,7 +156,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% Upto*",
-        value: 49,
     },
     {
         id: 19,
@@ -179,7 +164,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Status*",
-        value: "PASS",
     },
     {
         id: 20,
@@ -188,7 +172,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Grade*",
-        value: "D",
     },
     {
         id: 21,
@@ -197,7 +180,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% From*",
-        value: 33,
     },
     {
         id: 22,
@@ -206,7 +188,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% Upto*",
-        value: 49,
     },
     {
         id: 23,
@@ -215,7 +196,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Status*",
-        value: "PASS",
     },
     {
         id: 24,
@@ -224,7 +204,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Grade*",
-        value: "D",
     },
     {
         id: 25,
@@ -233,7 +212,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% From*",
-        value: 0,
     },
     {
         id: 26,
@@ -242,7 +220,6 @@ const MarksGrading: fieldsData[] = [
         type: "number",
         select: false,
         label: "% Upto*",
-        value: 32,
     },
     {
         id: 27,
@@ -251,7 +228,6 @@ const MarksGrading: fieldsData[] = [
         type: "text",
         select: false,
         label: "Status*",
-        value: "FAIL",
     },
 ]
 

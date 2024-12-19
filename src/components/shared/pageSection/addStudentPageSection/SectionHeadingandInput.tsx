@@ -1,6 +1,6 @@
 import React from "react";
 import InputSection from "@/components/template/form/input/InputSection";
-import { Name } from "./FormSection";
+import { Name } from "../../../template/form/FormSection";
 import { Button } from "@/components/ui/button";
 import { InputSectionProps } from "@/types/InputFormSectionType";
 import { employeename } from "../addEmployeePageSection/EmployeeFormSection";

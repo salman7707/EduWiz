@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import MarksGradingForm from "./MarksGradingForm";
+import MarksGradingForm from "./MarksGradingFormSection";
 import FailCriteriaForm from "./FailCriteriaForm";
 
 export default function MarksAndFailCriteria() {

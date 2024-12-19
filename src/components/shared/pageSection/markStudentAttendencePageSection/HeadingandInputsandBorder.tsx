@@ -28,7 +28,7 @@ export default function HeadingandInputsandBorder({
       >
         {heading}
       </h2>
-      <div className="w-[70%] mx-auto space-y-2">
+      <div className="md:w-[70%] w-full mx-auto space-y-2">
         <Input
           type="date"
           value={date}

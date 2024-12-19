@@ -4,7 +4,7 @@ import MarkBottomHeadingandButton from "../markStudentAttendencePageSection/Mark
 
 export default function MarkEmployeeHeadingAndInputSection() {
   return (
-    <div className="w-[65%] mx-auto">
+    <div className="md:w-[65%] w-full mx-auto">
       <HeadingandInputsandBorder
         heading="Choose Employee attendance type"
         markstudentpage={false}

@@ -1,6 +1,7 @@
 import { SideBaritemstypes } from "@/types/SidebarItemsType";
-import { Hand, Home, PencilRuler, Settings } from "lucide-react";
+import { Hand, Home, PencilRuler, Settings, Wallet } from "lucide-react";
 import { BsPencilFill, BsPerson } from "react-icons/bs";
+import { GiOpenBook } from "react-icons/gi";
 import { TfiBag } from "react-icons/tfi";
 
 const SideBarItems: SideBaritemstypes[] = [
@@ -66,6 +67,25 @@ const SideBarItems: SideBaritemstypes[] = [
     },
     {
         id: 3,
+        title: "Subjects",
+        url: "",
+        icon: GiOpenBook,
+        plusicon: true,
+        insidedata: [
+            {
+                id: 0,
+                title: "Classes With Subjects",
+                url: "/classes_with_subjects"
+            },
+            {
+                id: 1,
+                title: "Assign Subjects",
+                url: "/assign_subjects"
+            },
+        ]
+    },
+    {
+        id: 4,
         title: "Students",
         url: "",
         icon: BsPerson,
@@ -99,7 +119,7 @@ const SideBarItems: SideBaritemstypes[] = [
         ],
     },
     {
-        id: 4,
+        id: 5,
         title: "Employees",
         url: "",
         icon: TfiBag,
@@ -128,7 +148,26 @@ const SideBarItems: SideBaritemstypes[] = [
         ]
     },
     {
-        id: 5,
+        id: 6,
+        title: "Accounts",
+        url: "",
+        icon: Wallet,
+        plusicon: true,
+        insidedata: [
+            {
+                id: 0,
+                title: "Chart Of Account",
+                url: "/chart_of_account"
+            },
+            {
+                id: 1,
+                title: "Add Income",
+                url: "/classes_with_subjects"
+            },
+        ]
+    },
+    {
+        id: 7,
         title: "Attendance",
         url: "",
         icon: Hand,
@@ -162,11 +201,14 @@ const SideBarItems: SideBaritemstypes[] = [
         ]
     },
     {
-        id: 6,
+        id: 8,
         title: "Homework",
         url: "/homework",
         icon: BsPencilFill,
+        plusicon: false
     },
+
+
 ];
 
 export default SideBarItems;

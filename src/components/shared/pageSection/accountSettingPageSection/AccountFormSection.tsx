@@ -4,8 +4,10 @@ import React from "react";
 
 export default function AccountFormSection() {
   return (
-    <div className="grid grid-cols-[55%_42%] items-start justify-center gap-x-12 px-5 py-8">
-      <AccountSettingForm />
+    <div className="grid md:grid-cols-[55%_42%] grid-cols-1 gap-y-8 md:items-start items-center justify-center md:gap-x-12 md:px-5 py-8">
+      <div className="md:w-full w-[94%]">
+        <AccountSettingForm />
+      </div>
       <AccountDetailCard />
     </div>
   );

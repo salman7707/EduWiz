@@ -4,7 +4,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="py-8 px-8">
+    <div className="py-8 md:px-8 px-4">
       <AccountSettingHeader />
       <AccountFormSection />
     </div>

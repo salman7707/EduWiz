@@ -4,7 +4,7 @@ import MarkBottomHeadingandButton from "./MarkBottomHeadingandButton";
 
 export default function ManualHeadingAndInputSection() {
   return (
-    <div className="w-[65%] mx-auto space-y-4">
+    <div className="md:w-[65%] mx-auto space-y-4">
       <HeadingandInputsandBorder
         heading="Mark Manual Attendance Class wise"
         select={true}

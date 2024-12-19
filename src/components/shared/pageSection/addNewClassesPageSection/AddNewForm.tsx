@@ -23,7 +23,7 @@ export default function AddNewForm() {
     });
   return (
     <div className="w-full mt-6">
-      <div className="w-[50%] bg-white rounded-2xl mx-auto h-auto py-3">
+      <div className="md:w-[50%] bg-white rounded-2xl mx-auto h-auto py-3">
         <div className="py-4 px-2">
           <h2 className="text-medblacktext text-xl font-semibold text-center">
             Add New Class
