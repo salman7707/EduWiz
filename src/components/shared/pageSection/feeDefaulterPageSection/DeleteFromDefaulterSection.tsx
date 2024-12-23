@@ -5,7 +5,7 @@ import AddBalanceorClearListCard from "@/components/template/cards/AddBalanceorC
 
 export default function DeleteFromDefaulterSection() {
   return (
-    <div className="mt-8 flex items-start gap-x-5">
+    <div className="mt-8 flex flex-wrap gap-y-4 items-start gap-x-5 md:px-0 px-5">
       {FeeDefaulters.map((data) => (
         <div key={data.id}>
           <ExsistedCard

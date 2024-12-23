@@ -31,16 +31,21 @@ const SideBarItems: SideBaritemstypes[] = [
             },
             {
                 id: 2,
+                title: "Details For Fee Challan",
+                url: "/details_for_fee_challan",
+            },
+            {
+                id: 3,
                 title: "Marks Grading",
                 url: "/marks_grading",
             },
             {
-                id: 3,
+                id: 4,
                 title: "Account Settings",
                 url: "/account_setting",
             },
             {
-                id: 4,
+                id: 5,
                 title: "Log Out",
                 url: "/",
                 logoutBtn: true,
@@ -186,16 +191,21 @@ const SideBarItems: SideBaritemstypes[] = [
         insidedata: [
             {
                 id: 0,
+                title: "Generate Bank Challan",
+                url: "/bank_challan"
+            },
+            {
+                id: 1,
                 title: "Collect Fee",
                 url: "/collect_fee"
             },
             {
-                id: 1,
+                id: 2,
                 title: "Fee Slip",
                 url: "/fee_slip"
             },
             {
-                id: 2,
+                id: 3,
                 title: "Fees Defaulters",
                 url: "/fee_defaulters"
             },

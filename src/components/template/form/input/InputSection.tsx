@@ -71,7 +71,7 @@ export default function InputSection({
         {/* Select Dropdown */}
         {select && option && (
           <select
-            className="h-8 w-full bg-white rounded-3xl text-lightblacktext px-2.5 border border-none focus-visible:outline-none focus-visible:ring-0"
+            className="h-9 w-full bg-white rounded-3xl text-lightblacktext px-2.5 border border-none focus-visible:outline-none focus-visible:ring-0"
             name={name}
             value={values}
             onChange={handlechange}

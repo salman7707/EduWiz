@@ -13,9 +13,12 @@ export default function ProfileSectionInput({
   values,
   name,
   handlechange,
+  maxSizeCard = false,
+  size,
 }: inputFieldTypes) {
+  const sizeClasses = size === "small" ? "text-xs" : "md:text-base text-xs";
   return (
-    <div className={`flex flex-col w-full`}>
+    <div className={`flex flex-col items-start w-full gap-y-1`}>
       <div className="border-cardfourth relative border w-full h-auto rounded-3xl py-1 px-1">
         <Label
           className={`absolute -top-2.5 left-4 ${
@@ -35,6 +38,7 @@ export default function ProfileSectionInput({
             <Input
               name={name}
               type={type}
+              value={values}
               onChange={handlechange}
               className={`hidden`}
             />
@@ -48,7 +52,9 @@ export default function ProfileSectionInput({
               />
             </div>
             <div className="bg-gradient-to-l cursor-pointer to-cardfourth from-lightpurplegradient text-white md:px-3 px-2 py-3 rounded-3xl">
-              <div className="flex items-center justify-center md:gap-x-2 md:text-base text-xs">
+              <div
+                className={`flex items-center justify-center md:gap-x-2 ${sizeClasses} `}
+              >
                 <AiTwotonePicture />
                 Change Logo
               </div>
@@ -56,6 +62,11 @@ export default function ProfileSectionInput({
           </Label>
         </div>
       </div>
+      {maxSizeCard && (
+        <div className="bg-YellowBtn rounded-2xl px-1 text-[10px] text-lightblack">
+          Max size 500KB
+        </div>
+      )}
     </div>
   );
 }

@@ -21,11 +21,11 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         blue: "text-white bg-blue hover:bg-darkblue",
         white: "text-black bg-white hover:bg-darkwhite",
-        lightblue: "text-white bg-electricblue  hover:bg-lightelectricblue  ",
+        lightblue: "text-white bg-electricblue  hover:bg-lightelectricblue",
         lightblueattendance:
-          "text-white bg-[#4099FF]  hover:bg-lightelectricblue  ",
+          "text-white bg-[#4099FF]  hover:bg-lightelectricblue",
         orangegradient:
-          "bg-gradient-to-l to-darkpink from-orange cursor-pointer  ",
+          "bg-gradient-to-l to-darkpink from-orange cursor-pointer",
         medblue: "bg-cardsecond cursor-pointer",
         yellow: "bg-YellowBtn text-black cursor-pointer",
         dark: "bg-studentdataBtn hover:bg-darkblue text-white cursor-pointer",

@@ -70,5 +70,6 @@ const IMAGES = {
     ACCBTNBG: "/images/sideImages/acccardbg.jpg",
     ACCCTR: "/images/sideImages/tr1.png",
     ACCCBL: "/images/sideImages/bl.png",
+    NOIMAGE: "/images/sideImages/no-image.jpg",
 }
 export default IMAGES

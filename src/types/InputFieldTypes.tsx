@@ -16,4 +16,5 @@ export interface inputFieldTypes {
     width?:string;
     color?:string;
     size?:string;
+    maxSizeCard?:boolean
 }
