@@ -2,6 +2,7 @@ import { SideBaritemstypes } from "@/types/SidebarItemsType";
 import { Hand, Home, PencilRuler, Settings, Wallet } from "lucide-react";
 import { BsPencilFill, BsPerson } from "react-icons/bs";
 import { GiOpenBook } from "react-icons/gi";
+import { RiMoneyDollarBoxLine } from "react-icons/ri";
 import { TfiBag } from "react-icons/tfi";
 
 const SideBarItems: SideBaritemstypes[] = [
@@ -25,7 +26,7 @@ const SideBarItems: SideBaritemstypes[] = [
             },
             {
                 id: 1,
-                title: "ٖٖFee Particulars",
+                title: "Fee Particulars",
                 url: "/fee_particulars",
             },
             {
@@ -162,12 +163,46 @@ const SideBarItems: SideBaritemstypes[] = [
             {
                 id: 1,
                 title: "Add Income",
-                url: "/classes_with_subjects"
+                url: "/add_income"
+            },
+            {
+                id: 2,
+                title: "Add Expense",
+                url: "/add_expense"
+            },
+            {
+                id: 3,
+                title: "Account Statement",
+                url: "/account_statement"
             },
         ]
     },
     {
         id: 7,
+        title: "Fees",
+        url: "",
+        icon: RiMoneyDollarBoxLine,
+        plusicon: true,
+        insidedata: [
+            {
+                id: 0,
+                title: "Collect Fee",
+                url: "/collect_fee"
+            },
+            {
+                id: 1,
+                title: "Fee Slip",
+                url: "/fee_slip"
+            },
+            {
+                id: 2,
+                title: "Fees Defaulters",
+                url: "/fee_defaulters"
+            },
+        ]
+    },
+    {
+        id: 8,
         title: "Attendance",
         url: "",
         icon: Hand,
@@ -201,7 +236,7 @@ const SideBarItems: SideBaritemstypes[] = [
         ]
     },
     {
-        id: 8,
+        id: 9,
         title: "Homework",
         url: "/homework",
         icon: BsPencilFill,

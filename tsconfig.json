@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/shared/pageSection/marksGradingPageSection/MarksAndFailCriteria.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/shared/pageSection/marksGradingPageSection/MarksAndFailCriteria.tsx", "src/components/shared/pageSection/collectFeePageSection/ScanPaidChallan.tsx"],
   "exclude": ["node_modules"]
 }

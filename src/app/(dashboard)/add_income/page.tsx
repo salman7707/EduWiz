@@ -1,9 +1,10 @@
-import React from 'react'
+import AddIncomeSection from "@/components/shared/pageSection/addIncomePageSection/AddIncomeSection";
+import React from "react";
 
 export default function page() {
   return (
-    <div>
-        
+    <div className="py-8 px-6">
+      <AddIncomeSection />
     </div>
-  )
+  );
 }

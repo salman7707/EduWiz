@@ -1,10 +1,12 @@
 import IMAGES from "../../public/images";
 
-interface ExsistedStudentType {
+export interface ExsistedStudentType {
     id?: number;
     img?: string;
     name?: string;
-    registerationno?: string;
+    registerationno?: string | number;
+    subject?: string,
+    feepage?: boolean;
 }
 
 const ExsistedStudent: ExsistedStudentType[] = [

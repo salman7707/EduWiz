@@ -34,7 +34,7 @@ export default function RootLayout({
       <div
         className={`${
           navbarOpen ? "lg:w-[77%] md:w-full xs:w-full" : "w-full"
-        } pt-[75px] h-screen`}
+        } pt-[75px] h-full`}
       >
         {children}
       </div>

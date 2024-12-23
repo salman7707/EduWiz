@@ -4,7 +4,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="py-8 px-6">
+    <div className="py-8 md:px-6 px-2">
       <HeadingSection
         forpage="Accounts"
         heading=" Chart of accounts"
