@@ -8,7 +8,8 @@ const DashboardCard: DashboardCardType[] = [
         icon: IMAGES.PERSON,
         number: 0,
         subheading: "This Month",
-        color: "cardfirst"
+        color: "cardfirst",
+        url: "/all_students",
     },
     {
         id: 1,
@@ -17,6 +18,7 @@ const DashboardCard: DashboardCardType[] = [
         number: 0,
         subheading: "This Month",
         color: "cardsecond",
+        url: "/all_employees",
     },
     {
         id: 2,
@@ -25,6 +27,7 @@ const DashboardCard: DashboardCardType[] = [
         number: 0,
         subheading: "This Month",
         color: "pink",
+        url: "/account_statement",
     },
     {
         id: 3,
@@ -33,6 +36,7 @@ const DashboardCard: DashboardCardType[] = [
         number: 0,
         subheading: "This Month",
         color: "cardfourth",
+        url: "/account_statement",
     },
 ]
 

@@ -19,7 +19,9 @@ export default function Cards({
       ? "bg-pink"
       : "bg-cardfourth";
   return (
-    <div className={`w-full h-auto ${colorClasses} rounded-2xl hover:shadow-xl shadow-md`}>
+    <div
+      className={`w-full cursor-pointer h-auto ${colorClasses} rounded-2xl hover:shadow-xl shadow-md`}
+    >
       <div className="py-4 px-6 space-y-4">
         <h2 className="text-white text-lg font-semibold ">{heading}</h2>
         <div className="flex items-center justify-between">

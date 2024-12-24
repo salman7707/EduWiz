@@ -1,3 +1,5 @@
+import { ClassPercentageDataTypes } from "./ClassPercentageDataTypes";
+
 export interface allClassesDataType {
   id?: number;
   classname?: string;
@@ -10,4 +12,5 @@ export interface allClassesDataType {
   girls?: number;
   na?: number;
   totalmarks?: number;
+  percentageData?: ClassPercentageDataTypes[];
 }

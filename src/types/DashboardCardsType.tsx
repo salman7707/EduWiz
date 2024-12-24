@@ -5,4 +5,5 @@ export interface DashboardCardType {
     number: number;
     subheading: string;
     color:string;
+    url?:string;
 }

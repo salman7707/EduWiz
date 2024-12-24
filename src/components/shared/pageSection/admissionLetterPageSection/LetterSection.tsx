@@ -4,54 +4,9 @@ import IMAGES from "../../../../../public/images";
 import { FaCheck } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { GrDocumentPdf } from "react-icons/gr";
+import admissionletterdata from "@/lib/LetterSection";
 
 export default function LetterSection() {
-  const admissionletterdata = [
-    {
-      id: 0,
-      img: IMAGES.AVATAR,
-      name: "salman",
-      insidedata: [
-        {
-          id: 0,
-          key: "Registration/ID",
-          value: "asfsafsa",
-          bg: "dark",
-        },
-        {
-          id: 1,
-          key: "Class",
-          value: "",
-          bg: "transparent",
-        },
-        {
-          id: 2,
-          key: "Admission Date",
-          value: "10 December, 2024",
-          bg: "dark",
-        },
-        {
-          id: 3,
-          key: "Account Status",
-          value: "Active",
-          color: "green",
-          bg: "transparent",
-        },
-        {
-          id: 4,
-          key: "Username",
-          value: "98825PCjCasfsafsa",
-          bg: "dark",
-        },
-        {
-          id: 5,
-          key: "Password",
-          value: "98825PCjCasfsafsa",
-          bg: "transparent",
-        },
-      ],
-    },
-  ];
   return (
     <div className="border-2 border-neutralgray h-auto lg:w-[33%] w-full bg-white max-w-full mx-auto rounded-2xl mt-6">
       <div>
@@ -114,9 +69,7 @@ export default function LetterSection() {
               </div>
             </div>
           ))}
-
           {/*  */}
-
           <div className="mt-2">
             <Button className="h-8 bg-pink rounded-full text-xs hover:bg-pink">
               <GrDocumentPdf /> Print Admission Letter

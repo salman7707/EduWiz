@@ -115,7 +115,7 @@ const SideBarItems: SideBaritemstypes[] = [
             {
                 id: 3,
                 title: "Print Basic List",
-                url: "/printinfo",
+                url: "/print_basic_info",
             },
             {
                 id: 4,

@@ -14,7 +14,7 @@ export default function DownloadVersion() {
               Desktop Version
             </h2>
             <h2 className="text-gray-500 text-[11px] font-semibold w-[60%] leading-none">
-              *Download & install eSkooly  on your PC.
+              *Download & install eSkooly on your PC.
             </h2>
           </div>
           {/* buttons */}
@@ -48,7 +48,13 @@ export default function DownloadVersion() {
           </div>
         </div>
         <div>
-          <Image src={IMAGES.DESKTOPi} alt="desktop" width={100} height={100} className="absolute right-0 -top-4 w-[100px] h-[100px]" />
+          <Image
+            src={IMAGES.DESKTOPi}
+            alt="desktop"
+            width={100}
+            height={100}
+            className="absolute right-0 -top-4 w-[100px] h-[100px]"
+          />
         </div>
       </div>
     </div>

@@ -3,8 +3,10 @@ import OtherCardsSection from "@/components/shared/pageSection/dashboardPageSect
 import React from "react";
 
 export default function page() {
-  return <div className="w-full pb-6">
-    <CardsSection/>
-    <OtherCardsSection/>
-  </div>;
+  return (
+    <div className="w-full pb-6">
+      <CardsSection />
+      <OtherCardsSection />
+    </div>
+  );
 }

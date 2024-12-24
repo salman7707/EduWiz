@@ -2,7 +2,6 @@
 import { updateSchema } from "@/lib/validations/updateschema";
 import { useFormik } from "formik";
 import React from "react";
-import IMAGES from "../../../../public/images";
 import ProfileSectionInput from "./input/profileSectionInput";
 import InputSection from "./input/InputSection";
 import { Button } from "@/components/ui/button";
@@ -10,7 +9,7 @@ import { MdOutlineLoop } from "react-icons/md";
 
 export default function InstituteForm() {
   const initialvalue = {
-    logo: IMAGES.AVATAR,
+    logo: "",
     phoneno: "",
     website: "",
     address: "",
@@ -18,15 +17,22 @@ export default function InstituteForm() {
     nameofinstitute: "",
     targetline: "",
   };
-  const { values, handleSubmit, handleBlur, handleChange, errors, touched } =
-    useFormik({
-      initialValues: initialvalue,
-      validationSchema: updateSchema,
-      onSubmit: (value, action) => {
-        console.log(value);
-        action.resetForm();
-      },
-    });
+  const {
+    values,
+    setFieldValue,
+    handleSubmit,
+    handleBlur,
+    handleChange,
+    errors,
+    touched,
+  } = useFormik({
+    initialValues: initialvalue,
+    validationSchema: updateSchema,
+    onSubmit: (value, action) => {
+      console.log(value);
+      action.resetForm();
+    },
+  });
   return (
     <form onSubmit={handleSubmit}>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-8 py-4">
@@ -39,6 +45,7 @@ export default function InstituteForm() {
               values={values.logo}
               handleblur={handleBlur}
               handlechange={handleChange}
+              setFieldValue={setFieldValue}
             />
             {errors.logo && touched.logo && (
               <div className="text-xs text-red-500">{errors.logo}</div>

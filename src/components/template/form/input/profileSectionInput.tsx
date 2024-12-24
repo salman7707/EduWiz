@@ -10,11 +10,11 @@ export default function ProfileSectionInput({
   label,
   type,
   theme = "blues",
-  values,
-  name,
+  name = "logo",
   handlechange,
   maxSizeCard = false,
   size,
+  setFieldValue,
 }: inputFieldTypes) {
   const sizeClasses = size === "small" ? "text-xs" : "md:text-base text-xs";
   return (
@@ -38,13 +38,17 @@ export default function ProfileSectionInput({
             <Input
               name={name}
               type={type}
-              value={values}
-              onChange={handlechange}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                handlechange?.(e);
+                if (e.target.files && e.target.files.length > 0) {
+                  setFieldValue?.(name, e.target.files[0]);
+                }
+              }}
               className={`hidden`}
             />
             <div className="md:w-[120px] md:h-[120px] overflow-hidden rounded-full">
               <Image
-                src={values || IMAGES.AVATAR}
+                src={IMAGES.AVATAR}
                 alt="Logo"
                 width={100}
                 height={100}

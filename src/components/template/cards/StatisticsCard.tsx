@@ -8,11 +8,7 @@ import { TiMinus } from "react-icons/ti";
 import { RiLoopRightLine } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-
-export interface StaticCardTypes {
-  heading: string;
-  src: string;
-}
+import { StaticCardTypes } from "@/types/StaticCardType";
 
 export default function StatisticsCard({ heading, src }: StaticCardTypes) {
   const [option, setOption] = useState(false);

@@ -1,5 +1,5 @@
-import AddNewForm from "@/components/shared/pageSection/addNewClassesPageSection/AddNewForm";
-import HeadingSection from "@/components/shared/pageSection/addStudentPageSection/HeadingSection";
+import HeadingSection from "@/components/shared/HeadingSection";
+import AddNewHeadingAndFormSection from "@/components/shared/pageSection/addNewClassesPageSection/AddNewHeadingAndFormSection";
 import React from "react";
 
 export default function page() {
@@ -10,7 +10,7 @@ export default function page() {
         forpage="Classes"
         buttonsection={false}
       />
-      <AddNewForm />
+      <AddNewHeadingAndFormSection />
     </div>
   );
 }

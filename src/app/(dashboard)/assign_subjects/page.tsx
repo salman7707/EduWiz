@@ -1,5 +1,5 @@
-import HeadingSection from "@/components/shared/pageSection/addStudentPageSection/HeadingSection";
-import AssignSubjectForm from "@/components/shared/pageSection/assignSubjectPageSection/AssignSubjectForm";
+import HeadingSection from "@/components/shared/HeadingSection";
+import AssignSubjectForm from "@/components/shared/pageSection/assignSubjectPageSection/AssignSubjectFormAndHeadingSection";
 import React from "react";
 
 export default function page() {

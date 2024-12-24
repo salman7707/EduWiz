@@ -41,11 +41,11 @@ export default function FailCriteriaForm() {
         </div>
         <div className="text-lightgraytext text-[15px] lg:w-[33%] text-wrap flex flex-col items-start w-full">
           <div className="text-wrap gap-x-1">
-            <span className="font-semibold text-YellowBtn text-nowrap">OR</span> he or she
-            obtains a{" "}
+            <span className="font-semibold text-YellowBtn text-nowrap">OR</span>{" "}
+            he or she obtains a{" "}
             <span className="text-wrap font-semibold text-lightblack pr-1">
-              Subject percentag 
-             </span> 
+              Subject percentag
+            </span>
             e score equal to or below
           </div>
           <div className="mt-4 w-full">

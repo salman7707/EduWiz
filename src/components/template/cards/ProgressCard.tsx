@@ -13,6 +13,7 @@ export default function ProgressCard() {
           </div>
           <div className="bg-gray-300 border rounded-md py-[2px]"></div>
         </div>
+
         <div className="space-y-1">
           <div className="flex items-center justify-between">
             <h2 className="text-neutralgray text-base font-medium">

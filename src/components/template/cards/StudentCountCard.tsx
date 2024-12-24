@@ -7,10 +7,7 @@ import { RiLoopRightLine } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { TfiFaceSad } from "react-icons/tfi";
-export interface StaticCardTypes {
-  heading: string;
-  headingcolor: string;
-}
+import { StaticCardTypes } from "@/types/StaticCardType";
 
 export default function StudentCountCard({
   heading,
@@ -22,7 +19,9 @@ export default function StudentCountCard({
       ? "text-pink"
       : headingcolor === "cardfirst"
       ? "text-cardfirst"
-      :  headingcolor === "blue" ? "text-blue" : "text-cardsecond";
+      : headingcolor === "blue"
+      ? "text-blue"
+      : "text-cardsecond";
   return (
     <div className="w-full bg-white rounded-2xl hover:shadow-2xl shadow-md overflow-hidden">
       <div className="px-6 py-6">

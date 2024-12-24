@@ -1,4 +1,4 @@
-import HeadingSection from "@/components/shared/pageSection/addStudentPageSection/HeadingSection";
+import HeadingSection from "@/components/shared/HeadingSection";
 import AddNewEmployeeSection from "@/components/shared/pageSection/allEmployeePageSection/AddNewEmployeeSection";
 import SearchEmployeeSection from "@/components/shared/pageSection/allEmployeePageSection/SearchEmployeeSection";
 import React from "react";

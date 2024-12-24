@@ -8,18 +8,15 @@ import { allClassesDataType } from "@/types/allClassesDataType";
 
 export default function ClassCard({
   classname,
-  boysPercentage,
-  grilsPercentage,
-  naPercentage,
   totalStudents,
-  boys,
-  girls,
-  na,
+  percentageData,
 }: allClassesDataType) {
   const [deleted, setDelete] = useState(false);
   const [edit, setEdit] = useState(false);
+
   return (
     <div className="rounded-2xl bg-white py-4 px-6 w-full">
+      {/* Subject, Buttons and icon */}
       <div className="flex items-center justify-between gap-x-4">
         <h2 className="text-base text-lightblack font-semibold ">
           {classname}
@@ -55,6 +52,7 @@ export default function ClassCard({
           </Button>
         </div>
       </div>
+      {/* Total Students */}
       <div className="flex md:flex-col flex-row md:items-start items-center justify-between">
         <div className="">
           <FaGraduationCap className="text-darkblue text-4xl" />
@@ -66,28 +64,20 @@ export default function ClassCard({
           <h2 className="text-xl font-semibold text-slate">Students</h2>
         </div>
       </div>
+      {/* Percentage Section */}
       <div className="flex md:flex-col flex-row gap-x-3 items-center gap-y-4 h-full py-4">
-        <div className="relative border-4 rounded-full h-[53px] w-[53px] flex items-center justify-center">
-          <h2 className="text-black text-xs">{boysPercentage}</h2>
-          <div className="absolute -bottom-4 h-7 w-7 py-0.5 rounded-full bg-white flex flex-col items-center justify-center">
-            <h2 className="text-[8px]">Boys</h2>
-            <h2 className="text-[11px]">{boys}</h2>
+        {percentageData?.map((data) => (
+          <div
+            key={data.id}
+            className="relative border-4 rounded-full h-[53px] w-[53px] flex items-center justify-center"
+          >
+            <h2 className="text-black text-xs">{data.percentage}</h2>
+            <div className="absolute -bottom-4 h-7 w-7 py-0.5 rounded-full bg-white flex flex-col items-center justify-center">
+              <h2 className="text-[8px]">{data.heading}</h2>
+              <h2 className="text-[11px]">{data.number}</h2>
+            </div>
           </div>
-        </div>
-        <div className="relative border-4 rounded-full h-[53px] w-[53px] flex items-center justify-center">
-          <h2 className="text-black text-xs">{grilsPercentage}</h2>
-          <div className="absolute -bottom-4 h-7 w-7 py-0.5 rounded-full bg-white flex flex-col items-center justify-center">
-            <h2 className="text-[8px]">Grils</h2>
-            <h2 className="text-[11px]">{girls}</h2>
-          </div>
-        </div>
-        <div className="relative border-4 rounded-full h-[53px] w-[53px] flex items-center justify-center">
-          <h2 className="text-black text-xs">{naPercentage}</h2>
-          <div className="absolute -bottom-4 h-7 w-7 py-0.5 rounded-full bg-white flex flex-col items-center justify-center">
-            <h2 className="text-[8px]">N/A</h2>
-            <h2 className="text-[11px]">{na}</h2>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

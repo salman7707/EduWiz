@@ -2,11 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { GoPlus } from "react-icons/go";
 
-interface addnewButtonCardType {
-  url: string;
-}
-
-export default function AddNewButtonCard({ url }: addnewButtonCardType) {
+export default function AddNewButtonCard({ url }: { url: string }) {
   return (
     <Link
       href={url}

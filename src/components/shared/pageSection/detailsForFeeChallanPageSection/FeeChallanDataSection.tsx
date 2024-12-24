@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, {  useState } from "react";
 import {
   Table,
   TableBody,
@@ -41,6 +42,9 @@ export default function FeeChallanDataSection() {
     },
   ];
 
+  const [data, setData] = useState("");
+  const [select, setSelect] = useState<number>(10);
+
   return (
     <div className="w-full border rounded-2xl py-4 md:px-4 px-1.5 bg-white">
       <div className="flex lg:flex-row flex-col items-center justify-between pb-4 gap-4">
@@ -48,7 +52,8 @@ export default function FeeChallanDataSection() {
           <div className="rounded-none">show</div>
           <div className="rounded-none">
             <select
-              value={10}
+              value={select}
+              onChange={(e) => setSelect(Number(e.target.value))}
               className="border-neutralgray border py-1 rounded-sm"
             >
               <option>10</option>
@@ -60,7 +65,13 @@ export default function FeeChallanDataSection() {
           <div className="rounded-none">entries</div>
         </div>
         <div className="flex items-center gap-x-2 lg:w-full">
-          Search: <Input className="rounded-3xl border border-gray-400" />
+          Search:{" "}
+          <Input
+            type="text"
+            value={data}
+            onChange={(e) => setData(e.target.value)}
+            className="rounded-3xl border border-gray-400"
+          />
         </div>
       </div>
       <Table className="">

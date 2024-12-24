@@ -63,21 +63,6 @@ export default function AccountDetailCard() {
               </TableRow>
             </TableBody>
           </Table>
-          //   <div
-
-          //     key={data.id}
-          //     className="flex items-center justify-center text-xs gap-x-3.5 w-full"
-          //   >
-          //     <h2 className=" text-neutralgray font-semibold text-right w-14">
-          //       {data.key}:
-          //     </h2>
-          //     <h2 className="text-white text-left w-10 bg-green-700">{data.value}</h2>
-          //     {data.btn && (
-          //       <div className="w-28 flex justify-start bg-green-900">
-          //
-          //       </div>
-          //     )}
-          //   </div>
         ))}
       </div>
       <div className="my-4 border-b-[0.1px] border-b-gradientdarkblue opacity-25"></div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { AiOutlineAim } from "react-icons/ai";
 import { TbHandFinger } from "react-icons/tb";
-
 import { TfiWallet } from "react-icons/tfi";
+
 export default function EsstimateFeeCard() {
   return (
     <div className="w-full bg-white rounded-2xl hover:shadow-2xl shadow-md">
@@ -36,7 +36,7 @@ export default function EsstimateFeeCard() {
               <h2 className="text-black text-2xl font-bold">$ 0</h2>
             </div>
             <div className="flex items-center justify-start text-pink gap-x-1">
-            <TbHandFinger className="rotate-180" />
+              <TbHandFinger className="rotate-180" />
               <h2 className="text-base font-normal pt-[2px]">Remainings</h2>
             </div>
           </div>

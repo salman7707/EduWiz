@@ -1,4 +1,4 @@
-import HeadingSection from "@/components/shared/pageSection/addStudentPageSection/HeadingSection";
+import HeadingSection from "@/components/shared/HeadingSection";
 import ChartSearchAndDataSection from "@/components/shared/pageSection/cartAccountPageSection/ChartSearchAndDataSection";
 import React from "react";
 

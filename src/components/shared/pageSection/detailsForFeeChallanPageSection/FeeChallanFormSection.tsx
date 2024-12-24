@@ -6,11 +6,10 @@ import AddNewBankData from "@/lib/AddNewBankData";
 import { useFormik } from "formik";
 import React from "react";
 import { FaPlus } from "react-icons/fa6";
-import IMAGES from "../../../../../public/images";
 
 export default function FeeChallanFormSection() {
   const initialValue = {
-    logo: IMAGES.COURT,
+    logo: "",
     bankname: "",
     branchaddress: "",
     accountnumber: "",
@@ -26,6 +25,7 @@ export default function FeeChallanFormSection() {
   });
   return (
     <div className="w-full rounded-2xl border bg-white md:px-6 px-3">
+      {/* IMAGES Section */}
       <div className="py-4 px-2">
         <h2 className="text-medblacktext text-xl font-semibold text-center">
           Add New Bank
@@ -41,6 +41,7 @@ export default function FeeChallanFormSection() {
           </div>
         </div>
       </div>
+      {/*  */}
       <form onSubmit={handleSubmit}>
         <div>
           <ProfileSectionInput

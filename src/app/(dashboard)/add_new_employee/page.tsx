@@ -1,5 +1,5 @@
 import EmployeeSection from "@/components/shared/pageSection/addEmployeePageSection/EmployeeSection";
-import HeadingSection from "@/components/shared/pageSection/addStudentPageSection/HeadingSection";
+import HeadingSection from "@/components/shared/HeadingSection";
 import React from "react";
 
 export default function page() {

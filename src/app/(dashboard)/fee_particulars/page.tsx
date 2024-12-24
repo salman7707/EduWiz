@@ -1,4 +1,4 @@
-import HeadingSection from "@/components/shared/pageSection/addStudentPageSection/HeadingSection";
+import HeadingSection from "@/components/shared/HeadingSection";
 import FeeFormAndHeadingSection from "@/components/shared/pageSection/feePaticularsPageSection/FeeFormAndHeadingSection";
 import React from "react";
 
