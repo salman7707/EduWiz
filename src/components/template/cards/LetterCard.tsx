@@ -5,6 +5,8 @@ import { BsArrowReturnRight } from "react-icons/bs";
 import { FaCheck } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { GrDocumentPdf } from "react-icons/gr";
+import JobLetterPortalDetails from "@/lib/JobletterPortalDetails";
+import JobLetterdetails from "@/lib/JobLetterDetails";
 
 export default function LetterCard() {
   return (
@@ -25,79 +27,43 @@ export default function LetterCard() {
           </div>
         </div>
         {/*  */}
-        <div className="">
-          <div>
-            <h2 className="text-gray-400 border-b w-[73.5px] border-slate text-[11px]">
-              Registration/ID
-            </h2>
-            <div className="flex -mt-[1.8px]">
-              <BsArrowReturnRight className="text-neutralgray text-lg" />
-              <h2 className="text-xs font-semibold pl-2 pt-0.5">136477</h2>
-            </div>
-          </div>
-          <div>
-            <h2 className="text-gray-400 w-20 border-b border-slate text-[11px]">
-              Employee Role
-            </h2>
-            <div className="flex -mt-[1.8px]">
-              <BsArrowReturnRight className="text-neutralgray text-lg" />
-              <h2 className="text-xs font-semibold pl-2 pt-0.5">Principal</h2>
-            </div>
-          </div>
-          <div>
-            <h2 className="text-gray-400 border-b w-[73.5px] border-slate text-[11px]">
-              Date of Joining
-            </h2>
-            <div className="flex -mt-[1.8px]">
-              <BsArrowReturnRight className="text-neutralgray text-lg" />
-              <h2 className="text-xs font-semibold pl-2 pt-0.5">
-                25 December, 2024
+        <div>
+          {JobLetterdetails.map((detail) => (
+            <div key={detail.id}>
+              <h2 className="text-gray-400 border-b border-slate text-[11px] w-fit">
+                {detail.label}
               </h2>
+              <div className="flex -mt-[1.8px]">
+                <BsArrowReturnRight className="text-neutralgray text-lg" />
+                {detail.isStatus ? (
+                  <h2 className="text-xs font-semibold pl-2 pt-0.5 flex text-green-500">
+                    <FaCheck className="mr-1" /> {detail.value}
+                  </h2>
+                ) : (
+                  <h2 className="text-xs font-semibold pl-2 pt-0.5">
+                    {detail.value}
+                  </h2>
+                )}
+              </div>
             </div>
-          </div>
-          <div>
-            <h2 className="text-gray-400 w-20 border-b border-slate text-[11px]">
-              Account Status
-            </h2>
-            <div className="flex -mt-[1.8px]">
-              <BsArrowReturnRight className="text-neutralgray text-lg" />
-              <h2 className="text-xs font-semibold pl-2 pt-0.5 flex text-green-500">
-                <FaCheck /> Active
-              </h2>
-            </div>
-          </div>
+          ))}
         </div>
-        {/*  */}
-        <div className="">
-          <div>
-            <h2 className="text-gray-400 border-b w-14 border-slate text-[11px]">
-              Portal URL
-            </h2>
-            <div className="flex -mt-[1.8px]">
-              <BsArrowReturnRight className="text-neutralgray text-lg" />
-              <h2 className="text-xs font-semibold pl-2 pt-0.5">
-                eskooly.com/login
+
+        {/* Portal Details Section */}
+        <div>
+          {JobLetterPortalDetails.map((detail) => (
+            <div key={detail.id}>
+              <h2 className="text-gray-400 border-b border-slate text-[11px] w-fit">
+                {detail.label}
               </h2>
+              <div className="flex -mt-[1.8px]">
+                <BsArrowReturnRight className="text-neutralgray text-lg" />
+                <h2 className="text-xs font-semibold pl-2 pt-0.5">
+                  {detail.value}
+                </h2>
+              </div>
             </div>
-          </div>
-          <div>
-            <h2 className="text-gray-400 w-14 border-b border-slate text-[11px]">
-              Username
-            </h2>
-            <div className="flex -mt-[1.8px]">
-              <BsArrowReturnRight className="text-neutralgray text-lg" />
-              <h2 className="text-xs font-semibold pl-2 pt-0.5">98825CTOgF1</h2>
-            </div>
-          </div>
-          <div>
-            <h2 className="text-gray-400 border-b w-14 border-slate text-[11px]">
-              Password
-            </h2>
-            <div className="flex -mt-[1.8px]">
-              <BsArrowReturnRight className="text-neutralgray text-lg" />
-              <h2 className="text-xs font-semibold pl-2 pt-0.5">98825CTOgF1</h2>
-            </div>
-          </div>
+          ))}
         </div>
         {/*  */}
         <div className="flex items-center lg:justify-end justify-center">

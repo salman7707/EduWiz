@@ -9,21 +9,8 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import ChartData from "@/lib/ChartData";
 export default function ChartDataSection() {
-  const studentsdata = [
-    {
-      id: 0,
-      srno: 1,
-      studentid: "asfasfa",
-      studentname: "salman",
-    },
-    {
-      id: 1,
-      srno: 2,
-      studentid: "asfasfa",
-      studentname: "salman",
-    },
-  ];
   const formheaderdata = [
     {
       id: 0,
@@ -75,8 +62,8 @@ export default function ChartDataSection() {
           </TableRow>
         </TableHeader>
         <TableBody className=" border-b-black">
-          {studentsdata.length > 0 &&
-            studentsdata?.map((data) => (
+          {ChartData.length > 0 &&
+            ChartData?.map((data) => (
               <TableRow key={data.id} className="border-b border-b-gray-100">
                 <TableCell className="font-medium">{data.srno}</TableCell>
                 <TableCell className="">{data.studentid}</TableCell>
@@ -85,7 +72,7 @@ export default function ChartDataSection() {
             ))}
         </TableBody>
       </Table>
-      {studentsdata.length === 0 && (
+      {ChartData.length === 0 && (
         <div className=" border-b text-center py-2.5 text-neutralgray bg-white border-b-black">
           No data avaliable in table
         </div>

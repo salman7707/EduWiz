@@ -99,10 +99,12 @@ export default function ExsistedCard({
                 data.bgColor === "pink"
                   ? "bg-pink hover:bg-pink"
                   : "bg-cardfourth hover:bg-cardfourth"
-              }  rounded-3xl relative text-white h-7 px-10 text-xs`}
+              }  rounded-3xl relative text-white h-7 ${
+                data.id === 0 ? "px-10" : "px-3"
+              } text-xs`}
             >
               <data.Icon />
-              Submit
+              {data.value}
               {state.open && data.id === state.id && (
                 <div
                   className={`bg-lightblack absolute -top-8 rounded-sm ${

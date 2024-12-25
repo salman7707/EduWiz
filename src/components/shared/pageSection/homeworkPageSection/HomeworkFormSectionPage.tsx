@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import InputSection from "@/components/template/form/input/InputSection";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
@@ -13,7 +13,7 @@ export default function HomeworkFormSectionPage() {
           label="Homework Date*"
           type="date"
           values={date}
-          handlechange={(e)=>setDate(e.target.value)}
+          handlechange={(e) => setDate(e.target.value)}
           select={false}
         />
       </div>

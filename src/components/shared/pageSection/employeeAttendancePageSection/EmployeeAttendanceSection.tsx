@@ -9,82 +9,19 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import PrintInfoButtons from "@/lib/PrintInfoButtons";
+import EmployeesAttendanceReport from "@/lib/EmployeesAttendanceReportHead";
+import EmployeesAttendanceReportData from "@/lib/EmployeesReportData";
 export default function EmployeeAttendanceSection() {
-  const studentsdata = [
-    {
-      id: 0,
-      srno: 1,
-      studentid: "asfasfa",
-      studentname: "salman",
-      father: "",
-      class: "",
-      status: "",
-      time: "",
-    },
-    {
-      id: 1,
-      srno: 2,
-      studentid: "asfasfa",
-      studentname: "salman",
-      father: "",
-      class: "",
-      status: "",
-      time: "",
-    },
-  ];
-  const formheaderdata = [
-    {
-      id: 0,
-      heading: "DATE",
-    },
-    {
-      id: 1,
-      heading: "DAY",
-    },
-    {
-      id: 2,
-      heading: "ID",
-    },
-    {
-      id: 3,
-      heading: "NAME",
-    },
-    {
-      id: 4,
-      heading: "TYPE",
-    },
-    {
-      id: 5,
-      heading: "STATUS",
-    },
-    {
-      id: 6,
-      heading: "TIME [Card Scanning]",
-    },
-  ];
-
   return (
     <div className="w-full rounded-2xl py-4 md:px-4 px-1.5">
       <div className="flex lg:flex-row flex-col items-center justify-between pb-4 gap-4">
         <div className="flex flex-wrap lg:justify-start justify-center gap-2 w-full">
-          <Button variant={"light"} className="rounded-none">
-            Copy
-          </Button>
-          <Button variant={"light"} className="rounded-none">
-            CSV
-          </Button>
-          <Button variant={"light"} className="rounded-none">
-            Excel
-          </Button>
-          <Button variant={"light"} className="rounded-none">
-            PDF
-          </Button>
-          <Button variant={"light"} className="rounded-none">
-            Print
-          </Button>
-          <Button variant={"light"} className="rounded-none">
-            Column Visibility
-          </Button>
+          {PrintInfoButtons.map((data) => (
+            <Button key={data.id} variant={"light"} className="rounded-none">
+              {data.text}
+            </Button>
+          ))}
         </div>
         <div className="flex items-center gap-x-2 lg:w-[40%]">
           Search: <Input className="rounded-none border border-gray-400" />
@@ -93,7 +30,7 @@ export default function EmployeeAttendanceSection() {
       <Table className="">
         <TableHeader className="">
           <TableRow className="bg-white hover:bg-white border-b-black">
-            {formheaderdata.map((data) => (
+            {EmployeesAttendanceReport.map((data) => (
               <TableHead
                 key={data.id}
                 className={` text-lightblack font-semibold `}
@@ -104,21 +41,19 @@ export default function EmployeeAttendanceSection() {
           </TableRow>
         </TableHeader>
         <TableBody className="border-b bg-gray-200 border-b-black">
-          {studentsdata.length > 0 &&
-            studentsdata?.map((data) => (
+          {EmployeesAttendanceReportData.length > 0 &&
+            EmployeesAttendanceReportData?.map((data) => (
               <TableRow key={data.id} className="border-b border-b-gray-100">
-                <TableCell className="font-medium">{data.srno}</TableCell>
-                <TableCell className="">{data.studentid}</TableCell>
-                <TableCell className="">{data.studentname}</TableCell>
-                <TableCell className="">{data.father}</TableCell>
-                <TableCell className="">{data.class}</TableCell>
-                <TableCell className="">{data.status}</TableCell>
-                <TableCell className="">{data.status}</TableCell>
+                {data.insideData.map((insidedata) => (
+                  <TableCell key={insidedata.id} className="font-medium">
+                    {insidedata.data}
+                  </TableCell>
+                ))}
               </TableRow>
             ))}
         </TableBody>
       </Table>
-      {studentsdata.length === 0 && (
+      {EmployeesAttendanceReportData.length === 0 && (
         <div className=" border-b text-center py-2.5 text-lightblack bg-gray-200 border-b-black">
           No data avaliable in table
         </div>

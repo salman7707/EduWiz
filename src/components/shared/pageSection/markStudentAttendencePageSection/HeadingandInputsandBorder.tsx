@@ -1,15 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { headingandinputtypes } from "@/types/HeadingAndInputSection";
 import React, { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
-
-interface headingandinputtypes {
-  heading?: string;
-  select?: boolean;
-  markstudentpage?: boolean;
-  markemployeepage?: boolean;
-}
 
 export default function HeadingandInputsandBorder({
   heading,

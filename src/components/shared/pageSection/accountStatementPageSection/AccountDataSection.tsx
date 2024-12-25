@@ -11,44 +11,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { IoIosSearch } from "react-icons/io";
-import { FaMartiniGlassEmpty, FaRegCalendar } from "react-icons/fa6";
-import { TfiPrinter } from "react-icons/tfi";
-import { RiLoopRightLine } from "react-icons/ri";
-import { MdDelete } from "react-icons/md";
+import AccountIcons from "@/lib/AccountIcons";
+import formheaderdata from "@/lib/FormsHeadData";
+import AccountData from "@/lib/AccountData";
 export default function AccountDataSection() {
   const [date, setDate] = useState("2024-12-20");
-  const studentsdata = [
-    {
-      id: 0,
-      date: "",
-      description: "Total",
-      Debit: "$0 Expense",
-      Credit: "$0 Income",
-      NetBalance: "$0 Net Profit",
-    },
-  ];
-  const formheaderdata = [
-    {
-      id: 0,
-      heading: "Date",
-    },
-    {
-      id: 1,
-      heading: "Description",
-    },
-    {
-      id: 2,
-      heading: "Debit",
-    },
-    {
-      id: 3,
-      heading: "Credit",
-    },
-    {
-      id: 4,
-      heading: "Net Balance",
-    },
-  ];
 
   return (
     <div className="w-full">
@@ -83,21 +50,11 @@ export default function AccountDataSection() {
           </div>
         </div>
         <div className="flex lg:flex-row whitespace-nowrap xs:flex-wrap items-center md:justify-end justify-end xl:w-[50%] w-full">
-          <div className="bg-gray-200 px-6 py-3">
-            <FaRegCalendar />
-          </div>
-          <div className="bg-gray-200 px-6 py-3">
-            <TfiPrinter />
-          </div>
-          <div className="bg-gray-200 px-6 py-3">
-            <RiLoopRightLine />
-          </div>
-          <div className="bg-gray-200 px-6 py-3">
-            <MdDelete />
-          </div>
-          <div className="bg-gray-200 px-6 py-3">
-            <FaMartiniGlassEmpty />
-          </div>
+          {AccountIcons.map((data) => (
+            <div key={data.id} className="bg-gray-200 px-6 py-3">
+              <data.Icon />
+            </div>
+          ))}
         </div>
       </div>
       {/*  */}
@@ -115,8 +72,8 @@ export default function AccountDataSection() {
           </TableRow>
         </TableHeader>
         <TableBody className=" bg-gray-200 hover:bg-gray-200">
-          {studentsdata.length > 0 &&
-            studentsdata?.map((data) => (
+          {AccountData.length > 0 &&
+            AccountData?.map((data) => (
               <TableRow key={data.id} className="">
                 <TableCell className="font-medium">{data.date}</TableCell>
                 <TableCell className="font-semibold text-nowrap">

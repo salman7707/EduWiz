@@ -5,4 +5,5 @@ export interface ExsistedButtonDataTypes {
   Icon: IconType;
   heading: string;
   bgColor: string;
+  value?: string;
 }

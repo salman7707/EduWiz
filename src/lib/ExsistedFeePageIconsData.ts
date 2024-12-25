@@ -8,6 +8,7 @@ const ExsistedFeeButtonData: ExsistedButtonDataTypes[] = [
         Icon: TfiDownload,
         bgColor: "pink",
         heading: "Submit Fee Now",
+        value:"Submit"
     },
     {
         id: 1,

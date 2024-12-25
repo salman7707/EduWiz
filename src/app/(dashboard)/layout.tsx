@@ -25,7 +25,7 @@ export default function RootLayout({
         <div
           className={` ${
             navbarOpen ? "lg:w-[23%] md:w-[0%] xs:w-[0%]" : "w-0"
-          } ${navbarOpen ? "lg:bg-dimwhite bg-black/20" : ""} mt-24`}
+          } ${navbarOpen ? "lg:bg-dimwhite bg-black/20" : ""}`}
         >
           <SideBar />
         </div>
@@ -34,7 +34,7 @@ export default function RootLayout({
       <div
         className={`${
           navbarOpen ? "lg:w-[77%] md:w-full xs:w-full" : "w-full"
-        } pt-[75px] h-full`}
+        }  h-full pt-[75px]`}
       >
         {children}
       </div>

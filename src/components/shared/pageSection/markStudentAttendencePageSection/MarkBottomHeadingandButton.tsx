@@ -2,12 +2,8 @@ import Image from "next/image";
 import React from "react";
 import IMAGES from "../../../../../public/images";
 import { Button } from "@/components/ui/button";
+import { markbheadandbtntypes } from "@/types/MarkHeadingAndBtnTypes";
 
-interface markbheadandbtntypes {
-  heading?: string;
-  studentbtn?: boolean;
-  employeebtn?: boolean;
-}
 
 export default function MarkBottomHeadingandButton({
   heading,
