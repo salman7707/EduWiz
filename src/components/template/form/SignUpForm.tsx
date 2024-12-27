@@ -5,19 +5,21 @@ import React from "react";
 import { useFormik } from "formik";
 import { signUpSchema } from "@/lib/validations/signUpSchema";
 import { Input } from "@/components/ui/input";
+import useSignup from "@/customHooks/useSignup";
 
 export default function SignUpForm() {
   const initialValues = {
     email: "",
     password: "",
-    confirm_password: "",
   };
+  const { doSignUp, loading } = useSignup();
   const { handleChange, handleSubmit, touched, errors, values, handleBlur } =
     useFormik({
       initialValues: initialValues,
       validationSchema: signUpSchema,
-      onSubmit: (values, action) => {
-        console.log(values);
+      onSubmit: async (values, action) => {
+        console.log("Working", values);
+        await doSignUp(values);
         action.resetForm();
       },
     });
@@ -25,6 +27,11 @@ export default function SignUpForm() {
   return (
     <>
       {/* Form Section */}
+      {loading && (
+        <div className="absolute inset-0 w-full h-full bg-black/50 text-white text-5xl  font-bold text-center">
+          Loading...
+        </div>
+      )}
       <form
         className="mt-8 lg:w-[65%] w-full space-y-5 h-full"
         onSubmit={handleSubmit}
@@ -59,26 +66,6 @@ export default function SignUpForm() {
           {errors.password && touched.password ? (
             <p className="text-red-500 text-xs mt-1">{errors.password}</p>
           ) : null}
-        </div>
-
-        {/* Confirm Password Field */}
-        <div className="mb-4">
-          <Input
-            name="confirm_password"
-            type="password"
-            placeholder="Confirm Password *"
-            className="bg-white border-none h-11"
-            value={values.confirm_password}
-            onBlur={handleBlur}
-            onChange={handleChange}
-          />
-          {errors.confirm_password && touched.confirm_password ? (
-            <p className="text-red-500 text-xs mt-1">
-              {errors.confirm_password}
-            </p>
-          ) : (
-            ""
-          )}
         </div>
 
         {/* Terms and Conditions */}

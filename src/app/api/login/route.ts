@@ -17,7 +17,7 @@ export async function POST(req: Request) {
             return Response.json({ message: "error in set a cookie or data will not coming correctly" }, { status: 401 })
         }
     } catch (error) {
-        return Response.json({ message: "Error Parsing Request Data",error }, { status: 400 })
+        return Response.json({ message: "Error Parsing Request Data", error }, { status: 400 })
     }
 
 }

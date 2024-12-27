@@ -2,45 +2,25 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { login } from "@/lib/store/authSlice";
+import useLogin from "@/customHooks/useLogin";
 import { LoginSchema } from "@/lib/validations/loginSchema";
 import { useFormik } from "formik";
-import { useRouter } from "next/navigation";
 import React from "react";
-import { useDispatch } from "react-redux";
 
 export default function LoginForm() {
-  const Router = useRouter();
   const initialValues = {
-    username: "salman@gmail.com",
-    password: "123456",
+    email: "",
+    password: "",
   };
-  const dispatch = useDispatch();
+  const { dologin} = useLogin();
   const { handleChange, handleSubmit, touched, errors, values, handleBlur } =
     useFormik({
       initialValues: initialValues,
       validationSchema: LoginSchema,
       onSubmit: async (values, action) => {
-        const data = await fetch("/api/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            username: values.username,
-            password: values.password,
-          }),
-        });
-
-        const result = await data.json();
-        if (data.ok) {
-          console.log(result);
-          dispatch(login());
-          Router.push("/dashboard");
-          action.resetForm();
-        } else {
-          console.log("error in sending data", result.message);
-        }
+        console.log(values);
+        await dologin(values);
+        action.resetForm();
       },
     });
 
@@ -53,16 +33,16 @@ export default function LoginForm() {
         {/* Email Field */}
         <div className="mb-0">
           <Input
-            name="username"
+            name="email"
             type="email"
             placeholder="User Name *"
             className="bg-white h-12 "
-            value={values.username}
+            value={values.email}
             onBlur={handleBlur}
             onChange={handleChange}
           />
-          {errors.username && touched.username ? (
-            <p className="text-red-500 text-xs mt-1">{errors.username}</p>
+          {errors.email && touched.email ? (
+            <p className="text-red-500 text-xs mt-1">{errors.email}</p>
           ) : null}
         </div>
 

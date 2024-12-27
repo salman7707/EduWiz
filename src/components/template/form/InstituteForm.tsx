@@ -42,6 +42,7 @@ export default function InstituteForm() {
               label="Institute Logo*"
               name="logo"
               type="file"
+              size="small"
               values={values.logo}
               handleblur={handleBlur}
               handlechange={handleChange}

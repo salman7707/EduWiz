@@ -57,7 +57,7 @@ export default function ProfileSectionInput({
             </div>
             <div className="bg-gradient-to-l cursor-pointer to-cardfourth from-lightpurplegradient text-white md:px-3 px-2 py-3 rounded-3xl">
               <div
-                className={`flex items-center justify-center md:gap-x-2 ${sizeClasses} `}
+                className={`flex items-center justify-center md:gap-x-2 gap-x-1 ${sizeClasses} `}
               >
                 <AiTwotonePicture />
                 Change Logo

@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { authSlice } from "./authSlice";
 import { navSlice } from "./navSlice";
+import { sidebarSlice } from "./sidebarSlice";
 const store = configureStore({
     reducer: {
         auth: authSlice.reducer,
         nav: navSlice.reducer,
+        sidebar: sidebarSlice.reducer,
     },
 })
 export default store;

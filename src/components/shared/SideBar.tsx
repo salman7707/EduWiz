@@ -18,18 +18,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { closeNav, navInitialStateTypes } from "@/lib/store/navSlice";
 import SideBarItems from "@/lib/SideBarItems";
 import { logout } from "@/lib/store/authSlice";
+import { SideBarSliceTypes, ToggleState } from "@/lib/store/sidebarSlice";
 
 export function SideBar() {
   const pathname = usePathname();
   const router = useRouter();
+  const { open, id } = useSelector(
+    (state: { sidebar: SideBarSliceTypes }) => state.sidebar.openState
+  );
   const [insideitemClicked, setinsideitemClicked] = useState(false);
-  const [openState, setOpenState] = useState<{
-    open: boolean;
-    id: number | null;
-  }>({
-    open: false,
-    id: null,
-  });
   const [hoverDot, setHoverDot] = useState<{
     hover: boolean;
     id: number | null;
@@ -48,6 +45,9 @@ export function SideBar() {
   const dispatch = useDispatch();
   const Ref = useRef<HTMLDivElement | null>(null);
 
+  const handleDropDown = (id: number) => {
+    dispatch(ToggleState({ id }));
+  };
   useEffect(() => {
     const handlemousedown = (e: MouseEvent) => {
       const toggleBtn = document.querySelector(".hamburger");
@@ -59,6 +59,7 @@ export function SideBar() {
         dispatch(closeNav());
       }
     };
+
     if (typeof window !== "undefined") {
       const mediaquery = window.matchMedia("(max-width:786px)");
       if (mediaquery.matches) {
@@ -69,14 +70,6 @@ export function SideBar() {
       };
     }
   }, [dispatch]);
-
-  const handleDropDown = (id: number) => {
-    if (openState.open && openState.id === id) {
-      setOpenState({ open: false, id: null });
-    } else {
-      setOpenState({ open: true, id: id });
-    }
-  };
 
   const handleLogout = async () => {
     const response = await fetch("/api/logout", {
@@ -107,17 +100,23 @@ export function SideBar() {
             menu
           </SidebarGroupLabel>
           <SidebarGroupContent className="">
-            <SidebarMenu className={` w-full flex flex-col h-full`}>
+            <SidebarMenu
+              className={` w-full flex flex-col h-full focus:border-0 `}
+            >
               {/* MAin Looping Start From there */}
               {SideBarItems.map((item) => (
-                <SidebarMenuItem key={item.title} className={`w-full `}>
+                <SidebarMenuItem key={item.id} className={`w-full `}>
                   <SidebarMenuButton
                     asChild
                     className={` w-full rounded-none px-0 ${
-                      pathname === item.url || openState.id === item.id
+                      pathname === item.url ||
+                      (id === item.id &&
+                        item.insidedata?.find(
+                          (state) => state.url === pathname
+                        ))
                         ? "text-navbaractiveColor font-semibold"
                         : "text-gray-600 font-normal"
-                    } hover:text-navbaractiveColor bg-transparent hover:bg-transparent `}
+                    } hover:text-navbaractiveColor focus:ring-0 focus:ouline-0 focus-visible:ring-0 bg-transparent hover:bg-transparent `}
                   >
                     <div className="flex flex-col items-center justify-center h-auto">
                       {/* Main Simple div if there is no data for dropdown then only this will shown */}
@@ -135,7 +134,11 @@ export function SideBar() {
                           {/* Border */}
                           <div
                             className={`${
-                              pathname === item.url && item.plusicon === true
+                              pathname === item.url ||
+                              (id === item.id &&
+                                item.insidedata?.find(
+                                  (state) => state.url === pathname
+                                ))
                                 ? "border-l-4 h-10 border-navbaractiveColor"
                                 : "border-l-4 border-transparent"
                             }`}
@@ -156,8 +159,8 @@ export function SideBar() {
                             className="w-[10%]"
                             onClick={() => handleDropDown(item.id)}
                           >
-                            {openState.open && openState.id === item.id ? (
-                              <Minus className="w-[70%] text-neutralgray" />
+                            {open && id === item.id ? (
+                              <Minus className="focus-visible:ring-0 w-[70%] text-neutralgray focus: border-0" />
                             ) : (
                               <Plus className="w-[70%] text-neutralgray" />
                             )}
@@ -166,15 +169,19 @@ export function SideBar() {
                       </div>
 
                       {/* If there is data avaliable for for dropdown then this will also shown */}
-                      {openState.open && openState.id === item.id && (
+                      {open && id === item.id && (
                         <div className="border-l relative border-navbaractiveColor w-[75%] h-auto text-gray-700">
                           {item.insidedata?.map((insideitem, index) => (
-                            <div
+                            <Link
+                              href={insideitem.url || "/dashboard"}
+                              onClick={() =>
+                                setinsideitemClicked(!insideitemClicked)
+                              }
                               data-url={insideitem.url}
                               key={insideitem.id}
                               onMouseEnter={() => hanldehover(insideitem.id)}
                               onMouseLeave={handleMouseLeave}
-                              className={`flex flex-col w-full items-center justify-center py-2 pl-4`}
+                              className={`flex flex-col group w-full items-center justify-center py-2 pl-4 cursor-pointer focus-visible:ring-0`}
                             >
                               {(hoverDot.hover && hoverDot.id === index) ||
                               pathname === insideitem.url ? (
@@ -195,11 +202,7 @@ export function SideBar() {
                                   {insideitem.title}
                                 </div>
                               ) : (
-                                <Link
-                                  href={insideitem.url || "/dashboard"}
-                                  onClick={() =>
-                                    setinsideitemClicked(!insideitemClicked)
-                                  }
+                                <div
                                   className={`text-[15px] ${
                                     pathname === insideitem.url
                                       ? "font-semibold text-navbaractiveColor"
@@ -207,9 +210,9 @@ export function SideBar() {
                                   } hover:text-navbaractiveColor flex cursor-pointer items-center w-full`}
                                 >
                                   {insideitem.title}
-                                </Link>
+                                </div>
                               )}
-                            </div>
+                            </Link>
                           ))}
                         </div>
                       )}
