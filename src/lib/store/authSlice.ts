@@ -2,6 +2,7 @@ import { loginusertype } from "@/types/LoginUserType";
 import { signupusertype } from "@/types/SignupUserTypes";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios"
+import axiosWithToken from "../axiosWithToken";
 
 export const LoginUser = createAsyncThunk("Auth/LoginUser", async (userData: loginusertype, { rejectWithValue }) => {
     try {
@@ -54,6 +55,40 @@ export const SignUpUser = createAsyncThunk("Auth/Signup", async (userData: signu
     }
 })
 
+export const FetchCurrentUser = createAsyncThunk("Auth/FetchCurrentUser", async (_, { rejectWithValue }) => {
+    try {
+        if (typeof window !== undefined) {
+            const getdata = window.localStorage.getItem("User")
+            console.log(" Getting USer Data From LocalStorege Initial ", getdata)
+
+            if (getdata) {
+                const fetchedUser = JSON.parse(getdata)
+                console.log("🚀 ~ fetched User Data before:", fetchedUser)
+                const res = await axiosWithToken.get(`auth/fetch-current-user`)
+                const data = res.data;
+                console.log("🚀 ~ Fetched User Data after:", data)
+                if (!data.success) {
+                    console.log("Data Didn't Get.")
+                    return rejectWithValue(data)
+                }
+                console.log("Start Setting Data inside the localstorege")
+                const updatefetcheduser = {
+                    token: fetchedUser.token,
+                    ...data.data.user,
+                }
+                if (typeof window !== undefined) {
+                    window.localStorage.setItem("User", JSON.stringify(updatefetcheduser))
+                }
+                console.log("Data Set in localstorege Successfully");
+                return updatefetcheduser;
+            }
+        }
+    } catch (error) {
+        console.log(error)
+        return rejectWithValue(error)
+    }
+})
+
 export interface initialValuesTypes {
     UserLoggedIn: boolean;
     signupuser: null;
@@ -73,6 +108,9 @@ export const authSlice = createSlice({
     initialState: initialValues,
     reducers: {
         logout: (state) => {
+            if (typeof window !== undefined) {
+                window.localStorage.removeItem("User");
+            }
             state.UserLoggedIn = false;
         },
     },
@@ -98,6 +136,23 @@ export const authSlice = createSlice({
             })
             .addCase(SignUpUser.rejected, (state) => {
                 state.error = "Error In Signup User";
+                return state;
+            })
+            .addCase(FetchCurrentUser.pending, (state) => {
+                return state;
+            })
+            .addCase(FetchCurrentUser.fulfilled, (state, action) => {
+                state.user = action.payload;
+
+                console.log("🚀 ~ fetched data Set in user Successfully")
+                return state;
+            })
+            .addCase(FetchCurrentUser.rejected, (state) => {
+                if (typeof window !== undefined) {
+                    window.localStorage.removeItem("User");
+                }
+                state.error = "Error while Fetching User."
+                console.log("Error in Fetching Data.")
                 return state;
             })
     },

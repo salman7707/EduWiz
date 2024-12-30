@@ -48,6 +48,7 @@ export default function NAvBarWithLogin() {
       console.log("User Logout");
       dispatch(logout());
       router.push("/login");
+      setDropdown(false);
     }
   };
   return (
@@ -152,34 +153,46 @@ export default function NAvBarWithLogin() {
           {dropdown && (
             <div
               ref={Ref}
-              className=" absolute lg:top-[90px] md:top-[150px] sm:top-52 xsss:top-52  top-64  md:right-14 bg-white pl-3 rounded pr-16 py-3"
+              className=" absolute lg:top-[90px] md:top-[150px] sm:top-52 xsss:top-52  top-64  md:right-14 bg-white rounded shadow-2xl "
             >
-              <div className="space-y-4 py-0">
-                <div className="flex items-center justify-start gap-x-3 w-full pl-1">
+              <div className=" py-0">
+                <div
+                  onClick={() => {
+                    router.push("/account_setting");
+                    setDropdown(false);
+                  }}
+                  className="z-10 py-2.5 relative cursor-pointer bg-white hover:bg-gray-600/5 flex items-center justify-start gap-x-3 w-full pl-3 pr-16"
+                >
                   <div>
                     <CiSettings className="text-2xl" />
                   </div>
-                  <div className="text-black text-base flex">
+                  <div className="text-black text-sm flex">
                     Account Settings
                   </div>
                 </div>
-                <div className="flex items-center justify-start gap-x-3 w-full pl-2">
+                <div
+                  onClick={() => {
+                    router.push("/institute_profile");
+                    setDropdown(false);
+                  }}
+                  className="z-10 py-2.5 cursor-pointer relative bg-white hover:bg-gray-600/5 flex items-center justify-start gap-x-3 w-full pl-4 pr-16"
+                >
                   <div>
                     <FaBuildingColumns className="text-xl" />
                   </div>
-                  <div className="text-black text-base flex">Profile</div>
+                  <div className="text-black text-sm flex">Profile</div>
                 </div>
                 <div
                   onClick={() => handleLogout()}
-                  className="cursor-pointer flex items-center justify-start gap-x-3 w-full pl-2"
+                  className="z-10 py-2.5 cursor-pointer relative bg-white hover:bg-gray-600/5 flex items-center justify-start gap-x-3 w-full pl-4 pr-16"
                 >
                   <div>
                     <CiLock className="text-xl" />
                   </div>
-                  <div className="text-black text-base flex">Logout</div>
+                  <div className="text-black text-sm flex">Logout</div>
                 </div>
               </div>
-              <div className="w-6 h-6 bg-white absolute -top-2 right-8 rounded-sm rotate-45"></div>
+              <div className="w-6 h-6 bg-white absolute z-0 -top-2 right-8 rounded-sm rotate-45"></div>
             </div>
           )}
         </div>
