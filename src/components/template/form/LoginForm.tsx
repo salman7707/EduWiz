@@ -12,15 +12,14 @@ export default function LoginForm() {
     email: "",
     password: "",
   };
-  const { dologin} = useLogin();
+  const { dologin } = useLogin();
   const { handleChange, handleSubmit, touched, errors, values, handleBlur } =
     useFormik({
       initialValues: initialValues,
       validationSchema: LoginSchema,
-      onSubmit: async (values, action) => {
+      onSubmit: async (values) => {
         console.log(values);
         await dologin(values);
-        action.resetForm();
       },
     });
 
@@ -45,7 +44,6 @@ export default function LoginForm() {
             <p className="text-red-500 text-xs mt-1">{errors.email}</p>
           ) : null}
         </div>
-
         {/* Password Field */}
         <div className="mb-0">
           <Input
@@ -61,7 +59,6 @@ export default function LoginForm() {
             <p className="text-red-500 text-xs mt-1">{errors.password}</p>
           ) : null}
         </div>
-
         {/* Terms and Conditions */}
         <div className="flex items-center justify-start gap-x-1 mb-6">
           <input type="checkbox" id="terms" />
@@ -69,7 +66,6 @@ export default function LoginForm() {
             Remember Me
           </Label>
         </div>
-
         <div className="w-full flex items-center justify-center">
           <Button
             type="submit"

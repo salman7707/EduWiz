@@ -12,26 +12,20 @@ export default function SignUpForm() {
     email: "",
     password: "",
   };
-  const { doSignUp, loading } = useSignup();
+  const { doSignUp } = useSignup();
   const { handleChange, handleSubmit, touched, errors, values, handleBlur } =
     useFormik({
       initialValues: initialValues,
       validationSchema: signUpSchema,
-      onSubmit: async (values, action) => {
+      onSubmit: async (values) => {
         console.log("Working", values);
         await doSignUp(values);
-        action.resetForm();
       },
     });
 
   return (
     <>
       {/* Form Section */}
-      {loading && (
-        <div className="absolute inset-0 w-full h-full bg-black/50 text-white text-5xl  font-bold text-center">
-          Loading...
-        </div>
-      )}
       <form
         className="mt-8 lg:w-[65%] w-full space-y-5 h-full"
         onSubmit={handleSubmit}

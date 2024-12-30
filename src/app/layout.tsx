@@ -1,6 +1,8 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/lib/store/provider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,6 +28,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <div className="w-full bg-dimwhite">{children}</div>
+          <ToastContainer />
         </Providers>
       </body>
     </html>
