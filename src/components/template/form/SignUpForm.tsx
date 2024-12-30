@@ -27,7 +27,7 @@ export default function SignUpForm() {
     <>
       {/* Form Section */}
       <form
-        className="mt-8 lg:w-[65%] w-full space-y-5 h-full"
+        className="w-full"
         onSubmit={handleSubmit}
       >
         {/* Email Field */}
@@ -79,8 +79,8 @@ export default function SignUpForm() {
         </Button>
       </form>
       {/* to login page */}
-      <div className="h-full">
-        <h3 className="text-neutralgray text-sm">have an account ? Login</h3>
+      <div className="">
+        <h3 className="text-neutralgray text-sm text-center">Have an account ? Login</h3>
       </div>
     </>
   );

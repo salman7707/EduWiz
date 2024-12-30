@@ -6,6 +6,7 @@ import axiosWithToken from "../axiosWithToken";
 
 export const LoginUser = createAsyncThunk("Auth/LoginUser", async (userData: loginusertype, { rejectWithValue }) => {
     try {
+        console.log(`${process.env.NEXT_PUBLIC_APIURL}auth/signin`)
         const res = await axios.post(`${process.env.NEXT_PUBLIC_APIURL}auth/signin`, userData)
         console.log(" Response Data ", res)
         const data = res.data;
@@ -35,6 +36,7 @@ export const LoginUser = createAsyncThunk("Auth/LoginUser", async (userData: log
 
 export const SignUpUser = createAsyncThunk("Auth/Signup", async (userData: signupusertype, { rejectWithValue }) => {
     try {
+        console.log(`${process.env.NEXT_PUBLIC_APIURL}auth/signup`)
         const res = await axios.post(`${process.env.NEXT_PUBLIC_APIURL}auth/signup`, userData)
         const data = res.data;
         console.log("✔ SignupData ~ ", data);

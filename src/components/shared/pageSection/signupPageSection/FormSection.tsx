@@ -24,7 +24,7 @@ export default function FormSection({
       }  flex flex-col justify-center items-center px-4 gap-y-10 xl:py-10 py-14 h-full`}
     >
       {/* LOGO Section */}
-      <div className="mb-4 flex flex-col gap-y-4 items-center w-auto">
+      <div className=" flex flex-col gap-y-4 items-center 2xl:justify-start xl:justify-start w-auto 2xl:h-[35%] xl:h-[20%]">
         <Link href="/">
           <Image
             src={imgC === true ? IMAGES.CLOGO : IMAGES.LOGO}
@@ -94,7 +94,15 @@ export default function FormSection({
       )}
 
       {/* Form Section */}
-      {!loginForm ? <SignUpForm /> : <LoginForm />}
+      {!loginForm ? (
+        <div className="mt-8 lg:w-[70%] w-full space-y-5 2xl:h-[65%] xl:h-[80%] flex flex-col items-center 2xl:justify-start xl:justify-start gap-y-5">
+          <SignUpForm />
+        </div>
+      ) : (
+        <div className="lg:w-[40%] w-full 2xl:h-[70%] h-[80%] ">
+          <LoginForm />
+        </div>
+      )}
     </div>
   );
 }

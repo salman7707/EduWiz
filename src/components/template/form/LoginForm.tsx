@@ -26,7 +26,7 @@ export default function LoginForm() {
   return (
     <>
       <form
-        className="lg:w-[40%] w-full space-y-4 h-full"
+        className="w-full space-y-4 h-auto"
         onSubmit={handleSubmit}
       >
         {/* Email Field */}
@@ -35,7 +35,7 @@ export default function LoginForm() {
             name="email"
             type="email"
             placeholder="User Name *"
-            className="bg-white h-12 "
+            className="bg-white h-12"
             value={values.email}
             onBlur={handleBlur}
             onChange={handleChange}
@@ -78,7 +78,7 @@ export default function LoginForm() {
         </div>
         {/* Submit Button */}
       </form>
-      <div className="h-full">
+      <div className="h-auto">
         <h3 className="text-neutralgray text-sm">Forgot Password ?</h3>
       </div>
     </>
