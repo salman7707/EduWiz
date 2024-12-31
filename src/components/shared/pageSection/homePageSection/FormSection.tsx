@@ -21,7 +21,7 @@ const ContactUs = () => {
       <div className="max-w-[1176px] mx-auto px-4">
         {/* Title Section */}
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-white">Drop us a Line.</h2>
+          <h2 className="text-3xl font-semibold text-white">Drop us a Line.</h2>
           <h4 className="text-lg text-gray-300 mt-2">
             Ask us a question, or just say Hello.
           </h4>
@@ -33,7 +33,7 @@ const ContactUs = () => {
             <form id="contactform" className="lg:p-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div>
-                  <Label className="text-white">First name *</Label>
+                  <Label className="text-white text-sm">First name *</Label>
                   <Input
                     type="text"
                     id="firstName"
@@ -42,7 +42,7 @@ const ContactUs = () => {
                   />
                 </div>
                 <div>
-                  <Label className="text-white">Last name *</Label>
+                  <Label className="text-white text-sm">Last name *</Label>
                   <Input
                     type="text"
                     id="firstName"
@@ -51,7 +51,7 @@ const ContactUs = () => {
                   />
                 </div>
                 <div>
-                  <Label className="text-white">Email *</Label>
+                  <Label className="text-white text-sm">Email *</Label>
                   <Input
                     type="text"
                     id="firstName"
@@ -60,7 +60,7 @@ const ContactUs = () => {
                   />
                 </div>
                 <div>
-                  <Label className="text-white">Phone</Label>
+                  <Label className="text-white text-sm">Phone</Label>
 
                   <Input
                     type="text"
@@ -71,7 +71,7 @@ const ContactUs = () => {
                 </div>
               </div>
               <div className="mt-4">
-                <Label className="text-white">Message *</Label>
+                <Label className="text-white text-sm">Message *</Label>
                 <Textarea
                   id="message"
                   rows={4}

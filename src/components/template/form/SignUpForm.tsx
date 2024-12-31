@@ -12,7 +12,7 @@ export default function SignUpForm() {
     email: "",
     password: "",
   };
-  const { doSignUp } = useSignup();
+  const { doSignUp, loading } = useSignup();
   const { handleChange, handleSubmit, touched, errors, values, handleBlur } =
     useFormik({
       initialValues: initialValues,
@@ -26,10 +26,7 @@ export default function SignUpForm() {
   return (
     <>
       {/* Form Section */}
-      <form
-        className="w-full"
-        onSubmit={handleSubmit}
-      >
+      <form className="w-full" onSubmit={handleSubmit}>
         {/* Email Field */}
         <div className="mb-4">
           <Input
@@ -75,12 +72,18 @@ export default function SignUpForm() {
 
         {/* Submit Button */}
         <Button type="submit" className="w-full rounded-3xl" variant={"blue"}>
-          Sign Up
+          {loading ? (
+            <div className="border-b-2 border-l-2 border-white rounded-full w-6 h-6 animate-spin"></div>
+          ) : (
+            "Sign Up"
+          )}
         </Button>
       </form>
       {/* to login page */}
       <div className="">
-        <h3 className="text-neutralgray text-sm text-center">Have an account ? Login</h3>
+        <h3 className="text-neutralgray text-sm text-center">
+          Have an account ? Login
+        </h3>
       </div>
     </>
   );

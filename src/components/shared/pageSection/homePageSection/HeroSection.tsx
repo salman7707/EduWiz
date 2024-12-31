@@ -14,18 +14,18 @@ const HeroSection = () => {
 
           {/* Hero Section */}
           <div className="text-center pt-28 z-0 pb-16 lg:w-[60%] mx-auto">
-            <h1 className="md:text-6xl text-4xl font-bold text-white px-4">
+            <h1 className="md:text-[53px] leading-tight text-xl font-semibold text-white px-4">
               Free Online School Management Software
             </h1>
-            <p className="text-[#9295D3] mt-4 w-[80%] mx-auto">
+            <p className="text-[#9295D3] mt-4 w-[80%] text-sm mx-auto">
               Now you can manage your school, college, or any educational center
               with eSkooly. Its 100% free for a lifetime with no limitations.
             </p>
             <div className="mt-8 flex md:flex-row flex-col justify-center items-center gap-3 ">
-              <Button variant={"blue"} size={"lg"}>
+              <Button variant={"blue"} size={"lg"} className="font-extralight">
                 <Link href="/signup">Sign Up Now, Its Free</Link>
               </Button>
-              <Button variant={"white"} size={"lg"}>
+              <Button variant={"white"} size={"lg"} className="font-extralight">
                 <Link href="#product" className="">
                   Learn More
                 </Link>

@@ -62,12 +62,20 @@ export default function NavBarWithoutLogin() {
         {/* Buttons */}
         <div className="flex lg:flex-row items-center justify-center flex-col lg:gap-x-4 lg:gap-y-0 gap-y-4">
           <Link href="/signup">
-            <Button variant={"blue"} size={"lg"} className="rounded-3xl">
+            <Button
+              variant={"blue"}
+              size={"lg"}
+              className="rounded-3xl font-extralight"
+            >
               Sign Up
             </Button>
           </Link>
           <Link href="/login">
-            <Button variant={"white"} size={"lg"} className="rounded-3xl">
+            <Button
+              variant={"white"}
+              size={"lg"}
+              className="rounded-3xl font-extralight"
+            >
               Login
             </Button>
           </Link>

@@ -3,7 +3,7 @@ import { fieldsData } from "@/types/FieldsDataTypes";
 const accountInputs: fieldsData[] = [
     {
         id: 0,
-        name: "username",
+        name: "email",
         label: "Username*",
         value: "salman@gmail.com",
         type: "text",

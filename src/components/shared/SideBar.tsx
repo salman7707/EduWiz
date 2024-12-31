@@ -92,11 +92,11 @@ export function SideBar() {
       ref={Ref}
       className={`${
         navbarOpen === true ? "lg:w-[23%] sm:w-[35%] xs:w-[75%]" : "w-0"
-      } shadow-even bg-transparent z-20 h-auto`}
+      } shadow-even z-20 h-auto bg-white `}
     >
-      <SidebarContent className="mt-[75px] scrollbar">
+      <SidebarContent className="mt-[75px] border-t bg-white scrollbar">
         <SidebarGroup className="w-full px-0 mx-0">
-          <SidebarGroupLabel className="text-black text-sm font-semibold py-2 px-4 w-full">
+          <SidebarGroupLabel className="text-black text-xs font-semibold py-2 px-4 w-full">
             menu
           </SidebarGroupLabel>
           <SidebarGroupContent className="">
@@ -115,7 +115,7 @@ export function SideBar() {
                           (state) => state.url === pathname
                         ))
                         ? "text-navbaractiveColor font-semibold"
-                        : "text-gray-600 font-normal"
+                        : "text-lightblack font-normal"
                     } hover:text-navbaractiveColor focus:ring-0 focus:ouline-0 focus-visible:ring-0 bg-transparent hover:bg-transparent `}
                   >
                     <div className="flex flex-col items-center justify-center h-auto">
@@ -139,7 +139,7 @@ export function SideBar() {
                                 item.insidedata?.find(
                                   (state) => state.url === pathname
                                 ))
-                                ? "border-l-4 h-10 border-navbaractiveColor"
+                                ? "border-l-4 h-7 border-navbaractiveColor"
                                 : "border-l-4 border-transparent"
                             }`}
                           ></div>
@@ -148,7 +148,7 @@ export function SideBar() {
                             <div className="w-[10%]">
                               <item.icon className="md:w-[70%] w-[90%]" />
                             </div>
-                            <span className={`text-[15px] w-[80%]`}>
+                            <span className={`text-sm w-[80%]`}>
                               {item.title}
                             </span>
                           </div>

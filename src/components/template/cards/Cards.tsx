@@ -22,8 +22,8 @@ export default function Cards({
     <div
       className={`w-full cursor-pointer h-auto ${colorClasses} rounded-2xl hover:shadow-xl shadow-md`}
     >
-      <div className="py-4 px-6 space-y-4">
-        <h2 className="text-white text-lg font-semibold ">{heading}</h2>
+      <div className="py-6 px-6 space-y-3">
+        <h2 className="text-white text-sm font-semibold ">{heading}</h2>
         <div className="flex items-center justify-between">
           <Image
             src={icon || IMAGES.PERSON}

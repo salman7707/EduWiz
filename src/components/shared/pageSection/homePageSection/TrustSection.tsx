@@ -10,10 +10,11 @@ const TrustSection = () => {
       <div className="max-w-[1176px] mx-auto px-4 py-14">
         {/* Title */}
         <div className="text-center mb-8 relative w-[50%] mx-auto py-4">
-          <h2 className="text-base font-normal text-white">We Build Trust.</h2>
-          <p className="text-base font-semibold text-white">
-            <b>45K+ Schools</b> use our product.
-          </p>
+          <h2 className="text-base font-extralight text-white">We Build Trust.</h2>
+          <div className="text-base font-semibold text-white">
+            45K+ Schools{" "}
+            <span className="font-extralight">use our product.</span>
+          </div>
           <div className=" flex items-center justify-center absolute inset-0">
             <Image
               src={IMAGES.DOMAIN}

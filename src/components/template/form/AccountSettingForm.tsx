@@ -6,17 +6,26 @@ import React from "react";
 import InputSection from "./input/InputSection";
 import { Button } from "@/components/ui/button";
 import { MdLoop } from "react-icons/md";
-const initialValues = {
-  username: "salman@gmail.com",
-  password: "123456",
-  timezone: "Asia/Karachi",
-  currency: "Dollars (USD)",
-  symbol: "$",
-};
-
-type accoutnformname = keyof typeof initialValues;
+import { useSelector } from "react-redux";
+import { RootState } from "@/lib/store/store";
 
 export default function AccountSettingForm() {
+  const { user } = useSelector((state: RootState) => state.auth);
+  const defaultValues = {
+    username: "",
+    password: "******",
+    timezone: "Asia/Karachi",
+    currency: "Dollars (USD)",
+    symbol: "$",
+  };
+
+  const initialValues = {
+    ...defaultValues,
+    ...(user || {}),
+  };
+
+  type accoutnformname = keyof typeof initialValues;
+
   const { values, handleChange, handleBlur, errors, handleSubmit, touched } =
     useFormik({
       initialValues,
@@ -33,7 +42,7 @@ export default function AccountSettingForm() {
             <InputSection
               name={data.name}
               label={data.label}
-              values={values[data.name as accoutnformname]}
+              values={values[data.name as accoutnformname] ?? ""}
               type={data.type}
               handleblur={handleBlur}
               handlechange={handleChange}
@@ -54,7 +63,7 @@ export default function AccountSettingForm() {
         <Button
           type="submit"
           variant={"lighteshblue"}
-          className="rounded-3xl h-11 px-3 text-lg"
+          className="rounded-3xl h-11 px-3 text-base"
         >
           <MdLoop /> Update Settings
         </Button>

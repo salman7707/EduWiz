@@ -6,13 +6,13 @@ export default function WellcomeAdminCard() {
   return (
     <div className="w-auto bg-lightpink rounded-2xl flex relative">
       <div className="xl:px-12 px-6 py-4 space-y-1">
-        <h2 className="text-pink text-lg font-semibold ">
+        <h2 className="text-pink text-base font-semibold ">
           Welcome to Admin Dashboard
         </h2>
-        <h2 className="text-gray-500 xl:text-base text-sm font-medium ">
+        <h2 className="text-gray-500 text-sm font-normal ">
           Your Account is not Verified yet!
         </h2>
-        <h2 className="text-gray-500 xl:text-base text-sm font-medium ">
+        <h2 className="text-gray-500 text-sm font-normal ">
           Please Verify your email address.
           <span className="text-blue">Verify now!</span>
         </h2>

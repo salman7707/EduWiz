@@ -10,7 +10,7 @@ const MoreFeatureCard = ({ icon, title, description }: MoreFeatureCardType) => {
           filter:"invert(1)"
         }}/>
       </div>
-      <h3 className="text-xl text-white font-bold">{title}</h3>
+      <h3 className="text-2xl text-white font-semibold">{title}</h3>
       <p className="text-sm text-gray-200 mt-2">{description}</p>
     </div>
   );

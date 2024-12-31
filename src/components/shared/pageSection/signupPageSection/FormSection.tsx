@@ -35,13 +35,13 @@ export default function FormSection({
         </Link>
         {/* Heading */}
         <h1
-          className={` font-bold ${
-            imgC ? "text-neutralgray text-sm" : "text-white text-lg"
+          className={` font-medium ${
+            imgC ? "text-neutralgray text-xs" : "text-white text-lg"
           } `}
         >
           {imgC ? (
             <div className="flex items-center justify-center gap-x-1">
-              <div className=" text-neutralgray text-xs text-center border-2 border-neutralgray rounded-full h-[18px] w-[18px]">
+              <div className=" text-neutralgray text-xs text-center border border-neutralgray rounded-full h-[18px] w-[18px]">
                 ?
               </div>{" "}
               I do not have an account yet
@@ -56,7 +56,7 @@ export default function FormSection({
 
       {roleSection && (
         <div>
-          <h2 className="text-neutralgray font-bold text-base text-center">
+          <h2 className="text-neutralgray font-bold text-sm text-center mb-3">
             I am
           </h2>
           <div className="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-3 gap-2">
@@ -70,7 +70,7 @@ export default function FormSection({
                     : "bg-white text-neutralgray border border-neutralgray"
                 } ${
                   data.id === 2 ? "lg:justify-self-center" : ""
-                } h-20 w-20 flex flex-col items-center justify-center rounded-full space-y-1`}
+                } h-[90px] w-[90px] flex flex-col items-center justify-center rounded-full space-y-1`}
               >
                 {data.id === 0 ? (
                   <BsPerson className="text-4xl" />

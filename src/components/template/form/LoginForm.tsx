@@ -12,7 +12,7 @@ export default function LoginForm() {
     email: "",
     password: "",
   };
-  const { dologin } = useLogin();
+  const { dologin, loading } = useLogin();
   const { handleChange, handleSubmit, touched, errors, values, handleBlur } =
     useFormik({
       initialValues: initialValues,
@@ -25,10 +25,7 @@ export default function LoginForm() {
 
   return (
     <>
-      <form
-        className="w-full space-y-4 h-auto"
-        onSubmit={handleSubmit}
-      >
+      <form className="w-full space-y-4 h-auto" onSubmit={handleSubmit}>
         {/* Email Field */}
         <div className="mb-0">
           <Input
@@ -62,10 +59,11 @@ export default function LoginForm() {
         {/* Terms and Conditions */}
         <div className="flex items-center justify-start gap-x-1 mb-6">
           <input type="checkbox" id="terms" />
-          <Label htmlFor="terms" className="text-sm text-neutralgray">
+          <Label htmlFor="terms" className="text-sm font-light text-neutralgray">
             Remember Me
           </Label>
         </div>
+        {/* Submit Button */}
         <div className="w-full flex items-center justify-center">
           <Button
             type="submit"
@@ -73,12 +71,15 @@ export default function LoginForm() {
             size={"lg"}
             variant={"lightblue"}
           >
-            Login
+            {loading ? (
+              <div className="border-b-2 border-l-2 border-white rounded-full w-6 h-6 animate-spin"></div>
+            ) : (
+              "Login"
+            )}
           </Button>
         </div>
-        {/* Submit Button */}
       </form>
-      <div className="h-auto">
+      <div className="h-auto text-center mt-10">
         <h3 className="text-neutralgray text-sm">Forgot Password ?</h3>
       </div>
     </>

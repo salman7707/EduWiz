@@ -91,10 +91,25 @@ export const FetchCurrentUser = createAsyncThunk("Auth/FetchCurrentUser", async 
     }
 })
 
+interface user {
+    id?: string;
+    email?: string;
+    role?: string;
+    profileImageUrl?: null,
+    name?: string;
+    providerId?: null;
+    provider?: string,
+    accesstoken?: null,
+    otp?: string,
+    createdAt?: string,
+    updatedAt?: string,
+    token?: string;
+}
+
 export interface initialValuesTypes {
     UserLoggedIn: boolean;
     signupuser: null;
-    user: null;
+    user: null | user;
     error: string;
 }
 

@@ -25,7 +25,7 @@ export default function ManagingSection({
     <div
       className={`lg:flex flex-col hidden w-full ${
         signIn ? "bg-electricblue" : "bg-white"
-      } bg-cover bg-center items-center justify-start h-full`}
+      } bg-cover bg-center items-center justify-between h-auto`}
     >
       {/* Login Btn */}
       {LoginBtn && (
@@ -35,7 +35,7 @@ export default function ManagingSection({
             <Button
               size={"default"}
               variant={"blue"}
-              className="rounded-full h-[30px] px-6"
+              className="rounded-full h-[30px] px-6 font-extralight"
             >
               Login
             </Button>
@@ -43,10 +43,10 @@ export default function ManagingSection({
         </div>
       )}
 
-      <div className="flex flex-col items-center justify-center pt-20">
-        <div className="w-full">
+      <div className="flex flex-col items-center justify-between pt-20 h-full">
+        <div className="w-full h-auto">
           <h2
-            className={`text-4xl font-bold ${
+            className={`text-3xl font-medium ${
               page === "login" ? "text-white " : "text-black"
             }  w-2/3 mx-auto text-center`}
           >
@@ -71,7 +71,7 @@ export default function ManagingSection({
             </div>
           )}
         </div>
-        <div className="w-full h-full">
+        <div className="w-full h-auto">
           <Image
             src={bgimg || IMAGES.SIGNUPBG}
             alt="signup"

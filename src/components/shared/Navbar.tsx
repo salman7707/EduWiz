@@ -28,10 +28,10 @@ export default function Navbar() {
   return (
     <div
       className={`w-full fixed  z-20 top-0 ${
-        state === true ? " shadow-2xl" : "shadow-md"
-      } shadow-sm left-0 right-0 lg:h-[75px] h-auto ${
+        state === true ? "" : ""
+      } left-0 right-0 lg:h-[75px] h-auto ${
         shownavbar
-          ? "bg-white shadow-2xl"
+          ? "bg-white"
           : "bg-gradient-to-r from-[#09327f] to-[#06183b]"
       } `}
     >

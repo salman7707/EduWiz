@@ -8,7 +8,7 @@ const CTASection = () => {
       <div className="max-w-[1176px] mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between lg:gap-y-0 gap-y-6">
           <div className="lg:w-[50%] w-[95%] space-y-6">
-            <h2 className="text-2xl font-bold text-gray-100">
+            <h2 className="text-3xl font-semibold text-gray-100">
               Single Stop Solution For School Management
             </h2>
             <p className="text-gray-300 text-sm leading-relaxed">

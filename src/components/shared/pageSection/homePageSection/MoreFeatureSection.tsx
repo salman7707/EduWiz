@@ -42,7 +42,7 @@ const MoreFeatureSection = () => {
                 className="opacity-15 "
               />
             </div>
-            <h2 className="text-base text-white font-bold">THATS NOT ALL</h2>
+            <h2 className="text-base text-white font-normal">THATS NOT ALL</h2>
             <h3 className="text-2xl text-white font-semibold mt-2">
               All Features in one place
             </h3>

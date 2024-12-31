@@ -10,7 +10,7 @@ const Features = () => {
   return (
     <div id="product" className="relative py-10 px-4 bg-lightblue">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+        <h2 className="text-3xl md:text-4xl font-semibold text-white mb-8">
           Features Of School Management Software
         </h2>
         <p className="text-gray-200 text-sm md:text-base max-w-3xl mx-auto">

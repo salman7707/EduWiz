@@ -53,7 +53,7 @@ export default function NAvBarWithLogin() {
   };
   return (
     <nav
-      className={` flex lg:flex-row flex-col justify-between items-center overflow-hidden py-0 w-[95%] lg:mx-[44px]
+      className={`bg-white flex lg:flex-row flex-col justify-between items-center overflow-hidden py-0 w-[95%] lg:mx-[44px]
        mx-auto lg:px-0 px-5 ${
          navOpen ? "h-auto" : "h-[75px]"
        } transition-all duration-1000 ease-in-out `}
@@ -108,7 +108,7 @@ export default function NAvBarWithLogin() {
           </div>
         </div>
         {/*  */}
-        <div className="xl:w-[90%] lg:w-[80%] flex lg:flex-row flex-wrap items-center xl:justify-end lg:justify-start justify-center gap-4">
+        <div className="xl:w-[90%] lg:w-[90%] flex lg:flex-row flex-wrap items-center xl:justify-end lg:justify-end justify-center gap-4">
           <div className="flex items-center gap-x-3">
             <Image
               src={IMAGES.APPLE}
@@ -153,7 +153,7 @@ export default function NAvBarWithLogin() {
           {dropdown && (
             <div
               ref={Ref}
-              className=" absolute lg:top-[90px] md:top-[150px] sm:top-52 xsss:top-52  top-64  md:right-14 bg-white rounded shadow-2xl "
+              className=" absolute lg:top-[90px] md:top-[150px] sm:top-52 xsss:top-52  top-64  xl:right-7 md:right-14 bg-white rounded shadow-even "
             >
               <div className=" py-0">
                 <div

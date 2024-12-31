@@ -8,7 +8,7 @@ export interface inputFieldTypes {
   theme?: string;
   select?: boolean;
   option?: option[];
-  values?: string | number;
+  values?: string | number ;
   name?: string;
   setFieldValue?: (field: string, value: File | boolean | undefined) => void;
   handlechange?: (

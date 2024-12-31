@@ -29,7 +29,9 @@ export default function HeadingSection({
         <div className="flex items-center justify-center gap-x-2">
           <AiOutlineHome className="text-xl" />
           <div className="text-black text-lg">-</div>
-          <div className="text-black md:text-base xs:text-sm leading-tight">{heading}</div>
+          <div className="text-black md:text-base xs:text-sm leading-tight">
+            {heading}
+          </div>
         </div>
       </div>
       {buttonsection && (
@@ -65,7 +67,7 @@ export default function HeadingSection({
           </Button>
           <Button
             size={"default"}
-            className="text-black bg-btnbg hover:bg-btnbg rounded-md text-xl"
+            className="text-black bg-btnbg hover:bg-btnbg rounded-md text-base font-medium"
           >
             <IoSearchOutline />
             Search
