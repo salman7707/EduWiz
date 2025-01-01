@@ -80,11 +80,11 @@ export default function SignUpForm() {
         </Button>
       </form>
       {/* to login page */}
-      <div className="">
-        <h3 className="text-neutralgray text-sm text-center">
+      <Link href={"/login"} className="">
+        <h3 className="text-neutralgray hover:text-blue text-sm text-center">
           Have an account ? Login
         </h3>
-      </div>
+      </Link>
     </>
   );
 }

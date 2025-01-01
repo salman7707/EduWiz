@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import useLogin from "@/customHooks/useLogin";
 import { LoginSchema } from "@/lib/validations/loginSchema";
 import { useFormik } from "formik";
+import Link from "next/link";
 import React from "react";
 
 export default function LoginForm() {
@@ -59,7 +60,10 @@ export default function LoginForm() {
         {/* Terms and Conditions */}
         <div className="flex items-center justify-start gap-x-1 mb-6">
           <input type="checkbox" id="terms" />
-          <Label htmlFor="terms" className="text-sm font-light text-neutralgray">
+          <Label
+            htmlFor="terms"
+            className="text-sm font-light text-neutralgray"
+          >
             Remember Me
           </Label>
         </div>
@@ -79,8 +83,15 @@ export default function LoginForm() {
           </Button>
         </div>
       </form>
-      <div className="h-auto text-center mt-10">
-        <h3 className="text-neutralgray text-sm">Forgot Password ?</h3>
+      <div className="mt-6 h-auto space-y-3">
+        <Link href={"/signup"} className="">
+          <h3 className="text-neutralgray hover:text-blue text-sm text-center">
+          {"Don't Have an account? Signup"}
+          </h3>
+        </Link>
+        <div className=" text-center">
+          <h3 className="text-neutralgray text-sm">Forgot Password ?</h3>
+        </div>
       </div>
     </>
   );

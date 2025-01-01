@@ -13,6 +13,7 @@ axiosWithToken.interceptors.request.use(
         if (userString) {
             const user = JSON.parse(userString);
             config.headers.Authorization = `${user.token}`;
+            // console.log("Auth Token ", config.headers.Authorization)
         }
         return config;
     },

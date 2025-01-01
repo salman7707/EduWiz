@@ -160,9 +160,7 @@ export const authSlice = createSlice({
             })
             .addCase(FetchCurrentUser.fulfilled, (state, action) => {
                 state.user = action.payload;
-
                 console.log("🚀 ~ fetched data Set in user Successfully")
-                return state;
             })
             .addCase(FetchCurrentUser.rejected, (state) => {
                 if (typeof window !== undefined) {

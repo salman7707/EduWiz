@@ -99,7 +99,7 @@ export default function FormSection({
           <SignUpForm />
         </div>
       ) : (
-        <div className="lg:w-[40%] w-full 2xl:h-[70%] h-[80%] ">
+        <div className="lg:w-[40%] w-full 2xl:h-[70%] h-[90%] ">
           <LoginForm />
         </div>
       )}

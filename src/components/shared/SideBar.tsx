@@ -33,7 +33,6 @@ export function SideBar() {
   }>({ hover: false, id: null });
 
   const hanldehover = (id: number) => {
-    console.log(id);
     setHoverDot({ hover: true, id: id });
   };
   const handleMouseLeave = () => {
